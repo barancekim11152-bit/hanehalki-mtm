@@ -301,32 +301,44 @@ dash.calc('katki_grup', {
     if (d.status !== 'ok') { el.classList.add('dash-skeleton'); return; }
     el.classList.remove('dash-skeleton');
     const rows = d.data.map((r) => ({ ...r, v: r[olcu], p: r['puan_' + olcu] })).sort((a, b) => a.v - b.v);
-    const W = el.clientWidth || 600, bh = 26, gap = 14, top = 6;
-    const H = top + rows.length * (bh + gap);
+    const W = el.clientWidth || 600, narrow = W < 520;
+    const bh = narrow ? 14 : 26, gap = 14, lh = narrow ? 20 : 0, top = 6, rh = lh + bh + gap;
+    const H = top + rows.length * rh;
     const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('height', H);
-    // measure label column
-    const meas = svg.append('g').attr('font-size', 12);
-    let labW = 0;
-    rows.forEach((r) => { const t = meas.append('text').text(r.ad); labW = Math.max(labW, t.node().getComputedTextLength()); });
-    meas.remove();
-    labW = Math.min(labW + 12, W * 0.42);
-    const valW = 150;
+    const fillOf = (r) => r.v < 0 ? (r.grup === 'Altın' ? dash.colors[1] : r.grup === 'Borsa' ? dash.colors[0] : r.grup === 'BES' ? dash.colors[3] : dash.colors[2]) : 'var(--cds-chart-muted)';
     const minV = Math.min(0, d3.min(rows, (r) => r.v)), maxV = Math.max(0, d3.max(rows, (r) => r.v));
-    const x = d3.scaleLinear([minV, maxV], [labW + valW, W - (maxV > 0 ? valW : 8)]);
-    if (maxV <= 0) x.range([labW + 8, W - valW]);
     const g = svg.append('g');
-    g.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', 0).attr('y2', H).attr('stroke', 'var(--cds-chart-axis)');
-    rows.forEach((r, i) => {
-      const y = top + i * (bh + gap);
-      g.append('text').attr('x', 0).attr('y', y + bh / 2).attr('dy', '0.35em').attr('font-size', 12).attr('fill', 'var(--color-fg)').text(r.ad);
-      const x0 = x(Math.min(0, r.v)), w = Math.max(1, Math.abs(x(r.v) - x(0)));
-      g.append('rect').attr('class', 'mx-bar').attr('x', x0).attr('y', y).attr('width', w).attr('height', bh).attr('rx', 4)
-        .attr('fill', r.v < 0 ? (r.grup === 'Altın' ? dash.colors[1] : r.grup === 'Borsa' ? dash.colors[0] : r.grup === 'BES' ? dash.colors[3] : dash.colors[2]) : 'var(--cds-chart-muted)');
-      const lx = r.v < 0 ? x(r.v) - 6 : x(r.v) + 6;
-      g.append('text').attr('x', lx).attr('y', y + bh / 2).attr('dy', '0.35em').attr('text-anchor', r.v < 0 ? 'end' : 'start')
-        .attr('font-size', 12).attr('fill', 'var(--color-fg)')
-        .text(`${mxFmt.tl(r.v)} · ${mxFmt.sgn(r.p, mxFmt.f2)} puan`);
-    });
+    if (narrow) {
+      const x = d3.scaleLinear([minV, maxV + (maxV > 0 ? 0 : 0)], [2, W - 2]);
+      rows.forEach((r, i) => {
+        const y = top + i * rh;
+        g.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', y + lh - 3).attr('y2', y + lh + bh + 3).attr('stroke', 'var(--cds-chart-axis)');
+        g.append('text').attr('x', 0).attr('y', y + 8).attr('dy', '0.35em').attr('font-size', 12).attr('fill', 'var(--color-fg)').text(r.ad);
+        g.append('text').attr('x', W).attr('y', y + 8).attr('dy', '0.35em').attr('text-anchor', 'end').attr('font-size', 12).attr('fill', 'var(--color-fg)')
+          .text(`${mxFmt.tl(r.v)} · ${mxFmt.sgn(r.p, mxFmt.f2)} puan`);
+        g.append('rect').attr('class', 'mx-bar').attr('x', x(Math.min(0, r.v))).attr('y', y + lh).attr('width', Math.max(2, Math.abs(x(r.v) - x(0)))).attr('height', bh).attr('rx', 4).attr('fill', fillOf(r));
+      });
+    } else {
+      const meas = svg.append('g').attr('font-size', 12);
+      let labW = 0;
+      rows.forEach((r) => { const t = meas.append('text').text(r.ad); labW = Math.max(labW, t.node().getComputedTextLength()); });
+      meas.remove();
+      labW = Math.min(labW + 12, W * 0.42);
+      const valW = 150;
+      const x = d3.scaleLinear([minV, maxV], [labW + valW, W - (maxV > 0 ? valW : 8)]);
+      if (maxV <= 0) x.range([labW + 8, W - valW]);
+      g.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', 0).attr('y2', H).attr('stroke', 'var(--cds-chart-axis)');
+      rows.forEach((r, i) => {
+        const y = top + i * rh;
+        g.append('text').attr('x', 0).attr('y', y + bh / 2).attr('dy', '0.35em').attr('font-size', 12).attr('fill', 'var(--color-fg)').text(r.ad);
+        const x0 = x(Math.min(0, r.v)), w = Math.max(1, Math.abs(x(r.v) - x(0)));
+        g.append('rect').attr('class', 'mx-bar').attr('x', x0).attr('y', y).attr('width', w).attr('height', bh).attr('rx', 4).attr('fill', fillOf(r));
+        const lx = r.v < 0 ? x(r.v) - 6 : x(r.v) + 6;
+        g.append('text').attr('x', lx).attr('y', y + bh / 2).attr('dy', '0.35em').attr('text-anchor', r.v < 0 ? 'end' : 'start')
+          .attr('font-size', 12).attr('fill', 'var(--color-fg)')
+          .text(`${mxFmt.tl(r.v)} · ${mxFmt.sgn(r.p, mxFmt.f2)} puan`);
+      });
+    }
     el.style.minHeight = H + 'px';
   });
 })();
