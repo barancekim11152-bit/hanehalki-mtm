@@ -322,11 +322,12 @@ dash.calc('katki_grup', {
       const meas = svg.append('g').attr('font-size', 12);
       let labW = 0;
       rows.forEach((r) => { const t = meas.append('text').text(r.ad); labW = Math.max(labW, t.node().getComputedTextLength()); });
+      let valW = 0;
+      rows.forEach((r) => { const t = meas.append('text').text(`${mxFmt.tl(r.v)} · ${mxFmt.sgn(r.p, mxFmt.f2)} puan`); valW = Math.max(valW, t.node().getComputedTextLength()); });
       meas.remove();
       labW = Math.min(labW + 12, W * 0.42);
-      const valW = 150;
+      valW += 14;
       const x = d3.scaleLinear([minV, maxV], [labW + valW, W - (maxV > 0 ? valW : 8)]);
-      if (maxV <= 0) x.range([labW + 8, W - valW]);
       g.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', 0).attr('y2', H).attr('stroke', 'var(--cds-chart-axis)');
       rows.forEach((r, i) => {
         const y = top + i * rh;
