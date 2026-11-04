@@ -1,0 +1,239 @@
+{
+ "hisse": [
+  {
+   "uyruk": "Yerli",
+   "kimlik": "Gerçek",
+   "ag": 2852.59,
+   "ey": 2111.0,
+   "ek": 1841.19,
+   "mkk_2ay": -35.46,
+   "beta": 0.58,
+   "baz": 2890.22,
+   "mtm": -1054.49,
+   "getiri": -36.48,
+   "usd_baz": 60.15,
+   "usd_son": 36.88
+  },
+  {
+   "uyruk": "Yerli",
+   "kimlik": "Tüzel",
+   "ag": 1563.74,
+   "ey": 1368.92,
+   "ek": 1151.5,
+   "mkk_2ay": -26.36,
+   "beta": 0.41,
+   "baz": 1578.26,
+   "mtm": -432.09,
+   "getiri": -27.38,
+   "usd_baz": 32.85,
+   "usd_son": 23.03
+  },
+  {
+   "uyruk": "Yerli",
+   "kimlik": "Diğer",
+   "ag": 1997.12,
+   "ey": 1147.78,
+   "ek": 853.5,
+   "mkk_2ay": -57.26,
+   "beta": 1.11,
+   "baz": 2048.15,
+   "mtm": -1195.94,
+   "getiri": -58.39,
+   "usd_baz": 42.63,
+   "usd_son": 17.12
+  },
+  {
+   "uyruk": "Yabancı",
+   "kimlik": "Gerçek",
+   "ag": 23.52,
+   "ey": 20.02,
+   "ek": 18.29,
+   "mkk_2ay": -22.26,
+   "beta": 0.33,
+   "baz": 23.7,
+   "mtm": -5.37,
+   "getiri": -22.67,
+   "usd_baz": 0.49,
+   "usd_son": 0.37
+  },
+  {
+   "uyruk": "Yabancı",
+   "kimlik": "Tüzel",
+   "ag": 1829.52,
+   "ey": 1615.86,
+   "ek": 1424.0,
+   "mkk_2ay": -22.17,
+   "beta": 0.33,
+   "baz": 1843.17,
+   "mtm": -417.89,
+   "getiri": -22.67,
+   "usd_baz": 38.36,
+   "usd_son": 28.63
+  },
+  {
+   "uyruk": "Yabancı",
+   "kimlik": "Diğer",
+   "ag": 1249.39,
+   "ey": 1079.52,
+   "ek": 940.88,
+   "mkk_2ay": -24.69,
+   "beta": 0.38,
+   "baz": 1260.14,
+   "mtm": -323.18,
+   "getiri": -25.65,
+   "usd_baz": 26.23,
+   "usd_son": 18.82
+  }
+ ],
+ "piyasa": {
+  "2026-08": 9515.89,
+  "2026-09": 7343.09,
+  "2026-10": 6229.35
+ },
+ "fon_kurumsal": {
+  "kategori": [
+   {
+    "kategori": "Altın/kıymetli maden",
+    "baz": 64.74,
+    "mtm": -6.65
+   },
+   {
+    "kategori": "Borçlanma araçları",
+    "baz": 66.83,
+    "mtm": 3.57
+   },
+   {
+    "kategori": "Değişken/karma",
+    "baz": 29.15,
+    "mtm": -1.19
+   },
+   {
+    "kategori": "Döviz/Eurobond",
+    "baz": 4.58,
+    "mtm": 0.13
+   },
+   {
+    "kategori": "Fon sepeti",
+    "baz": 17.33,
+    "mtm": -1.57
+   },
+   {
+    "kategori": "Hisse senedi",
+    "baz": 27.02,
+    "mtm": -7.65
+   },
+   {
+    "kategori": "Katılım (diğer)",
+    "baz": 1.13,
+    "mtm": -0.05
+   },
+   {
+    "kategori": "Para piyasası",
+    "baz": 368.02,
+    "mtm": 24.37
+   },
+   {
+    "kategori": "Serbest altın",
+    "baz": 21.48,
+    "mtm": -0.98
+   },
+   {
+    "kategori": "Serbest diğer",
+    "baz": 615.94,
+    "mtm": 142.81
+   },
+   {
+    "kategori": "Serbest döviz",
+    "baz": 1279.58,
+    "mtm": 37.15
+   },
+   {
+    "kategori": "Serbest hisse",
+    "baz": 114.49,
+    "mtm": -25.65
+   },
+   {
+    "kategori": "Serbest kısa vade/PP",
+    "baz": 799.63,
+    "mtm": 53.76
+   }
+  ],
+  "baz_tasfiye": 537.52,
+  "baz": 3947.46,
+  "mtm": -174.02,
+  "tasfiye": -392.07,
+  "diger": 218.05
+ },
+ "tuzel_altin": {
+  "ton": 60.5,
+  "baz": 429.08,
+  "mtm": -49.61
+ },
+ "tuzel_kur": {
+  "usd": 73.58,
+  "kazanc": 127.15
+ },
+ "gercek_kur": 102.42,
+ "dibs": [
+  {
+   "uyruk": "Yerli",
+   "kimlik": "Gerçek",
+   "ag": 542.4,
+   "ek": 728.56,
+   "degisim": 186.16,
+   "pct": 34.32
+  },
+  {
+   "uyruk": "Yerli",
+   "kimlik": "Tüzel",
+   "ag": 962.55,
+   "ek": 1074.36,
+   "degisim": 111.81,
+   "pct": 11.62
+  },
+  {
+   "uyruk": "Yerli",
+   "kimlik": "Diğer",
+   "ag": 71.81,
+   "ek": 86.04,
+   "degisim": 14.24,
+   "pct": 19.83
+  },
+  {
+   "uyruk": "Yabancı",
+   "kimlik": "Gerçek",
+   "ag": 9.98,
+   "ek": 13.37,
+   "degisim": 3.39,
+   "pct": 33.99
+  },
+  {
+   "uyruk": "Yabancı",
+   "kimlik": "Tüzel",
+   "ag": 305.1,
+   "ek": 296.45,
+   "degisim": -8.65,
+   "pct": -2.84
+  },
+  {
+   "uyruk": "Yabancı",
+   "kimlik": "Diğer",
+   "ag": 907.7,
+   "ek": 842.41,
+   "degisim": -65.28,
+   "pct": -7.19
+  }
+ ],
+ "hanehalki": {
+  "toplam": -4733.06,
+  "hisse": -1054.49,
+  "altin": -3286.44,
+  "fon": -217.02,
+  "bes": -175.11,
+  "genis_payda": 57120.42
+ },
+ "usd0": 48.0466,
+ "usd1": 49.7747,
+ "g0": 7092.0,
+ "g1": 6272.0
+}

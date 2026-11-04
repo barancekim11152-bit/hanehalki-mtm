@@ -1,0 +1,21 @@
+HANEHALKI MTM VE BUYUK RESIM RAPORU: TUM DOSYALAR
+==================================================
+Son rapor: 3_cikti/buyuk_resim.html (tarayicida acilir, icinde "PDF olarak kaydet" dugmesi var)
+Hanehalki detay sayfasi: 3_cikti/index.html
+Ornek PDF cikti: 3_cikti/buyuk_resim_ornek.pdf
+
+1_girdi_verileri/
+  hanehalki_zip_icerigi/  TEFAS fon dosyalari (28 Agustos ve 2 Kasim; yatirim fonu, BES, BYF), BIST Tum (Bloomberg),
+                          EVDS altin ve kur, MKK Agustos ve Eylul bultenleri, TCMB haftalik para ve banka tablosu
+  MKK_*.csv, MKK_VAP_tum_sayfalar.xlsx   MKK Veri Analiz Platformu export'u (Ekim)
+  EVDS_YP_mevduat_degisim_ve_parite_etkisi.xlsx   28 Agustos TCMB stoklarini geriye bulmak icin
+  TCMB_blog_Fon_Tasfiyeleri_ve_Reel_Sektor.pdf
+
+2_hesap_kodlari/  (Python 3, pandas, openpyxl, playwright)
+  Calistirma sirasi: hesap.py -> build.py (hanehalki sayfasi) ; buyuk.py ; ../yab/veri.py ve paket.py ; tc_ekle.py ; rapor.html'e paket.json gomulur
+  load.py, yfclass.py, besclass.py, tasf.py, shares.py, tasfiye.json   yardimci siniflandirma ve pay kurallari
+  rapor.html      rapor sablonu (__DATA__ yerine paket.json gomulur)
+  *.json          ara ciktilar (hesap sonuclari)
+NOT: Kodlar yazildigi oturumdaki mutlak yollari kullaniyor (/tmp/claude-0/.../scratchpad/...).
+Baska bilgisayarda calistirmak icin dosyalardaki yollari (Z=, V=, W=, vap/, zip1/) kendi klasorlerinize cevirin.
+Rakamlar sayfadaki yontem bolumunde ve kodlarda aciklanmistir.

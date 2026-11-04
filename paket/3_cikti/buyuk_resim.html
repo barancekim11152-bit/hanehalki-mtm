@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fon Krizinin Bilançosu</title>
+<meta name="description" content="28 Ağustos - 2 Kasım 2026 döneminde hanehalkı, şirketler ve yabancı yatırımcıların piyasa değeri kayıpları.">
+<style>
+:root{color-scheme:light;
+--bg:#f9f9f7;--panel:#fcfcfb;--line:#e4e2dc;--ink:#0b0b0b;--ink2:#52514e;--ink3:#7c7a74;
+--hh:#2a78d6;--tz:#1baf7a;--yb:#eb6834;--dg:#9a988f;--pos:#5f7d62;--grid:#ebe9e4;--axis:#a3a199;--shade:#efede8;
+--tip:#ffffff;--tipline:#d6d4ce;--shadow:0 8px 28px rgba(20,20,10,.12);
+--serif:"Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){color-scheme:dark;
+--bg:#0f0f0e;--panel:#1a1a19;--line:#302f2b;--ink:#f0efec;--ink2:#c3c2b7;--ink3:#93918a;
+--hh:#3987e5;--tz:#199e70;--yb:#d95926;--dg:#77756e;--pos:#8fae92;--grid:#292825;--axis:#5f5d57;--shade:#22221f;
+--tip:#262624;--tipline:#42413c;--shadow:0 8px 28px rgba(0,0,0,.55)}}
+:root[data-theme="dark"]{color-scheme:dark;
+--bg:#0f0f0e;--panel:#1a1a19;--line:#302f2b;--ink:#f0efec;--ink2:#c3c2b7;--ink3:#93918a;
+--hh:#3987e5;--tz:#199e70;--yb:#d95926;--dg:#77756e;--pos:#8fae92;--grid:#292825;--axis:#5f5d57;--shade:#22221f;
+--tip:#262624;--tipline:#42413c;--shadow:0 8px 28px rgba(0,0,0,.55)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-variant-numeric:tabular-nums;line-height:1.55}
+.w{max-width:1140px;margin:0 auto;padding:0 16px}
+header.top{padding:34px 0 18px}
+.kicker{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,5.4vw,52px);line-height:1.05;margin:10px 0 12px;letter-spacing:-.01em}
+.dek{font-size:17.5px;color:var(--ink2);max-width:66ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:18px;font-size:12.5px;color:var(--ink3)}
+.btn{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:7px 13px;cursor:pointer;display:inline-flex;gap:7px;align-items:center}
+.btn:hover{border-color:var(--axis)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+nav.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc .w{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.toc a{font-size:13px;color:var(--ink2);text-decoration:none;padding:11px 10px;white-space:nowrap;border-bottom:2px solid transparent}
+nav.toc a.on{color:var(--ink);border-bottom-color:var(--ink)}
+section.s{padding:46px 0 8px;scroll-margin-top:44px}
+.sn{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(25px,3.4vw,34px);line-height:1.15;margin:0 0 10px;letter-spacing:-.005em}
+.lead{color:var(--ink2);max-width:72ch;margin:0 0 22px;font-size:16px}
+.lead b{color:var(--ink);font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15.5rem),1fr));gap:12px;margin:8px 0 18px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;position:relative;overflow:hidden}
+.kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c,var(--ink3))}
+.kpi .k{font-size:12.5px;color:var(--ink2)}
+.kpi .v{font-family:var(--serif);font-size:40px;line-height:1.1;margin:4px 0 2px}
+.kpi .u{font-size:13px;color:var(--ink3);margin-left:4px;font-family:var(--sans)}
+.kpi .s{font-size:12.5px;color:var(--ink3)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;min-width:0;break-inside:avoid}
+.card h3{font-size:14.5px;font-weight:600;margin:0 0 2px}
+.card .cs{font-size:12.5px;color:var(--ink3);margin:0 0 10px}
+.card .note{font-size:12px;color:var(--ink3);margin:10px 0 0;line-height:1.5}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,32rem),1fr));gap:14px;margin-bottom:14px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,21rem),1fr));gap:14px;margin-bottom:14px}
+.full{margin-bottom:14px}
+.chart{position:relative;width:100%}
+.chart svg{display:block;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--ink2);margin:0 0 10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:10px;height:10px;border-radius:3px;display:inline-block;flex:none}
+.tip{position:absolute;pointer-events:none;background:var(--tip);border:1px solid var(--tipline);border-radius:8px;box-shadow:var(--shadow);padding:8px 11px;font-size:12.5px;white-space:nowrap;z-index:5;line-height:1.5}
+.tip .t{color:var(--ink3);font-size:11.5px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:0 0 10px}
+.seg button{font:inherit;font-size:12.5px;padding:5px 12px;border:0;background:transparent;color:var(--ink2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between}
+.find{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,31rem),1fr));gap:10px 26px;margin:4px 0 22px;padding:0;list-style:none;counter-reset:f}
+.find li{counter-increment:f;display:grid;grid-template-columns:28px 1fr;gap:2px 10px;font-size:14.5px;color:var(--ink2);padding:10px 0;border-top:1px solid var(--line)}
+.find li::before{content:counter(f,decimal-leading-zero);font-family:var(--serif);color:var(--ink3);font-size:15px}
+.find li b{color:var(--ink);font-weight:600}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font-weight:600;color:var(--ink2);font-size:12px}
+td.n,th.n{text-align:right}
+td.neg{color:var(--ink)}
+.pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--ink2)}
+.scn{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:18px 28px;margin-bottom:16px}
+.sl label{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2);margin-bottom:6px}
+.sl label b{color:var(--ink)}
+.sl input{width:100%;accent-color:var(--ink)}
+.scout{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:12px}
+.scout div{border-top:1px solid var(--line);padding-top:8px}
+.scout .l{font-size:12px;color:var(--ink3)}
+.scout .x{font-family:var(--serif);font-size:28px}
+.scout .d{font-size:12px;color:var(--ink3)}
+.method{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,21rem),1fr));gap:14px 30px;font-size:13.5px;color:var(--ink2)}
+.method h4{font-size:13.5px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.method p{margin:0}
+details summary{cursor:pointer;color:var(--ink2);font-size:13.5px;margin:14px 0 8px}
+footer{margin:40px 0 50px;font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:14px}
+a{color:inherit}
+.only-print{display:none}
+@media print{
+  :root,:root[data-theme="dark"]{color-scheme:light;--bg:#fff;--panel:#fff;--line:#d9d7d1;--ink:#0b0b0b;--ink2:#3f3e3b;--ink3:#6b6963;
+   --hh:#2a78d6;--tz:#1baf7a;--yb:#eb6834;--dg:#9a988f;--pos:#5f7d62;--grid:#ebe9e4;--axis:#a3a199;--shade:#f1efea}
+  @page{size:A4;margin:14mm 12mm}
+  body{font-size:11.5px}
+  nav.toc,.btn,.seg,.noprint,.scn input{display:none!important}
+  .only-print{display:block}
+  .w{max-width:none;padding:0}
+  section.s{padding-top:18px;break-before:auto}
+  section.s.pb{break-before:page}
+  .card,.kpi,.find li{break-inside:avoid}
+  .g2,.g3{grid-template-columns:1fr;gap:10px}
+  .kpis{grid-template-columns:1fr 1fr}
+  section.s.pb{break-before:page}
+  .card{padding:12px 14px}
+  details{display:block}details>summary{display:none}
+  h1{font-size:34px}
+}
+</style></head>
+<body>
+<div class="w">
+<header class="top">
+  <div class="kicker">Araştırma notu · 4 Kasım 2026</div>
+  <h1>Fon krizinin bilançosu</h1>
+  <p class="dek">28 Ağustos - 2 Kasım 2026 döneminde hanehalkı, yerli şirketler ve yabancı yatırımcıların borsa, altın, fon ve emeklilik varlıklarındaki piyasa değeri değişimi.</p>
+  <div class="meta">
+    <button class="btn primary" id="b-pdf" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>PDF olarak kaydet</button>
+    <button class="btn" id="b-theme" type="button">Tema</button>
+    <span>Veri MKK, TEFAS, TCMB, EVDS, Bloomberg</span>
+  </div>
+</header>
+</div>
+<nav class="toc"><div class="w">
+  <a href="#ozet">Özet</a><a href="#borsa">Pay piyasası</a><a href="#hh">Hanehalkı</a><a href="#tz">Şirket ve kurumlar</a><a href="#yb">Yabancılar</a><a href="#scn">Duyarlılık</a><a href="#yontem">Yöntem</a>
+</div></nav>
+<main class="w">
+
+<section class="s" id="ozet">
+  <div class="sn">Özet</div>
+  <h2 id="ozet-h"></h2>
+  <div class="kpis" id="kpis"></div>
+  <ol class="find" id="find"></ol>
+  <div class="card full">
+    <div class="row"><div><h3>Kayıpların kesim ve kaleme göre dağılımı</h3><p class="cs" id="wf-cs">Milyar TL, 28 Ağustos bazlı</p></div>
+    <div class="seg" role="group" aria-label="Birim" id="wf-seg"><button type="button" data-u="tl" aria-pressed="true">TL</button><button type="button" data-u="usd" aria-pressed="false">Dolar</button></div></div>
+    <div class="legend"><span><i class="sw" style="background:var(--hh)"></i>Hanehalkı</span><span><i class="sw" style="background:var(--tz)"></i>Yerli şirket ve kurumlar</span><span><i class="sw" style="background:var(--yb)"></i>Yabancı yatırımcılar</span></div>
+    <div class="chart" id="c-wf"></div>
+  </div>
+</section>
+
+<section class="s pb" id="borsa">
+  <div class="sn">1 · Pay piyasası</div>
+  <h2>Pay piyasasında 3,3 trilyon liralık erime</h2>
+  <p class="lead" id="borsa-lead"></p>
+  <div class="card full">
+    <h3>Pay senedi portföy değeri, yatırımcı grubuna göre</h3><p class="cs">Milyar TL, ay sonu. Gölgeli alan kriz dönemi.</p>
+    <div class="legend"><span><i class="sw" style="background:var(--hh)"></i>Yerli gerçek kişi</span><span><i class="sw" style="background:var(--tz)"></i>Yerli tüzel</span><span><i class="sw" style="background:var(--dg)"></i>Yerli diğer</span><span><i class="sw" style="background:var(--yb)"></i>Yabancı</span></div>
+    <div class="chart" id="c-area"></div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>Grupların portföy değişimi</h3><p class="cs">31 Ağustos - 31 Ekim, milyar TL ve yüzde</p><div class="chart" id="c-grp"></div>
+      <p class="note">Gruplar arası alım satım toplamda sıfırlanır. Toplam satır piyasa genelindeki fiyat etkisidir.</p></div>
+    <div class="card"><h3>Yerli gerçek kişi yatırımcı sayısı</h3><p class="cs">Milyon kişi, bakiyeli hesap, ay sonu</p><div class="chart" id="c-yat"></div><p class="note" id="yat-note"></p></div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>Portföy büyüklüğüne göre hesap sayısı</h3><p class="cs">Tüm yatırımcılar, Eylül ve Ekim, TL dilimleri</p>
+      <div class="legend"><span><i class="sw" style="background:var(--dg)"></i>Eylül</span><span><i class="sw" style="background:var(--ink2)"></i>Ekim</span></div>
+      <div class="chart" id="c-dilim"></div><p class="note" id="dilim-note"></p></div>
+    <div class="card"><h3>İllere göre yerli portföy</h3><p class="cs">Ekim, daire alanı portföy değeriyle orantılı</p><div class="chart" id="c-map"></div><p class="note" id="map-note"></p></div>
+  </div>
+</section>
+
+<section class="s pb" id="hh">
+  <div class="sn">2 · Hanehalkı</div>
+  <h2>Hanehalkında belirleyici kalem altın</h2>
+  <p class="lead" id="hh-lead"></p>
+  <div class="g2">
+    <div class="card"><h3>Hanehalkı kaybı, kalem bazında</h3><p class="cs">Milyar TL, 28 Ağustos - 2 Kasım</p><div class="chart" id="c-hhk"></div></div>
+    <div class="card"><h3>Kaybın günlük birikimi</h3><p class="cs">Milyar TL. Hisse ve altın günlük, fon ve BES TEFAS gözlemleri.</p>
+      <div class="legend"><span><i class="sw" style="background:var(--hh)"></i>Altın</span><span><svg width="20" height="8"><line x1="1" y1="4" x2="19" y2="4" stroke="var(--hh)" stroke-width="2" stroke-dasharray="4 3"/></svg>Hisse</span><span><svg width="20" height="8"><line x1="1" y1="4" x2="19" y2="4" stroke="var(--ink3)" stroke-width="2"/></svg>Fon ve BES</span></div>
+      <div class="chart" id="c-seyir"></div></div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>Altın stokundan hanehalkı altınına</h3><p class="cs">Ton, Ağustos 2026</p><div class="chart" id="c-ton"></div><p class="note">Fon, BES ve BYF altını kendi kalemlerinde fiyatlandığı için stoktan düşüldü.</p></div>
+    <div class="card"><h3>Gram altın</h3><p class="cs">TL, BİST kıymetli madenler piyasası</p><div class="chart" id="c-gram"></div></div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>Yatırım fonlarında hanehalkı kaybı, kategoriye göre</h3><p class="cs">Milyar TL, tasfiyedeki fonlar hariç</p><div class="chart" id="c-fk"></div></div>
+    <div class="card"><h3>Tasfiyedeki fonlar, portföy şirketine göre</h3><p class="cs">Hanehalkı payına düşen değişim, milyar TL</p><div class="chart" id="c-tas"></div><p class="note">Fiyatı yayımlanan fonlarda 2 Kasım NAV'ı, Tera'da 23 Ekim modeli.</p></div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>Hanehalkına en çok kaybettiren fonlar</h3><p class="cs">Milyar TL, hanehalkı payı</p><div class="tw"><table id="t-top"></table></div></div>
+    <div class="card"><h3>BES ve OKS fonları, kategoriye göre</h3><p class="cs">Milyar TL</p><div class="chart" id="c-bes"></div><p class="note" id="bes-note"></p></div>
+  </div>
+</section>
+
+<section class="s pb" id="tz">
+  <div class="sn">3 · Yerli şirket ve kurumlar</div>
+  <h2>Şirket ve kurum kayıpları hisse ve tasfiyedeki fonlarda yoğunlaştı</h2>
+  <p class="lead" id="tz-lead"></p>
+  <div class="g2">
+    <div class="card"><h3>Yerli tüzel kişilerin varlık değişimi</h3><p class="cs">Milyar TL. Kur kazancı toplamın dışında.</p><div class="chart" id="c-tzk"></div></div>
+    <div class="card"><h3>Hanehalkı dışı fon sahiplerinin kaybı, kategoriye göre</h3><p class="cs">Milyar TL, tasfiyedeki fonlar hariç</p><div class="chart" id="c-tzf"></div></div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>Reel sektör firmalarının tasfiye maruziyeti</h3><p class="cs">TCMB, 15 Eylül 2026, milyar TL</p>
+      <div class="scout" id="tc-stat" style="margin-bottom:12px;grid-template-columns:repeat(3,minmax(0,1fr))"></div><div class="chart" id="c-tc"></div>
+      <p class="note" id="tc-note"></p></div>
+    <div class="card"><h3>Bu firmaların ve tedarikçilerinin ekonomideki payı</h3><p class="cs">Yüzde, TCMB firma verileri</p>
+      <div class="legend"><span><i class="sw" style="background:var(--tz)"></i>Fon yatırımcısı firmalar</span><span><i class="sw" style="background:var(--dg)"></i>Tedarikçiler</span></div>
+      <div class="chart" id="c-tcpay"></div>
+      <p class="note">Tedarikçiler, satışlarının %5'inden fazlası fon yatırımcısı firmalara giden firmalar. Fon yatırımının dönen varlıklara oranı %50'yi aşan yüksek maruziyetli firmalar istihdam ve cironun on binde 3'ünü, ticari kredilerin on binde 2'sini oluşturuyor.</p></div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>Yerli diğer sınıfı</h3><p class="cs">Pay senedi portföyü, milyar TL</p><div class="chart" id="c-dg"></div><p class="note">MKK'nın gerçek ve tüzel dışındaki yerli kimlik sınıfı. Fon kayıplarının toplamından büyük olduğundan fonlardan fazlasını kapsar. Toplama katılmadı.</p></div>
+    <div class="card"><h3>Tahvil tarafında yerli talep</h3><p class="cs">DİBS portföyü, milyar TL. Açık çubuk Ağustos, koyu çubuk Ekim.</p><div class="chart" id="c-dibs-y"></div><p class="note">Fiyat etkisi ve alım satım birlikte.</p></div>
+  </div>
+</section>
+
+<section class="s pb" id="yb">
+  <div class="sn">4 · Yabancı yatırımcılar</div>
+  <h2>Yabancıların pay senedi kaybı yerlinin altında kaldı</h2>
+  <p class="lead" id="yb-lead"></p>
+  <div class="g2">
+    <div class="card"><h3>Yabancı payı</h3><p class="cs">Yüzde, ay sonu</p>
+      <div class="legend"><span><svg width="20" height="8"><line x1="1" y1="4" x2="19" y2="4" stroke="var(--yb)" stroke-width="2"/></svg>Pay senedi</span><span><svg width="20" height="8"><line x1="1" y1="4" x2="19" y2="4" stroke="var(--yb)" stroke-width="2" stroke-dasharray="5 4"/></svg>DİBS</span></div>
+      <div class="chart" id="c-ypay"></div></div>
+    <div class="card"><div class="row"><div><h3>Yabancı portföyü, kimlik türüne göre</h3><p class="cs">Milyar dolar, Ağustos ve Ekim</p></div>
+      <div class="seg" role="group" aria-label="Varlık" id="yk-seg"><button type="button" data-v="pay" aria-pressed="true">Pay senedi</button><button type="button" data-v="dibs" aria-pressed="false">DİBS</button></div></div>
+      <div class="legend"><span><i class="sw" style="background:var(--yb);opacity:.4"></i>Ağustos</span><span><i class="sw" style="background:var(--yb)"></i>Ekim</span></div>
+      <div class="chart" id="c-yk"></div><p class="note" id="yk-note"></p></div>
+  </div>
+  <div class="g2">
+    <div class="card"><h3>Yabancı pay senedi portföyü, ülkeye göre</h3><p class="cs">Ekim, milyar TL</p><div class="chart" id="c-ulke"></div><p class="note" id="ulke-note"></p></div>
+    <div class="card"><h3>Yabancı yatırımcı sayısı</h3><p class="cs">Pay senedi, kimlik türüne göre</p><div class="tw"><table id="t-yyat"></table></div>
+      <h3 style="margin-top:18px">DİBS pozisyon değişimi</h3><p class="cs">Ağustos - Ekim, milyar TL</p><div class="chart" id="c-dibs-all"></div></div>
+  </div>
+</section>
+
+<section class="s pb" id="scn">
+  <div class="sn">5 · Duyarlılık</div>
+  <h2>Fiyatlar değişirse tablo nasıl değişir</h2>
+  <p class="lead">Gram altın ve bundan sonraki borsa hareketi değiştirildiğinde kesim kayıpları yeniden hesaplanır. Fon ve BES kalemleri sabit tutulur, hisse kayıpları her grubun kendi betasıyla işler.</p>
+  <div class="card full">
+    <div class="scn">
+      <div class="sl"><label for="sl-g">Gram altın, TL <b id="lb-g"></b></label><input id="sl-g" type="range" min="5000" max="8000" step="10"></div>
+      <div class="sl"><label for="sl-b">BIST, 2 Kasım'dan itibaren <b id="lb-b"></b></label><input id="sl-b" type="range" min="-40" max="40" step="1"></div>
+    </div>
+    <div class="scout" id="sc-out"></div>
+    <div class="chart" id="c-sc" style="margin-top:14px"></div>
+    <div class="noprint" style="margin-top:10px"><button class="btn" id="sc-reset" type="button">Baz değerlere dön</button></div>
+  </div>
+</section>
+
+<section class="s pb" id="yontem">
+  <div class="sn">Ek</div>
+  <h2>Yöntem ve kaynaklar</h2>
+  <div class="method">
+    <div><h4>Dönem ve ölçü</h4><p>Baz 28 Ağustos 2026. Her kalem baz tarihindeki elde tutulan miktarın 2 Kasım fiyatıyla yeniden değerlenmesidir. Dönem içi alım satım kayba sayılmaz.</p></div>
+    <div><h4>Pay senedi</h4><p>MKK Veri Analiz Platformu'nda her yatırımcı grubunun 31 Ağustos - 31 Ekim portföy değişimine kalibre edilmiş BIST Tüm betası, günlük bileşik. Grup betaları portföy el değiştirmesini de taşır.</p></div>
+    <div><h4>Altın</h4><p>Ağustos 2026 yurt içi stoku 4.305 ton. Tüzel kişi altın hesabı, BES ve yatırım fonu altını ve altın BYF'leri düşülerek hanehalkı stoku bulundu. Gram ve ons EVDS BİST serisi, kur TCMB döviz alış.</p></div>
+    <div><h4>Fonlar</h4><p>TEFAS'ta her fon için 28 Ağustos pay adedi ve 2 Kasım fiyatı. Hanehalkı payı yatırımcı başına ortalama büyüklüğe göre kademeli, toplamı MKK yerli gerçek kişi fon portföyüne eşit. Kalan pay hanehalkı dışı sahiplere yazıldı.</p></div>
+    <div><h4>Tasfiye</h4><p>129 fon. Fiyat yayımlayanlarda 2 Kasım NAV'ı, fiyat yayımı duranlarda fiyat yayımlayan tasfiye fonlarının ortalama getirisi, Tera fonlarında 23 Ekim'deki grup hisseleri modeli.</p></div>
+    <div><h4>Reel sektör maruziyeti</h4><p>TCMB Blog, Seven ve Gürci, 4 Kasım 2026. SPK'nın 17 Eylül kararıyla tasfiyeye alınan fonlarda 15 Eylül itibarıyla yatırımı olan firmalar. Kayıp tahmini bu rapora ait.</p></div>
+    <div><h4>Mevduat ve DİBS</h4><p>TCMB haftalık verisinden 28 Ağustos stokları, 23 Ekim'den geriye akış ve parite etkisiyle. Kur kazancı ayrı gösterildi. DİBS'te MKK pozisyon değişimi.</p></div>
+  </div>
+  <details open><summary>Tüm rakamlar</summary><div class="tw"><table id="t-all"></table></div></details>
+</section>
+<footer>Kaynaklar MKK Veri Analiz Platformu ve Aylık Piyasa Bülteni, TEFAS, TCMB Blog, TCMB EVDS ve haftalık para ve banka istatistikleri, Bloomberg BIST Tüm. Hesaplama 4 Kasım 2026.</footer>
+</main>
+
+<script>
+const P = {"b": {"hisse": [{"uyruk": "Yerli", "kimlik": "Gerçek", "ag": 2852.59, "ey": 2111.0, "ek": 1841.19, "mkk_2ay": -35.46, "beta": 0.58, "baz": 2890.22, "mtm": -1054.49, "getiri": -36.48, "usd_baz": 60.15, "usd_son": 36.88}, {"uyruk": "Yerli", "kimlik": "Tüzel", "ag": 1563.74, "ey": 1368.92, "ek": 1151.5, "mkk_2ay": -26.36, "beta": 0.41, "baz": 1578.26, "mtm": -432.09, "getiri": -27.38, "usd_baz": 32.85, "usd_son": 23.03}, {"uyruk": "Yerli", "kimlik": "Diğer", "ag": 1997.12, "ey": 1147.78, "ek": 853.5, "mkk_2ay": -57.26, "beta": 1.11, "baz": 2048.15, "mtm": -1195.94, "getiri": -58.39, "usd_baz": 42.63, "usd_son": 17.12}, {"uyruk": "Yabancı", "kimlik": "Gerçek", "ag": 23.52, "ey": 20.02, "ek": 18.29, "mkk_2ay": -22.26, "beta": 0.33, "baz": 23.7, "mtm": -5.37, "getiri": -22.67, "usd_baz": 0.49, "usd_son": 0.37}, {"uyruk": "Yabancı", "kimlik": "Tüzel", "ag": 1829.52, "ey": 1615.86, "ek": 1424.0, "mkk_2ay": -22.17, "beta": 0.33, "baz": 1843.17, "mtm": -417.89, "getiri": -22.67, "usd_baz": 38.36, "usd_son": 28.63}, {"uyruk": "Yabancı", "kimlik": "Diğer", "ag": 1249.39, "ey": 1079.52, "ek": 940.88, "mkk_2ay": -24.69, "beta": 0.38, "baz": 1260.14, "mtm": -323.18, "getiri": -25.65, "usd_baz": 26.23, "usd_son": 18.82}], "piyasa": {"2026-08": 9515.89, "2026-09": 7343.09, "2026-10": 6229.35}, "fon_kurumsal": {"kategori": [{"kategori": "Altın/kıymetli maden", "baz": 64.74, "mtm": -6.65}, {"kategori": "Borçlanma araçları", "baz": 66.83, "mtm": 3.57}, {"kategori": "Değişken/karma", "baz": 29.15, "mtm": -1.19}, {"kategori": "Döviz/Eurobond", "baz": 4.58, "mtm": 0.13}, {"kategori": "Fon sepeti", "baz": 17.33, "mtm": -1.57}, {"kategori": "Hisse senedi", "baz": 27.02, "mtm": -7.65}, {"kategori": "Katılım (diğer)", "baz": 1.13, "mtm": -0.05}, {"kategori": "Para piyasası", "baz": 368.02, "mtm": 24.37}, {"kategori": "Serbest altın", "baz": 21.48, "mtm": -0.98}, {"kategori": "Serbest diğer", "baz": 615.94, "mtm": 142.81}, {"kategori": "Serbest döviz", "baz": 1279.58, "mtm": 37.15}, {"kategori": "Serbest hisse", "baz": 114.49, "mtm": -25.65}, {"kategori": "Serbest kısa vade/PP", "baz": 799.63, "mtm": 53.76}], "baz_tasfiye": 537.52, "baz": 3947.46, "mtm": -174.02, "tasfiye": -392.07, "diger": 218.05}, "tuzel_altin": {"ton": 60.5, "baz": 429.08, "mtm": -49.61}, "tuzel_kur": {"usd": 73.58, "kazanc": 127.15}, "gercek_kur": 102.42, "dibs": [{"uyruk": "Yerli", "kimlik": "Gerçek", "ag": 542.4, "ek": 728.56, "degisim": 186.16, "pct": 34.32}, {"uyruk": "Yerli", "kimlik": "Tüzel", "ag": 962.55, "ek": 1074.36, "degisim": 111.81, "pct": 11.62}, {"uyruk": "Yerli", "kimlik": "Diğer", "ag": 71.81, "ek": 86.04, "degisim": 14.24, "pct": 19.83}, {"uyruk": "Yabancı", "kimlik": "Gerçek", "ag": 9.98, "ek": 13.37, "degisim": 3.39, "pct": 33.99}, {"uyruk": "Yabancı", "kimlik": "Tüzel", "ag": 305.1, "ek": 296.45, "degisim": -8.65, "pct": -2.84}, {"uyruk": "Yabancı", "kimlik": "Diğer", "ag": 907.7, "ek": 842.41, "degisim": -65.28, "pct": -7.19}], "hanehalki": {"toplam": -4733.06, "hisse": -1054.49, "altin": -3286.44, "fon": -217.02, "bes": -175.11, "genis_payda": 57120.42}, "usd0": 48.0466, "usd1": 49.7747, "g0": 7092.0, "g1": 6272.0}, "y": {"kur": {"2026-06": 46.5551, "2026-07": 47.3274, "2026-08": 48.0732, "2026-09": 48.9131, "2026-10": 49.6997}, "pay_12ay": [{"ay": "2025-11", "yabanci": 2657.23, "toplam": 7283.68, "yerli": 4626.45, "pay": 36.48, "yab_yatirimci": 29515}, {"ay": "2025-12", "yabanci": 2709.08, "toplam": 7470.75, "yerli": 4761.67, "pay": 36.26, "yab_yatirimci": 29891}, {"ay": "2026-01", "yabanci": 3238.67, "toplam": 8716.45, "yerli": 5477.78, "pay": 37.16, "yab_yatirimci": 30314}, {"ay": "2026-02", "yabanci": 3229.26, "toplam": 8779.59, "yerli": 5550.32, "pay": 36.78, "yab_yatirimci": 31149}, {"ay": "2026-03", "yabanci": 2973.24, "toplam": 8344.72, "yerli": 5371.48, "pay": 35.63, "yab_yatirimci": 30627}, {"ay": "2026-04", "yabanci": 3223.64, "toplam": 9217.98, "yerli": 5994.34, "pay": 34.97, "yab_yatirimci": 30823}, {"ay": "2026-05", "yabanci": 3028.88, "toplam": 8929.61, "yerli": 5900.73, "pay": 33.92, "yab_yatirimci": 31585}, {"ay": "2026-06", "yabanci": 2999.95, "toplam": 9295.31, "yerli": 6295.36, "pay": 32.27, "yab_yatirimci": 32219}, {"ay": "2026-07", "yabanci": 2971.75, "toplam": 9219.71, "yerli": 6247.96, "pay": 32.23, "yab_yatirimci": 33049}, {"ay": "2026-08", "yabanci": 3102.43, "toplam": 9515.89, "yerli": 6413.46, "pay": 32.6, "yab_yatirimci": 33273}, {"ay": "2026-09", "yabanci": 2715.39, "toplam": 7343.09, "yerli": 4627.7, "pay": 36.98, "yab_yatirimci": 33401}, {"ay": "2026-10", "yabanci": 2383.17, "toplam": 6229.35, "yerli": 3846.18, "pay": 38.26, "yab_yatirimci": 32978}], "pay_kimlik": [{"uyruk": "Yabancı", "kimlik": "Gerçek", "tl": {"2026-07": 22.58, "2026-08": 23.52, "2026-09": 20.02, "2026-10": 18.29}, "usd": {"2026-07": 0.477, "2026-08": 0.489, "2026-09": 0.409, "2026-10": 0.368}, "yatirimci": {"2026-07": 30324, "2026-08": 30524, "2026-09": 30657, "2026-10": 30229}}, {"uyruk": "Yabancı", "kimlik": "Tüzel", "tl": {"2026-07": 1775.11, "2026-08": 1829.52, "2026-09": 1615.86, "2026-10": 1424.0}, "usd": {"2026-07": 37.507, "2026-08": 38.057, "2026-09": 33.035, "2026-10": 28.652}, "yatirimci": {"2026-07": 1234, "2026-08": 1247, "2026-09": 1251, "2026-10": 1256}}, {"uyruk": "Yabancı", "kimlik": "Diğer", "tl": {"2026-07": 1174.06, "2026-08": 1249.39, "2026-09": 1079.52, "2026-10": 940.88}, "usd": {"2026-07": 24.807, "2026-08": 25.989, "2026-09": 22.07, "2026-10": 18.931}, "yatirimci": {"2026-07": 1491, "2026-08": 1502, "2026-09": 1493, "2026-10": 1493}}, {"uyruk": "Yerli", "kimlik": "Gerçek", "tl": {"2026-07": 2873.94, "2026-08": 2852.59, "2026-09": 2111.0, "2026-10": 1841.19}, "usd": {"2026-07": 60.725, "2026-08": 59.339, "2026-09": 43.158, "2026-10": 37.046}, "yatirimci": {"2026-07": 6852562, "2026-08": 6752662, "2026-09": 6647540, "2026-10": 6496357}}, {"uyruk": "Yerli", "kimlik": "Tüzel", "tl": {"2026-07": 1492.83, "2026-08": 1563.74, "2026-09": 1368.92, "2026-10": 1151.5}, "usd": {"2026-07": 31.543, "2026-08": 32.528, "2026-09": 27.987, "2026-10": 23.169}, "yatirimci": {"2026-07": 10308, "2026-08": 10401, "2026-09": 10424, "2026-10": 10488}}, {"uyruk": "Yerli", "kimlik": "Diğer", "tl": {"2026-07": 1881.2, "2026-08": 1997.12, "2026-09": 1147.78, "2026-10": 853.5}, "usd": {"2026-07": 39.749, "2026-08": 41.543, "2026-09": 23.466, "2026-10": 17.173}, "yatirimci": {"2026-07": 1733, "2026-08": 1737, "2026-09": 1689, "2026-10": 1612}}], "dibs_12ay": [{"ay": "2025-11", "yabanci": 908.41, "toplam": 2067.67, "yerli": 1159.26, "pay": 43.93, "yab_yatirimci": 1274}, {"ay": "2025-12", "yabanci": 1037.21, "toplam": 2302.93, "yerli": 1265.73, "pay": 45.04, "yab_yatirimci": 1321}, {"ay": "2026-01", "yabanci": 1215.54, "toplam": 2576.97, "yerli": 1361.43, "pay": 47.17, "yab_yatirimci": 1377}, {"ay": "2026-02", "yabanci": 1223.92, "toplam": 2585.6, "yerli": 1361.68, "pay": 47.34, "yab_yatirimci": 1283}, {"ay": "2026-03", "yabanci": 886.71, "toplam": 2373.25, "yerli": 1486.55, "pay": 37.36, "yab_yatirimci": 1310}, {"ay": "2026-04", "yabanci": 882.62, "toplam": 2386.06, "yerli": 1503.44, "pay": 36.99, "yab_yatirimci": 1292}, {"ay": "2026-05", "yabanci": 864.44, "toplam": 2418.72, "yerli": 1554.27, "pay": 35.74, "yab_yatirimci": 1289}, {"ay": "2026-06", "yabanci": 1076.5, "toplam": 2531.28, "yerli": 1454.78, "pay": 42.53, "yab_yatirimci": 1229}, {"ay": "2026-07", "yabanci": 1185.14, "toplam": 2696.4, "yerli": 1511.27, "pay": 43.95, "yab_yatirimci": 1275}, {"ay": "2026-08", "yabanci": 1222.78, "toplam": 2799.53, "yerli": 1576.76, "pay": 43.68, "yab_yatirimci": 1268}, {"ay": "2026-09", "yabanci": 1186.42, "toplam": 2911.61, "yerli": 1725.19, "pay": 40.75, "yab_yatirimci": 1336}, {"ay": "2026-10", "yabanci": 1152.24, "toplam": 3041.2, "yerli": 1888.96, "pay": 37.89, "yab_yatirimci": 1409}], "dibs_kimlik": [{"uyruk": "Yabancı", "kimlik": "Gerçek", "tl": {"2026-07": 9.48, "2026-08": 9.98, "2026-09": 11.59, "2026-10": 13.37}, "usd": {"2026-07": 0.2, "2026-08": 0.208, "2026-09": 0.237, "2026-10": 0.269}, "yatirimci": {"2026-07": 705, "2026-08": 713, "2026-09": 777, "2026-10": 854}}, {"uyruk": "Yabancı", "kimlik": "Tüzel", "tl": {"2026-07": 280.1, "2026-08": 305.1, "2026-09": 306.7, "2026-10": 296.45}, "usd": {"2026-07": 5.918, "2026-08": 6.347, "2026-09": 6.27, "2026-10": 5.965}, "yatirimci": {"2026-07": 212, "2026-08": 205, "2026-09": 202, "2026-10": 207}}, {"uyruk": "Yabancı", "kimlik": "Diğer", "tl": {"2026-07": 895.55, "2026-08": 907.7, "2026-09": 868.13, "2026-10": 842.41}, "usd": {"2026-07": 18.923, "2026-08": 18.882, "2026-09": 17.748, "2026-10": 16.95}, "yatirimci": {"2026-07": 358, "2026-08": 350, "2026-09": 357, "2026-10": 348}}, {"uyruk": "Yerli", "kimlik": "Gerçek", "tl": {"2026-07": 488.63, "2026-08": 542.4, "2026-09": 629.96, "2026-10": 728.56}, "usd": {"2026-07": 10.325, "2026-08": 11.283, "2026-09": 12.879, "2026-10": 14.659}, "yatirimci": {"2026-07": 28091, "2026-08": 28893, "2026-09": 33086, "2026-10": 38215}}, {"uyruk": "Yerli", "kimlik": "Tüzel", "tl": {"2026-07": 959.91, "2026-08": 962.55, "2026-09": 1015.97, "2026-10": 1074.36}, "usd": {"2026-07": 20.282, "2026-08": 20.023, "2026-09": 20.771, "2026-10": 21.617}, "yatirimci": {"2026-07": 409, "2026-08": 410, "2026-09": 435, "2026-10": 487}}, {"uyruk": "Yerli", "kimlik": "Diğer", "tl": {"2026-07": 62.73, "2026-08": 71.81, "2026-09": 79.26, "2026-10": 86.04}, "usd": {"2026-07": 1.325, "2026-08": 1.494, "2026-09": 1.62, "2026-10": 1.731}, "yatirimci": {"2026-07": 55, "2026-08": 51, "2026-09": 53, "2026-10": 58}}], "ulke": [{"ulke": "ABD", "portfoy": 593.78, "yatirimci": 995}, {"ulke": "Birleşik Krallık", "portfoy": 403.03, "yatirimci": 298}, {"ulke": "Katar", "portfoy": 339.17, "yatirimci": 9}, {"ulke": "İspanya", "portfoy": 248.46, "yatirimci": 14}, {"ulke": "Hollanda", "portfoy": 106.54, "yatirimci": 152}, {"ulke": "Lüksemburg", "portfoy": 100.39, "yatirimci": 212}, {"ulke": "Cayman Adaları", "portfoy": 66.22, "yatirimci": 73}, {"ulke": "İrlanda", "portfoy": 58.77, "yatirimci": 173}, {"ulke": "İsviçre", "portfoy": 40.13, "yatirimci": 104}, {"ulke": "Fransa", "portfoy": 38.5, "yatirimci": 47}, {"ulke": "Almanya", "portfoy": 23.6, "yatirimci": 2437}, {"ulke": "Kanada", "portfoy": 20.33, "yatirimci": 150}, {"ulke": "Avusturya", "portfoy": 10.86, "yatirimci": 432}, {"ulke": "KKTC", "portfoy": 1.55, "yatirimci": 2361}], "ulke_panel_toplam_ekim": 2051.33}, "h": {"ozet": [{"kalem": "hisse", "ad": "Doğrudan hisse senedi", "grup": "Borsa", "baz": 2890.22, "net": -1054.49, "brut": -1054.49, "yontem": "MKK yerli gerçek kişi portföyü, BIST Tüm ile beta 0,58 (Eylül-Ekim kalibrasyonu), 2 Kasım kapanış"}, {"kalem": "altin_yastik", "ad": "Yastık altı altın", "grup": "Altın", "baz": 24119.44, "net": -2788.77, "brut": -2788.77, "yontem": "Erkin Işık stoku eksi banka, fon, BES, BYF ve tüzel altını, gram altın farkı"}, {"kalem": "altin_banka", "ad": "Bankadaki altın (gerçek kişi)", "grup": "Altın", "baz": 4304.25, "net": -497.67, "brut": -497.67, "yontem": "TCMB gerçek kişi kıymetli maden hesabı, ton bazında gram fiyat farkı"}, {"kalem": "fon_tasfiye", "ad": "Tasfiyedeki 129 fon", "grup": "Yatırım fonu", "baz": 705.02, "net": -327.99, "brut": -327.99, "yontem": "Fiyat yayımlayanlarda 2 Kasım NAV, fiyatsızlarda tasfiye ortalaması, Tera model tahmini, hanehalkı payı"}, {"kalem": "fon_diger", "ad": "Diğer yatırım fonları", "grup": "Yatırım fonu", "baz": 5206.25, "net": 110.98, "brut": -153.68, "yontem": "TEFAS fon bazında al-tut, 28 Ağustos pay adedi, hanehalkı payı"}, {"kalem": "bes", "ad": "BES ve OKS fonları", "grup": "BES", "baz": 2652.95, "net": -175.11, "brut": -208.44, "yontem": "TEFAS emeklilik fonları al-tut, tamamı hanehalkı"}], "model": [{"anahtar": "usd0", "deger": 48.05}, {"anahtar": "usd1", "deger": 49.77}, {"anahtar": "gram0", "deger": 7092.0}, {"anahtar": "gram1", "deger": 6272.0}, {"anahtar": "hh_altin_ton", "deger": 4007.85}, {"anahtar": "erkin_ton", "deger": 4305.0}, {"anahtar": "altin_kesinti_ton", "deger": 297.15}, {"anahtar": "banka_ton", "deger": 606.92}, {"anahtar": "hisse_baz", "deger": 2890.22}, {"anahtar": "beta", "deger": 0.58}, {"anahtar": "fin_payda", "deger": 33000.98}, {"anahtar": "genis_payda", "deger": 57120.42}, {"anahtar": "yastik_deger", "deger": 24119.44}, {"anahtar": "q2_toplam", "deger": 30954.62}, {"anahtar": "doviz_kur_kazanci", "deger": 102.42}, {"anahtar": "doviz_mevduat_usd", "deger": 59.26}, {"anahtar": "xutum0", "deger": 78808.35}, {"anahtar": "xutum1", "deger": 35823.59}], "seyir": [{"tarih": "2026-08-28", "hisse": 0.0, "altin": 0.0, "fon": 0.0, "bes": 0.0, "xutum": 78808.35, "gram": 7092.0}, {"tarih": "2026-08-31", "hisse": -37.62, "altin": -949.86, "fon": null, "bes": null, "xutum": 77039.59, "gram": 6855.0}, {"tarih": "2026-09-01", "hisse": -58.95, "altin": -1430.8, "fon": null, "bes": null, "xutum": 76046.49, "gram": 6735.0}, {"tarih": "2026-09-02", "hisse": -70.12, "altin": -1551.84, "fon": null, "bes": null, "xutum": 75529.08, "gram": 6704.8}, {"tarih": "2026-09-03", "hisse": -96.69, "altin": -660.09, "fon": null, "bes": null, "xutum": 74302.21, "gram": 6927.3}, {"tarih": "2026-09-04", "hisse": -90.96, "altin": -677.73, "fon": -13.32, "bes": -47.63, "xutum": 74565.15, "gram": 6922.9}, {"tarih": "2026-09-07", "hisse": -89.29, "altin": -1090.14, "fon": null, "bes": null, "xutum": 74641.72, "gram": 6820.0}, {"tarih": "2026-09-08", "hisse": -77.42, "altin": -981.92, "fon": null, "bes": null, "xutum": 75187.41, "gram": 6847.0}, {"tarih": "2026-09-09", "hisse": -75.23, "altin": -1009.98, "fon": null, "bes": null, "xutum": 75288.12, "gram": 6840.0}, {"tarih": "2026-09-10", "hisse": -74.98, "altin": -1310.57, "fon": null, "bes": null, "xutum": 75299.62, "gram": 6765.0}, {"tarih": "2026-09-11", "hisse": -76.52, "altin": -1135.42, "fon": 13.86, "bes": -36.29, "xutum": 75228.85, "gram": 6808.7}, {"tarih": "2026-09-14", "hisse": -90.18, "altin": -1651.24, "fon": null, "bes": null, "xutum": 74599.06, "gram": 6680.0}, {"tarih": "2026-09-15", "hisse": -117.93, "altin": -1643.22, "fon": null, "bes": null, "xutum": 73324.23, "gram": 6682.0}, {"tarih": "2026-09-16", "hisse": -218.61, "altin": -1262.47, "fon": null, "bes": null, "xutum": 68733.27, "gram": 6777.0}, {"tarih": "2026-09-17", "hisse": -268.9, "altin": -1083.32, "fon": null, "bes": null, "xutum": 66502.43, "gram": 6821.7}, {"tarih": "2026-09-18", "hisse": -340.57, "altin": -1078.11, "fon": 8.5, "bes": -65.65, "xutum": 63367.35, "gram": 6823.0}, {"tarih": "2026-09-21", "hisse": -406.21, "altin": -1110.18, "fon": null, "bes": null, "xutum": 60554.81, "gram": 6815.0}, {"tarih": "2026-09-22", "hisse": -431.62, "altin": -1250.45, "fon": null, "bes": null, "xutum": 59486.89, "gram": 6780.0}, {"tarih": "2026-09-23", "hisse": -465.36, "altin": -1378.7, "fon": null, "bes": null, "xutum": 58079.0, "gram": 6748.0}, {"tarih": "2026-09-24", "hisse": -521.32, "altin": -1595.13, "fon": null, "bes": null, "xutum": 55768.45, "gram": 6694.0}, {"tarih": "2026-09-25", "hisse": -531.62, "altin": -1378.7, "fon": null, "bes": null, "xutum": 55350.08, "gram": 6748.0}, {"tarih": "2026-09-28", "hisse": -596.32, "altin": -2220.35, "fon": null, "bes": null, "xutum": 52732.38, "gram": 6538.0}, {"tarih": "2026-09-29", "hisse": -629.95, "altin": -2180.27, "fon": null, "bes": null, "xutum": 51399.61, "gram": 6548.0}, {"tarih": "2026-09-30", "hisse": -668.54, "altin": -1951.82, "fon": null, "bes": null, "xutum": 49886.27, "gram": 6605.0}, {"tarih": "2026-10-01", "hisse": -657.59, "altin": -1959.84, "fon": null, "bes": null, "xutum": 50310.33, "gram": 6603.0}, {"tarih": "2026-10-02", "hisse": -668.45, "altin": -1795.51, "fon": null, "bes": null, "xutum": 49888.29, "gram": 6644.0}, {"tarih": "2026-10-05", "hisse": -686.56, "altin": -2092.09, "fon": null, "bes": null, "xutum": 49187.47, "gram": 6570.0}, {"tarih": "2026-10-06", "hisse": -701.01, "altin": -1931.78, "fon": null, "bes": null, "xutum": 48631.36, "gram": 6610.0}, {"tarih": "2026-10-07", "hisse": -734.38, "altin": -2413.17, "fon": null, "bes": null, "xutum": 47353.17, "gram": 6489.89}, {"tarih": "2026-10-08", "hisse": -740.04, "altin": -2272.45, "fon": null, "bes": null, "xutum": 47138.87, "gram": 6525.0}, {"tarih": "2026-10-09", "hisse": -725.74, "altin": -1991.9, "fon": null, "bes": null, "xutum": 47679.41, "gram": 6595.0}, {"tarih": "2026-10-12", "hisse": -751.78, "altin": -1991.9, "fon": null, "bes": null, "xutum": 46690.47, "gram": 6595.0}, {"tarih": "2026-10-13", "hisse": -773.09, "altin": -1899.72, "fon": null, "bes": null, "xutum": 45888.18, "gram": 6618.0}, {"tarih": "2026-10-14", "hisse": -802.74, "altin": -2372.65, "fon": null, "bes": null, "xutum": 44780.08, "gram": 6500.0}, {"tarih": "2026-10-15", "hisse": -819.54, "altin": -2052.02, "fon": null, "bes": null, "xutum": 44158.72, "gram": 6580.0}, {"tarih": "2026-10-16", "hisse": -859.95, "altin": -1883.69, "fon": null, "bes": null, "xutum": 42673.01, "gram": 6622.0}, {"tarih": "2026-10-19", "hisse": -908.23, "altin": -1871.67, "fon": null, "bes": null, "xutum": 40923.12, "gram": 6625.0}, {"tarih": "2026-10-20", "hisse": -896.59, "altin": -2132.18, "fon": null, "bes": null, "xutum": 41337.58, "gram": 6560.0}, {"tarih": "2026-10-21", "hisse": -942.74, "altin": -2072.06, "fon": null, "bes": null, "xutum": 39687.71, "gram": 6575.0}, {"tarih": "2026-10-22", "hisse": -977.31, "altin": -2272.45, "fon": null, "bes": null, "xutum": 38473.01, "gram": 6525.0}, {"tarih": "2026-10-23", "hisse": -997.44, "altin": -2625.14, "fon": -201.24, "bes": -139.71, "xutum": 37775.27, "gram": 6437.0}, {"tarih": "2026-10-26", "hisse": -995.56, "altin": -2608.67, "fon": null, "bes": null, "xutum": 37839.65, "gram": 6441.11}, {"tarih": "2026-10-27", "hisse": -1009.85, "altin": -2681.21, "fon": null, "bes": null, "xutum": 37347.59, "gram": 6423.01}, {"tarih": "2026-10-28", "hisse": -1015.11, "altin": null, "fon": null, "bes": null, "xutum": 37167.7, "gram": null}, {"tarih": "2026-10-30", "hisse": -1050.91, "altin": -2973.83, "fon": null, "bes": null, "xutum": 35944.12, "gram": 6350.0}, {"tarih": "2026-11-02", "hisse": -1054.49, "altin": -3286.44, "fon": -217.01, "bes": -175.11, "xutum": 35823.59, "gram": 6272.0}], "altin_fiyat": [{"tarih": "2026-08-28", "ons_usd": 4591.4, "gram_tl": 7092.0, "usdtry": 48.05, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-09-04", "ons_usd": 4432.3, "gram_tl": 6922.9, "usdtry": 48.22, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-09-11", "ons_usd": 4340.4, "gram_tl": 6808.7, "usdtry": 48.41, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-09-18", "ons_usd": 4337.8, "gram_tl": 6823.0, "usdtry": 48.59, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-09-25", "ons_usd": 4315.0, "gram_tl": 6748.0, "usdtry": 48.77, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-10-02", "ons_usd": 4224.0, "gram_tl": 6644.0, "usdtry": 48.95, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-10-09", "ons_usd": 4141.45, "gram_tl": 6595.0, "usdtry": 49.13, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-10-16", "ons_usd": 4175.9, "gram_tl": 6622.0, "usdtry": 49.33, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-10-23", "ons_usd": 4027.75, "gram_tl": 6437.0, "usdtry": 49.54, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-10-30", "ons_usd": 3962.0, "gram_tl": 6350.0, "usdtry": 49.7, "kaynak": "EVDS: BİST altın, TCMB kur"}, {"tarih": "2026-11-02", "ons_usd": 3904.3, "gram_tl": 6272.0, "usdtry": 49.77, "kaynak": "EVDS: BİST altın, TCMB kur"}], "altin_ton": [{"kalem": "Yurt içi toplam altın stoku (Ağustos)", "ton": 4305.0, "not": "Ağustos 2026, aylık 8 ton düşüş, Kasım 2021'den beri en sert"}, {"kalem": "Eksi tüzel kişi banka altını", "ton": -60.5, "not": "TCMB tüzel kişi KMDH 8,93 milyar $, 28 Ağustos ons fiyatıyla"}, {"kalem": "Eksi BES altın fonları", "ton": -151.75, "not": "BES altın fonları büyüklüğü / gram altın"}, {"kalem": "Eksi yatırım fonu altını", "ton": -51.83, "not": "Altın ve kıymetli maden fonları / gram altın"}, {"kalem": "Eksi altın BYF", "ton": -33.07, "not": "TEFAS altın BYF büyüklüğü / gram altın"}, {"kalem": "Hanehalkının doğrudan altını", "ton": 4007.85, "not": "Fiyat etkisine tabi doğrudan stok"}, {"kalem": "… bankada (gerçek kişi)", "ton": 606.92, "not": "TCMB haftalık, 28 Ağustos 89,59 milyar $"}, {"kalem": "… yastık altında", "ton": 3400.94, "not": "Kalan"}], "fon_kategori": [{"kategori": "Hisse senedi", "baz": 177.39, "mtm": -46.89, "fon_sayisi": 187, "getiri": -26.43}, {"kategori": "Altın/kıymetli maden", "baz": 283.83, "mtm": -29.57, "fon_sayisi": 51, "getiri": -10.42}, {"kategori": "Fon sepeti", "baz": 96.69, "mtm": -10.51, "fon_sayisi": 89, "getiri": -10.87}, {"kategori": "Değişken/karma", "baz": 96.26, "mtm": -10.03, "fon_sayisi": 191, "getiri": -10.42}, {"kategori": "Serbest hisse", "baz": 53.46, "mtm": -7.64, "fon_sayisi": 184, "getiri": -14.29}, {"kategori": "Serbest altın", "baz": 27.32, "mtm": -5.29, "fon_sayisi": 7, "getiri": -19.38}, {"kategori": "Katılım (diğer)", "baz": 8.51, "mtm": -0.44, "fon_sayisi": 23, "getiri": -5.2}, {"kategori": "Döviz/Eurobond", "baz": 12.47, "mtm": 0.31, "fon_sayisi": 13, "getiri": 2.47}, {"kategori": "Serbest diğer", "baz": 217.64, "mtm": 11.16, "fon_sayisi": 382, "getiri": 5.13}, {"kategori": "Borçlanma araçları", "baz": 204.18, "mtm": 12.26, "fon_sayisi": 96, "getiri": 6.01}, {"kategori": "Serbest döviz", "baz": 1761.25, "mtm": 47.76, "fon_sayisi": 504, "getiri": 2.71}, {"kategori": "Serbest kısa vade/PP", "baz": 728.06, "mtm": 48.62, "fon_sayisi": 72, "getiri": 6.68}, {"kategori": "Para piyasası", "baz": 1539.19, "mtm": 101.25, "fon_sayisi": 98, "getiri": 6.58}], "bes_kategori": [{"kategori": "Altın", "baz": 1076.21, "mtm": -112.56, "fon_sayisi": 21, "getiri": -10.46}, {"kategori": "Hisse senedi", "baz": 228.55, "mtm": -42.0, "fon_sayisi": 46, "getiri": -18.38}, {"kategori": "Değişken/karma/sepet", "baz": 512.96, "mtm": -38.54, "fon_sayisi": 99, "getiri": -7.51}, {"kategori": "OKS/Başlangıç/Standart", "baz": 190.45, "mtm": -6.35, "fon_sayisi": 135, "getiri": -3.33}, {"kategori": "Katılım", "baz": 57.05, "mtm": -5.72, "fon_sayisi": 30, "getiri": -10.03}, {"kategori": "Döviz/yabancı", "baz": 118.84, "mtm": 0.72, "fon_sayisi": 20, "getiri": 0.61}, {"kategori": "Borçlanma araçları", "baz": 90.43, "mtm": 4.24, "fon_sayisi": 36, "getiri": 4.69}, {"kategori": "Para piyasası", "baz": 378.47, "mtm": 25.11, "fon_sayisi": 13, "getiri": 6.63}], "tasfiye": [{"portfoy": "Tera", "fon_sayisi": 6, "toplam_buyukluk": 565.06, "hanehalki_payi": 423.06, "karar_oncesi": 48.9, "karar_sonrasi": -310.53, "hanehalki_mtm": -195.34}, {"portfoy": "Hedef", "fon_sayisi": 29, "toplam_buyukluk": 111.61, "hanehalki_payi": 43.63, "karar_oncesi": -75.54, "karar_sonrasi": -17.75, "hanehalki_mtm": -34.41}, {"portfoy": "Pusula", "fon_sayisi": 12, "toplam_buyukluk": 375.66, "hanehalki_payi": 152.38, "karar_oncesi": -23.86, "karar_sonrasi": -180.63, "hanehalki_mtm": -33.58}, {"portfoy": "Atlas", "fon_sayisi": 16, "toplam_buyukluk": 81.61, "hanehalki_payi": 54.1, "karar_oncesi": -53.07, "karar_sonrasi": 0.0, "hanehalki_mtm": -33.06}, {"portfoy": "Pardus", "fon_sayisi": 42, "toplam_buyukluk": 84.1, "hanehalki_payi": 24.37, "karar_oncesi": -83.61, "karar_sonrasi": -0.25, "hanehalki_mtm": -24.29}, {"portfoy": "Bulls", "fon_sayisi": 15, "toplam_buyukluk": 21.18, "hanehalki_payi": 6.12, "karar_oncesi": -20.41, "karar_sonrasi": 0.0, "hanehalki_mtm": -5.96}, {"portfoy": "A1 Capital", "fon_sayisi": 9, "toplam_buyukluk": 3.32, "hanehalki_payi": 1.36, "karar_oncesi": -3.31, "karar_sonrasi": 0.0, "hanehalki_mtm": -1.35}], "en_cok_kaybettiren": [{"kod": "TLY", "fon": "Tera Portföy Birinci Serbest Fon", "kategori": "Serbest diğer", "tasfiye": "Evet", "hanehalki_baz": 204.75, "hanehalki_mtm": -146.0}, {"kod": "THF", "fon": "Tera Portföy Hisse Senedi (TL) Fonu (Hisse Senedi Yoğun Fon)", "kategori": "Hisse senedi", "tasfiye": "Evet", "hanehalki_baz": 50.45, "hanehalki_mtm": -43.84}, {"kod": "DFI", "fon": "Atlas Portföy Serbest Fon", "kategori": "Serbest diğer", "tasfiye": "Evet", "hanehalki_baz": 28.04, "hanehalki_mtm": -26.85}, {"kod": "PHE", "fon": "Pusula Portföy Hisse Senedi Fonu (Hisse Senedi Yoğun Fon)", "kategori": "Hisse senedi", "tasfiye": "Hayır", "hanehalki_baz": 24.95, "hanehalki_mtm": -23.92}, {"kod": "PCS", "fon": "Pusula Portföy Üçüncü Hisse Senedi Serbest Fon (Hisse Senedi Yoğun Fon)", "kategori": "Serbest hisse", "tasfiye": "Evet", "hanehalki_baz": 20.06, "hanehalki_mtm": -18.74}, {"kod": "TMV", "fon": "Tera Portföy Algoritmik Stratejiler Serbest Fon", "kategori": "Serbest diğer", "tasfiye": "Hayır", "hanehalki_baz": 30.41, "hanehalki_mtm": -16.22}, {"kod": "PKZ", "fon": "Pusula Portföy Kuzey Hisse Senedi Serbest (TL) Fon (Hisse Senedi Yoğun Fon)", "kategori": "Serbest hisse", "tasfiye": "Evet", "hanehalki_baz": 10.98, "hanehalki_mtm": -10.26}, {"kod": "KSA", "fon": "Hedef Portföy Kısa Vadeli Serbest (TL) Fon", "kategori": "Serbest kısa vade/PP", "tasfiye": "Evet", "hanehalki_baz": 11.96, "hanehalki_mtm": -8.59}, {"kod": "DOH", "fon": "Tera Portföy Dördüncü Hisse Senedi Serbest (TL) Fon (Hisse Senedi Yoğun Fon)", "kategori": "Serbest hisse", "tasfiye": "Evet", "hanehalki_baz": 8.39, "hanehalki_mtm": -7.28}, {"kod": "KZL", "fon": "Kuveyt Türk Portföy Altın Katılım Fonu", "kategori": "Altın/kıymetli maden", "tasfiye": "Hayır", "hanehalki_baz": 69.88, "hanehalki_mtm": -7.01}, {"kod": "KHA", "fon": "Pardus Portföy İkinci Hisse Senedi (TL) Fonu (Hisse Senedi Yoğun Fon)", "kategori": "Hisse senedi", "tasfiye": "Evet", "hanehalki_baz": 6.83, "hanehalki_mtm": -6.83}, {"kod": "HDH", "fon": "Hedef Portföy Doğu Hisse Senedi Serbest (TL) Fon (Hisse Senedi Yoğun Fon)", "kategori": "Serbest hisse", "tasfiye": "Evet", "hanehalki_baz": 6.58, "hanehalki_mtm": -5.92}], "beta": [{"beta": 0.3, "getiri": -0.20834}, {"beta": 0.31, "getiri": -0.21451}, {"beta": 0.32, "getiri": -0.22064}, {"beta": 0.33, "getiri": -0.22672}, {"beta": 0.34, "getiri": -0.23276}, {"beta": 0.35, "getiri": -0.23875}, {"beta": 0.36, "getiri": -0.2447}, {"beta": 0.37, "getiri": -0.2506}, {"beta": 0.38, "getiri": -0.25646}, {"beta": 0.39, "getiri": -0.26228}, {"beta": 0.4, "getiri": -0.26805}, {"beta": 0.41, "getiri": -0.27378}, {"beta": 0.42, "getiri": -0.27946}, {"beta": 0.43, "getiri": -0.28511}, {"beta": 0.44, "getiri": -0.29071}, {"beta": 0.45, "getiri": -0.29627}, {"beta": 0.46, "getiri": -0.30178}, {"beta": 0.47, "getiri": -0.30726}, {"beta": 0.48, "getiri": -0.31269}, {"beta": 0.49, "getiri": -0.31809}, {"beta": 0.5, "getiri": -0.32344}, {"beta": 0.51, "getiri": -0.32875}, {"beta": 0.52, "getiri": -0.33403}, {"beta": 0.53, "getiri": -0.33926}, {"beta": 0.54, "getiri": -0.34446}, {"beta": 0.55, "getiri": -0.34961}, {"beta": 0.56, "getiri": -0.35473}, {"beta": 0.57, "getiri": -0.35981}, {"beta": 0.58, "getiri": -0.36485}, {"beta": 0.59, "getiri": -0.36985}, {"beta": 0.6, "getiri": -0.37481}, {"beta": 0.61, "getiri": -0.37974}, {"beta": 0.62, "getiri": -0.38463}, {"beta": 0.63, "getiri": -0.38949}, {"beta": 0.64, "getiri": -0.3943}, {"beta": 0.65, "getiri": -0.39908}, {"beta": 0.66, "getiri": -0.40383}, {"beta": 0.67, "getiri": -0.40854}, {"beta": 0.68, "getiri": -0.41321}, {"beta": 0.69, "getiri": -0.41785}, {"beta": 0.7, "getiri": -0.42245}, {"beta": 0.71, "getiri": -0.42702}, {"beta": 0.72, "getiri": -0.43155}, {"beta": 0.73, "getiri": -0.43605}, {"beta": 0.74, "getiri": -0.44051}, {"beta": 0.75, "getiri": -0.44495}, {"beta": 0.76, "getiri": -0.44934}, {"beta": 0.77, "getiri": -0.45371}, {"beta": 0.78, "getiri": -0.45804}, {"beta": 0.79, "getiri": -0.46234}, {"beta": 0.8, "getiri": -0.4666}, {"beta": 0.81, "getiri": -0.47084}, {"beta": 0.82, "getiri": -0.47504}, {"beta": 0.83, "getiri": -0.47921}, {"beta": 0.84, "getiri": -0.48335}, {"beta": 0.85, "getiri": -0.48745}, {"beta": 0.86, "getiri": -0.49153}, {"beta": 0.87, "getiri": -0.49557}, {"beta": 0.88, "getiri": -0.49959}, {"beta": 0.89, "getiri": -0.50357}, {"beta": 0.9, "getiri": -0.50752}, {"beta": 0.91, "getiri": -0.51145}, {"beta": 0.92, "getiri": -0.51534}, {"beta": 0.93, "getiri": -0.5192}]}, "mkk12": [{"ay": "2025-11", "yerli_gercek": 2205.67, "yerli_tuzel": 1325.67, "yabanci": 2657.23, "toplam": 7283.68, "yatirimci_yerli_gercek": 6390854, "yatirimci_toplam": 6431964, "yerli_diger": 1095.11}, {"ay": "2025-12", "yerli_gercek": 2259.53, "yerli_tuzel": 1384.63, "yabanci": 2709.08, "toplam": 7470.75, "yatirimci_yerli_gercek": 6461615, "yatirimci_toplam": 6503149, "yerli_diger": 1117.51}, {"ay": "2026-01", "yerli_gercek": 2579.61, "yerli_tuzel": 1539.82, "yabanci": 3238.67, "toplam": 8716.45, "yatirimci_yerli_gercek": 6513973, "yatirimci_toplam": 6556028, "yerli_diger": 1358.35}, {"ay": "2026-02", "yerli_gercek": 2555.35, "yerli_tuzel": 1633.75, "yabanci": 3229.26, "toplam": 8779.59, "yatirimci_yerli_gercek": 6725577, "yatirimci_toplam": 6768541, "yerli_diger": 1361.22}, {"ay": "2026-03", "yerli_gercek": 2559.98, "yerli_tuzel": 1437.64, "yabanci": 2973.24, "toplam": 8344.72, "yatirimci_yerli_gercek": 6375981, "yatirimci_toplam": 6418407, "yerli_diger": 1373.86}, {"ay": "2026-04", "yerli_gercek": 2820.46, "yerli_tuzel": 1590.16, "yabanci": 3223.64, "toplam": 9217.98, "yatirimci_yerli_gercek": 6359183, "yatirimci_toplam": 6401807, "yerli_diger": 1583.72}, {"ay": "2026-05", "yerli_gercek": 2783.68, "yerli_tuzel": 1520.22, "yabanci": 3028.88, "toplam": 8929.61, "yatirimci_yerli_gercek": 6592939, "yatirimci_toplam": 6636367, "yerli_diger": 1596.84}, {"ay": "2026-06", "yerli_gercek": 2838.99, "yerli_tuzel": 1663.73, "yabanci": 2999.95, "toplam": 9295.31, "yatirimci_yerli_gercek": 6706742, "yatirimci_toplam": 6750901, "yerli_diger": 1792.63}, {"ay": "2026-07", "yerli_gercek": 2873.94, "yerli_tuzel": 1492.83, "yabanci": 2971.75, "toplam": 9219.71, "yatirimci_yerli_gercek": 6852562, "yatirimci_toplam": 6897652, "yerli_diger": 1881.19}, {"ay": "2026-08", "yerli_gercek": 2852.59, "yerli_tuzel": 1563.74, "yabanci": 3102.43, "toplam": 9515.89, "yatirimci_yerli_gercek": 6752662, "yatirimci_toplam": 6798073, "yerli_diger": 1997.13}, {"ay": "2026-09", "yerli_gercek": 2111.0, "yerli_tuzel": 1368.92, "yabanci": 2715.39, "toplam": 7343.09, "yatirimci_yerli_gercek": 6647540, "yatirimci_toplam": 6693054, "yerli_diger": 1147.78}, {"ay": "2026-10", "yerli_gercek": 1841.19, "yerli_tuzel": 1151.5, "yabanci": 2383.17, "toplam": 6229.35, "yatirimci_yerli_gercek": 6496357, "yatirimci_toplam": 6541435, "yerli_diger": 853.5}], "dilim": [{"dilim": "0-1", "v0": 0.0, "v1": 0.0, "n0": 167830, "n1": 210601}, {"dilim": "2-100", "v0": 0.03, "v1": 0.031, "n0": 1217715, "n1": 1279466}, {"dilim": "101-1 bin", "v0": 0.546, "v1": 0.443, "n0": 1079838, "n1": 1020860}, {"dilim": "1-5 bin", "v0": 2.584, "v1": 2.522, "n0": 1011520, "n1": 997702}, {"dilim": "10-20 bin", "v0": 6.826, "v1": 6.545, "n0": 473411, "n1": 454425}, {"dilim": "20-50 bin", "v0": 19.339, "v1": 18.5, "n0": 593467, "n1": 567774}, {"dilim": "50-100 bin", "v0": 29.822, "v1": 28.363, "n0": 414931, "n1": 395057}, {"dilim": "100-250 bin", "v0": 76.813, "v1": 72.731, "n0": 475723, "n1": 451107}, {"dilim": "250-500 bin", "v0": 104.398, "v1": 97.494, "n0": 293071, "n1": 273926}, {"dilim": "500 bin-1 milyon", "v0": 154.526, "v1": 140.505, "n0": 218894, "n1": 199485}, {"dilim": "1-5 milyon", "v0": 455.034, "v1": 396.769, "n0": 222765, "n1": 195210}, {"dilim": "5-10 milyon", "v0": 191.506, "v1": 162.45, "n0": 27670, "n1": 23542}, {"dilim": "10 milyon +", "v0": 6298.254, "v1": 5299.734, "n0": 25448, "n1": 22304}], "iller": [{"il": "İstanbul", "lat": 41.00527, "lon": 28.97696, "v": 2785.314, "n": 1599709}, {"il": "Ankara", "lat": 39.92077, "lon": 32.85411, "v": 314.944, "n": 666039}, {"il": "İzmir", "lat": 38.41885, "lon": 27.12872, "v": 119.564, "n": 438928}, {"il": "Bursa", "lat": 40.266864, "lon": 29.063448, "v": 72.176, "n": 271300}, {"il": "Antalya", "lat": 36.88414, "lon": 30.70563, "v": 46.763, "n": 227501}, {"il": "Adana", "lat": 37.0, "lon": 35.321333, "v": 39.371, "n": 179662}, {"il": "Balıkesir", "lat": 39.648369, "lon": 27.88261, "v": 39.22, "n": 119846}, {"il": "Kocaeli", "lat": 40.85327, "lon": 29.88152, "v": 36.81, "n": 188202}, {"il": "Mersin", "lat": 36.8, "lon": 34.633333, "v": 28.577, "n": 137424}, {"il": "Muğla", "lat": 37.215278, "lon": 28.363611, "v": 25.201, "n": null}, {"il": "Konya", "lat": 37.866667, "lon": 32.483333, "v": 23.939, "n": 133602}, {"il": "Aydın", "lat": 37.846393, "lon": 27.835064, "v": 17.71, "n": null}, {"il": "Denizli", "lat": 37.77652, "lon": 29.08639, "v": 17.282, "n": null}, {"il": "Manisa", "lat": 38.619099, "lon": 27.428921, "v": 16.852, "n": null}, {"il": "Kayseri", "lat": 38.73122, "lon": 35.478729, "v": 16.225, "n": null}, {"il": "Hatay", "lat": 36.401849, "lon": 36.34981, "v": 15.475, "n": null}, {"il": "Eskişehir", "lat": 39.776667, "lon": 30.520556, "v": 14.624, "n": null}, {"il": "Karabük", "lat": 41.2061, "lon": 32.62035, "v": 13.764, "n": null}, {"il": "Gaziantep", "lat": 37.06622, "lon": 37.38332, "v": 13.735, "n": null}, {"il": "Tekirdağ", "lat": 40.983333, "lon": 27.516667, "v": 12.671, "n": null}, {"il": "Samsun", "lat": 41.292782, "lon": 36.33128, "v": 12.132, "n": null}, {"il": "Sakarya", "lat": 40.693997, "lon": 30.435763, "v": 11.226, "n": null}, {"il": "Çanakkale", "lat": 40.155312, "lon": 26.41416, "v": 10.771, "n": null}, {"il": "Zonguldak", "lat": 41.456409, "lon": 31.798731, "v": 9.052, "n": null}, {"il": "Çorum", "lat": 40.550556, "lon": 34.955556, "v": 8.731, "n": null}, {"il": "Trabzon", "lat": 41.00145, "lon": 39.7178, "v": 8.576, "n": null}, {"il": "Diyarbakır", "lat": 37.91441, "lon": 40.230629, "v": 8.292, "n": null}, {"il": "Isparta", "lat": 37.764771, "lon": 30.556561, "v": 7.86, "n": null}, {"il": "Kahramanmaraş", "lat": 37.585831, "lon": 36.937149, "v": 7.473, "n": null}, {"il": "Malatya", "lat": 38.35519, "lon": 38.30946, "v": 6.809, "n": null}, {"il": "Kütahya", "lat": 39.416667, "lon": 29.983333, "v": 6.214, "n": null}, {"il": "Şanlıurfa", "lat": 37.159149, "lon": 38.796909, "v": 6.116, "n": null}, {"il": "Afyonkarahisar", "lat": 38.740978, "lon": 30.573958, "v": 5.9, "n": null}, {"il": "Edirne", "lat": 41.681808, "lon": 26.562269, "v": 5.721, "n": null}, {"il": "Rize", "lat": 41.02005, "lon": 40.523449, "v": 5.302, "n": null}, {"il": "Elazığ", "lat": 38.680969, "lon": 39.226398, "v": 5.059, "n": null}, {"il": "Yalova", "lat": 40.65, "lon": 29.266667, "v": 4.95, "n": null}, {"il": "Sivas", "lat": 39.747662, "lon": 37.017879, "v": 4.884, "n": null}, {"il": "Uşak", "lat": 38.682301, "lon": 29.40819, "v": 4.31, "n": null}, {"il": "Ordu", "lat": 40.983879, "lon": 37.876411, "v": 4.306, "n": null}, {"il": "Kırklareli", "lat": 41.733333, "lon": 27.216667, "v": 4.253, "n": null}, {"il": "Aksaray", "lat": 38.36869, "lon": 34.03698, "v": 4.206, "n": null}, {"il": "Osmaniye", "lat": 37.07, "lon": 36.25, "v": 4.13, "n": null}, {"il": "Bolu", "lat": 40.739479, "lon": 31.611561, "v": 3.995, "n": null}, {"il": "Niğde", "lat": 37.966667, "lon": 34.683333, "v": 3.803, "n": null}, {"il": "Tokat", "lat": 40.316667, "lon": 36.55, "v": 3.666, "n": null}, {"il": "Nevşehir", "lat": 38.625, "lon": 34.712222, "v": 3.56, "n": null}, {"il": "Erzurum", "lat": 39.9, "lon": 41.27, "v": 3.518, "n": null}, {"il": "Kastamonu", "lat": 41.38871, "lon": 33.78273, "v": 3.38, "n": null}, {"il": "Van", "lat": 38.48914, "lon": 43.40889, "v": 3.301, "n": null}, {"il": "Giresun", "lat": 40.912811, "lon": 38.38953, "v": 3.284, "n": null}, {"il": "Batman", "lat": 37.881168, "lon": 41.13509, "v": 3.27, "n": null}, {"il": "Düzce", "lat": 40.843849, "lon": 31.15654, "v": 3.204, "n": null}, {"il": "Adıyaman", "lat": 37.764751, "lon": 38.278561, "v": 3.086, "n": null}, {"il": "Karaman", "lat": 37.17593, "lon": 33.228748, "v": 2.97, "n": null}, {"il": "Kırıkkale", "lat": 39.846821, "lon": 33.515251, "v": 2.968, "n": null}, {"il": "Burdur", "lat": 37.726909, "lon": 30.288876, "v": 2.738, "n": null}, {"il": "Mardin", "lat": 37.321163, "lon": 40.724477, "v": 2.683, "n": null}, {"il": "Amasya", "lat": 40.64991, "lon": 35.83532, "v": 2.626, "n": null}, {"il": "Kırşehir", "lat": 39.14249, "lon": 34.17091, "v": 2.489, "n": null}, {"il": "Bitlis", "lat": 38.393799, "lon": 42.12318, "v": 2.384, "n": null}, {"il": "Yozgat", "lat": 39.818081, "lon": 34.81469, "v": 2.325, "n": null}, {"il": "Çankırı", "lat": 40.601343, "lon": 33.613421, "v": 2.235, "n": null}, {"il": "Sinop", "lat": 42.025579, "lon": 35.152602, "v": 1.999, "n": null}, {"il": "Siirt", "lat": 37.933333, "lon": 41.95, "v": 1.9, "n": null}, {"il": "Bilecik", "lat": 40.150131, "lon": 29.983061, "v": 1.86, "n": null}, {"il": "Bartın", "lat": 41.641521, "lon": 32.345581, "v": 1.815, "n": null}, {"il": "Erzincan", "lat": 39.75, "lon": 39.5, "v": 1.792, "n": null}, {"il": "Şırnak", "lat": 37.51873, "lon": 42.469761, "v": 1.253, "n": null}, {"il": "Artvin", "lat": 41.18277, "lon": 41.818291, "v": 1.222, "n": null}, {"il": "Ağrı", "lat": 39.718832, "lon": 43.048427, "v": 1.194, "n": null}, {"il": "Muş", "lat": 38.743293, "lon": 41.506482, "v": 1.09, "n": null}, {"il": "Gümüşhane", "lat": 40.438588, "lon": 39.508556, "v": 0.988, "n": null}, {"il": "Bingöl", "lat": 38.884722, "lon": 40.496389, "v": 0.976, "n": null}, {"il": "Kars", "lat": 40.616667, "lon": 43.1, "v": 0.95, "n": null}, {"il": "Tunceli", "lat": 39.105825, "lon": 39.545517, "v": 0.881, "n": null}, {"il": "Iğdır", "lat": 39.9193, "lon": 44.065498, "v": 0.755, "n": null}, {"il": "Kilis", "lat": 36.718399, "lon": 37.12122, "v": 0.726, "n": null}, {"il": "Hakkari", "lat": 37.583333, "lon": 43.733333, "v": 0.675, "n": null}, {"il": "Bayburt", "lat": 40.255169, "lon": 40.22488, "v": 0.669, "n": null}, {"il": "Ardahan", "lat": 41.110481, "lon": 42.702171, "v": 0.318, "n": null}], "il_toplam_ekim": 3909.04};
+(() => {
+const B = P.b, Y = P.y, Hd = P.h;
+// ---------- format ----------
+const nf = (d) => new Intl.NumberFormat('tr-TR', {minimumFractionDigits: d, maximumFractionDigits: d});
+const f0 = nf(0), f1 = nf(1), f2 = nf(2);
+const sg = (v, f = f0) => (v > 0 ? '+' : v < 0 ? '−' : '') + f.format(Math.abs(v));
+const pc = (v, f = f1) => (v > 0 ? '+%' : v < 0 ? '−%' : '%') + f.format(Math.abs(v));
+const pa = (v, f = f1) => '%' + f.format(Math.abs(v));
+const NS = 'http://www.w3.org/2000/svg';
+const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.append(e); return e; };
+const tx = (p, x, y, s, a = {}) => { const t = el('text', Object.assign({x, y, 'font-size': 12, fill: 'var(--ink2)'}, a), p); t.textContent = s; return t; };
+const $ = (id) => document.getElementById(id);
+let PRINT = false;
+const width = (box) => PRINT ? Math.min(box.clientWidth || 680, 680) : (box.clientWidth || 600);
+function tipFor(box) {
+  const t = document.createElement('div'); t.className = 'tip'; t.hidden = true; box.append(t);
+  return { show(ev, h) { t.innerHTML = h; t.hidden = false; const r = box.getBoundingClientRect();
+      let x = ev.clientX - r.left + 14, y = ev.clientY - r.top + 12;
+      if (x + t.offsetWidth > box.clientWidth) x = ev.clientX - r.left - t.offsetWidth - 14;
+      t.style.left = Math.max(0, x) + 'px'; t.style.top = Math.max(0, y) + 'px'; }, hide() { t.hidden = true; } };
+}
+const svgOf = (box, W, H, label) => el('svg', {width: '100%', height: H, viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': label || ''}, box);
+const rbar = (x, y, w, h, side) => { // 4px radius at data end only
+  const r = Math.min(4, Math.abs(w) / 2, h / 2);
+  if (side === 'r') return `M${x},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h - r}Q${x + w},${y + h} ${x + w - r},${y + h}H${x}Z`;
+  if (side === 'l') return `M${x + w},${y}H${x + r}Q${x},${y} ${x},${y + r}V${y + h - r}Q${x},${y + h} ${x + r},${y + h}H${x + w}Z`;
+  if (side === 't') { const rr = Math.min(4, w / 2, h); return `M${x},${y + h}V${y + rr}Q${x},${y} ${x + rr},${y}H${x + w - rr}Q${x + w},${y} ${x + w},${y + rr}V${y + h}Z`; }
+  const rr = Math.min(4, w / 2, h); return `M${x},${y}V${y + h - rr}Q${x},${y + h} ${x + rr},${y + h}H${x + w - rr}Q${x + w},${y + h} ${x + w},${y + h - rr}V${y}Z`;
+};
+
+// ---------- horizontal bars ----------
+function hbar(id, rows, o = {}) {
+  const box = $(id); box.replaceChildren();
+  const W = width(box), narrow = W < 500;
+  const bh = o.bh || (narrow ? 14 : 18), gap = narrow ? 26 : 10, lab = narrow ? 0 : (o.lab || Math.min(190, W * .34)), top = 2;
+  const rh = bh + gap, H = top + rows.length * rh + 2;
+  const svg = svgOf(box, W, H, o.aria);
+  const vals = rows.map((r) => r.v), mn = Math.min(0, ...vals), mx = Math.max(0, ...vals);
+  const vw = o.vw || 92, x0 = lab + (mn < 0 ? vw : 4), x1 = W - (mx > 0 ? vw : 4);
+  const sx = (v) => x0 + (v - mn) / ((mx - mn) || 1) * (x1 - x0);
+  el('line', {x1: sx(0), x2: sx(0), y1: 0, y2: H, stroke: 'var(--axis)'}, svg);
+  const tip = tipFor(box);
+  rows.forEach((r, i) => {
+    const y = top + i * rh + (narrow ? 13 : 0);
+    if (narrow) tx(svg, 0, y - 5, r.l, {fill: 'var(--ink)', 'font-size': 12});
+    else tx(svg, 0, y + bh / 2, r.l, {fill: 'var(--ink)', 'dominant-baseline': 'middle'});
+    const neg = r.v < 0, w = Math.max(2, Math.abs(sx(r.v) - sx(0)));
+    el('path', {d: rbar(neg ? sx(r.v) : sx(0), y, w, bh, neg ? 'l' : 'r'), fill: r.c, 'fill-opacity': r.o || 1}, svg);
+    tx(svg, neg ? sx(r.v) - 6 : sx(r.v) + 6, y + bh / 2, r.vl, {'text-anchor': neg ? 'end' : 'start', 'dominant-baseline': 'middle', fill: 'var(--ink)'});
+    const hit = el('rect', {x: 0, y: y - (narrow ? 16 : 5), width: W, height: bh + (narrow ? 20 : 10), fill: 'transparent'}, svg);
+    if (r.tip) { hit.addEventListener('mousemove', (e) => tip.show(e, r.tip)); hit.addEventListener('mouseleave', () => tip.hide()); }
+  });
+}
+
+// ---------- Turkce ek ----------
+const W1 = {1: 'bir', 2: 'iki', 3: 'üç', 4: 'dört', 5: 'beş', 6: 'altı', 7: 'yedi', 8: 'sekiz', 9: 'dokuz', 10: 'on', 20: 'yirmi', 30: 'otuz', 40: 'kırk', 50: 'elli', 60: 'altmış', 70: 'yetmiş', 80: 'seksen', 90: 'doksan'};
+function sonKelime(s) {
+  const m = String(s).match(/(\d[\d.]*)(?:,(\d+))?\D*$/); if (!m) return 'yüz';
+  const n = m[2] ? parseInt(m[2], 10) : parseInt(m[1].replace(/\./g, ''), 10);
+  if (n === 0) return 'sıfır'; if (n % 10) return W1[n % 10]; if (n % 100) return W1[n % 100];
+  if (n % 1000) return 'yüz'; if (n % 1e6) return 'bin'; return 'milyon';
+}
+function ek(s, t) {
+  const w = sonKelime(s), v = (w.match(/[aeıioöuü](?=[^aeıioöuü]*$)/) || ['e'])[0], son = w.slice(-1), unlu = 'aeıioöuü'.includes(son), sert = 'çfhkpsşt'.includes(son);
+  const kalin = 'aıou'.includes(v), d4 = {a: 'ı', ı: 'ı', o: 'u', u: 'u', e: 'i', i: 'i', ö: 'ü', ü: 'ü'}[v], d2 = kalin ? 'a' : 'e';
+  let e;
+  if (t === 'i') e = (unlu ? 's' : '') + d4;
+  else if (t === 'ini') e = (unlu ? 's' : '') + d4 + 'n' + d4;
+  else if (t === 'e') e = (unlu ? 'y' : '') + d2;
+  else if (t === 'dan') e = (sert ? 't' : 'd') + d2 + 'n';
+  return s + "'" + e;
+}
+// ---------- numbers ----------
+const G = (u, k) => B.hisse.find((h) => h.uyruk === u && h.kimlik === k);
+const hh = B.hanehalki, oz = Object.fromEntries(Hd.ozet.map((r) => [r.kalem, r]));
+const M = Object.fromEntries(Hd.model.map((r) => [r.anahtar, r.deger]));
+const tzH = G('Yerli', 'Tüzel'), dgH = G('Yerli', 'Diğer'), ygH = G('Yerli', 'Gerçek');
+const yabH = ['Gerçek', 'Tüzel', 'Diğer'].map((k) => G('Yabancı', k));
+const T = {hh: hh.toplam, tz: tzH.mtm + B.fon_kurumsal.mtm + B.tuzel_altin.mtm, yb: yabH.reduce((s, h) => s + h.mtm, 0)};
+T.all = T.hh + T.tz + T.yb;
+const yUsd0 = yabH.reduce((s, h) => s + h.usd_baz, 0), yUsd1 = yabH.reduce((s, h) => s + h.usd_son, 0);
+const p12 = Y.pay_12ay, d12 = Y.dibs_12ay, m12 = P.mkk12;
+const AT = (a, m, k) => a.find((r) => r.ay === m)[k], LAST = (a, k) => a[a.length - 1][k];
+const piy0 = AT(m12, '2026-08', 'toplam'), piy1 = AT(m12, '2026-10', 'toplam'), piyD = piy1 - piy0;
+const grp = [['Yerli', 'Gerçek', 'yerli_gercek', 'var(--hh)', 'Yerli gerçek kişi'], ['Yerli', 'Tüzel', 'yerli_tuzel', 'var(--tz)', 'Yerli tüzel'], ['Yerli', 'Diğer', 'yerli_diger', 'var(--dg)', 'Yerli diğer']];
+const yerliD = grp.reduce((s, g) => s + (AT(m12, '2026-10', g[2]) - AT(m12, '2026-08', g[2])), 0);
+const gramD = 100 * (M.gram1 / M.gram0 - 1);
+const yastikTon = Hd.altin_ton.find((r) => r.kalem.includes('yastık')).ton;
+const dil = P.dilim, dTop = dil[dil.length - 1], dSum1 = dil.reduce((s, d) => s + d.v1, 0);
+const dY = (u, k) => B.dibs.find((x) => x.uyruk === u && x.kimlik === k);
+const ist = P.iller.find((i) => i.il === 'İstanbul');
+
+// ---------- TCMB reel sektor ----------
+const TC = {tutar: 116.2, firma: 4500, pp: 57, rpp: -0.05456, rnpp: -0.84785,
+  pay: [['Aktifler', 1.2, null], ['İstihdam', 0.6, 1.2], ['Ciro', 0.9, 1.5], ['İhracat', 1.1, null], ['Ticari krediler', 0.9, null]]};
+TC.kayip_pp = TC.pp * TC.rpp; TC.kayip_d = (TC.tutar - TC.pp) * TC.rnpp; TC.kayip = TC.kayip_pp + TC.kayip_d;
+// ---------- text ----------
+$('ozet-h').textContent = `Üç kesimin toplam kaybı ${f1.format(-T.all / 1000)} trilyon lira, hanehalkının payı ${pa(100 * T.hh / T.all, f0)}`;
+const kp = [
+  {c: 'var(--ink)', k: 'Toplam kayıp', v: sg(T.all), u: 'milyar TL', s: `Dolar karşılığı yaklaşık ${f0.format(-T.all / M.usd1)} milyar $`},
+  {c: 'var(--hh)', k: 'Hanehalkı', v: sg(T.hh), u: 'milyar TL', s: `Hanehalkı varlığının ${ek(pa(100 * T.hh / hh.genis_payda),'i')}`},
+  {c: 'var(--tz)', k: 'Yerli şirket ve kurumlar', v: sg(T.tz), u: 'milyar TL', s: `Ayrıca ${f0.format(B.tuzel_kur.kazanc)} milyar TL kur kazancı`},
+  {c: 'var(--yb)', k: 'Yabancı yatırımcılar', v: sg(T.yb), u: 'milyar TL', s: `Pay senedi, ${sg(yUsd1 - yUsd0, f1)} milyar $`},
+];
+$('kpis').innerHTML = kp.map((k) => `<div class="kpi" style="--c:${k.c}"><div class="k">${k.k}</div><div class="v">${k.v}<span class="u">${k.u}</span></div><div class="s">${k.s}</div></div>`).join('');
+const fl = [
+  `Hanehalkı kaybının <b>${ek(pa(100 * hh.altin / hh.toplam, f0),'i')} altından</b> geliyor. Gram altındaki ${pa(gramD)} düşüş, ${f0.format(yastikTon)} tonluk yastık altı stok üzerinden ${f1.format(-oz.altin_yastik.net / 1000)} trilyon liraya karşılık geliyor.`,
+  `Pay senetlerinin piyasa değeri iki ayda <b>${pa(100 * piyD / piy0)} azaldı</b>. Erimenin ${ek(pa(100 * yerliD / piyD, f0),'i')} yerli yatırımcıların portföyünde, oysa yerlinin Ağustos'taki payı ${pa(100 - AT(p12, '2026-08', 'pay'), f0)} idi.`,
+  `En sert düşüş MKK'nın <b>yerli diğer sınıfında</b>, ${pa(dgH.mkk_2ay, f0)}. Yerli gerçek kişilerde ${pa(ygH.mkk_2ay, f0)}, yerli tüzelde ${pa(tzH.mkk_2ay, f0)}, yabancılarda %22-25.`,
+  `Borsada yabancı payı <b>${ek(pa(AT(p12, '2026-08', 'pay')),'dan')} ${ek(pa(LAST(p12, 'pay')),'e')}</b> yükseldi. DİBS'te ise ${ek(pa(AT(d12, '2026-08', 'pay')),'dan')} ${ek(pa(LAST(d12, 'pay')),'e')} geriledi.`,
+  `Yerli bireysel yatırımcının DİBS portföyü <b>${pa(dY('Yerli', 'Gerçek').pct, f0)}</b> büyüdü, DİBS yatırımcı sayısı ${f1.format(Y.dibs_kimlik.find((r) => r.uyruk === 'Yerli' && r.kimlik === 'Gerçek').yatirimci['2026-08'] / 1000)} binden ${f1.format(Y.dibs_kimlik.find((r) => r.uyruk === 'Yerli' && r.kimlik === 'Gerçek').yatirimci['2026-10'] / 1000)} bine çıktı.`,
+  `Tasfiyedeki 129 fonda kayıp hanehalkına ${f0.format(-oz.fon_tasfiye.net)}, hanehalkı dışı sahiplere ${f0.format(-B.fon_kurumsal.tasfiye)} milyar lira yansıdı. Para piyasası ve döviz fonları dengeleyici kaldı.`,
+  `TCMB verisine göre yaklaşık 4.500 reel sektör firmasının tasfiyedeki fonlarda <b>116 milyar lirası</b> var. Fon getirileriyle bu yaklaşık ${f0.format(-TC.kayip)} milyar liralık kayba karşılık geliyor. Bu firmalar istihdamın %0,6'sını oluşturuyor.`,
+];
+$('find').innerHTML = fl.map((s) => `<li><span>${s}</span></li>`).join('');
+$('borsa-lead').innerHTML = `MKK verisine göre pay senedi portföylerinin toplam değeri 31 Ağustos'ta ${f0.format(piy0)} milyar, 31 Ekim'de ${f0.format(piy1)} milyar lira. Gruplar arası el değiştirme toplamda sıfırlandığı için <b>${f0.format(-piyD)} milyar liralık</b> fark piyasa genelindeki fiyat etkisidir. Kayıp yatırımcı tabanının en kalabalık ve en küçük ölçekli kısmında derinleşti.`;
+const nY = (m) => AT(m12, m, 'yatirimci_yerli_gercek');
+$('yat-note').textContent = `Temmuz'da ${f2.format(nY('2026-07') / 1e6)} milyonla son 12 ayın zirvesine çıkan bakiyeli yerli bireysel yatırımcı sayısı, Ekim'e kadar ${f0.format((nY('2026-07') - nY('2026-10')) / 1000)} bin azaldı.`;
+$('dilim-note').textContent = `10 milyon TL üstü ${f0.format(dTop.n1)} hesap piyasa değerinin ${ek(pa(100 * dTop.v1 / dSum1, f0),'ini')} tutuyor, bu dilim Eylül'den bu yana ${f0.format(dTop.n0 - dTop.n1)} hesap kaybetti. 100 TL altına düşen hesap sayısı ${f0.format((dil[0].n1 + dil[1].n1) - (dil[0].n0 + dil[1].n0))} arttı.`;
+$('map-note').textContent = `İstanbul yerli portföyün ${ek(pa(100 * ist.v / P.il_toplam_ekim, f0),'ini')}, yatırımcıların ${ek(pa(100 * ist.n / AT(m12, '2026-10', 'yatirimci_yerli_gercek'), f0),'ini')} barındırıyor. Toplam ${f0.format(P.il_toplam_ekim)} milyar TL.`;
+$('hh-lead').innerHTML = `Hanehalkının borsa, altın, fon ve BES varlıklarının değeri <b>${f0.format(-T.hh)} milyar lira</b> azaldı. Bu, yastık altı altın dahil hanehalkı varlığının ${ek(pa(100 * T.hh / hh.genis_payda),'i')}. Altın kaybı ${f0.format(-hh.altin)}, doğrudan hisse kaybı ${f0.format(-hh.hisse)} milyar lira. Fonlarda tasfiye kayıpları para piyasası ve döviz fonlarının getirisiyle kısmen dengelendi.`;
+const besA = Hd.bes_kategori.find((r) => r.kategori === 'Altın');
+$('bes-note').textContent = `BES'in ${ek(pa(100 * besA.baz / oz.bes.baz, f0),'i')} altın fonlarında, BES kaybının ${ek(pa(100 * besA.mtm / oz.bes.net, f0),'i')} bu kategoriden.`;
+$('tz-lead').innerHTML = `Yerli tüzel kişilerin hisse, fon ve altın varlıklarındaki kayıp <b>${f0.format(-T.tz)} milyar lira</b>. Hisse portföyü ${pa(tzH.mkk_2ay, f0)} eridi, tasfiyedeki fonlarda hanehalkı dışı payın kaybı ${f0.format(-B.fon_kurumsal.tasfiye)} milyar. ${f1.format(B.tuzel_kur.usd)} milyar dolarlık döviz mevduatı kurdan ${f0.format(B.tuzel_kur.kazanc)} milyar lira kazandırdı. Tüzel kişilerin DİBS portföyü aynı dönemde ${pa(dY('Yerli', 'Tüzel').pct, f0)} büyüdü.`;
+$('yb-lead').innerHTML = `Yabancıların pay senedi portföyü %22-25 eridi, yatırımcı sayıları ise neredeyse sabit kaldı. Ağırlıklı olarak büyük ve likit hisselerde konumlanan yabancılar, fon ve küçük hisse kaynaklı satış dalgasından daha az etkilendi. Dolar bazında pay senedi kaybı ${f1.format(-(yUsd1 - yUsd0))} milyar $. DİBS'te pozisyon ${f0.format(-B.dibs.filter((x) => x.uyruk === 'Yabancı').reduce((s, x) => s + x.degisim, 0))} milyar lira azaldı.`;
+const t10 = Y.ulke.slice(0, 10).reduce((s, u) => s + u.portfoy, 0);
+$('ulke-note').textContent = `MKK ülke paneli, toplam ${f0.format(Y.ulke_panel_toplam_ekim)} milyar TL. İlk 10 ülke panelin ${ek(pa(100 * t10 / Y.ulke_panel_toplam_ekim, f0),'ini')} tutuyor. Katar 9, İspanya 14 yatırımcıyla bu büyüklükte.`;
+
+// ---------- waterfall ----------
+let wfU = 'tl';
+function drawWF() {
+  const box = $('c-wf'); box.replaceChildren();
+  const k = wfU === 'usd' ? 1 / M.usd1 : 1, uL = wfU === 'usd' ? 'milyar $' : 'milyar TL';
+  $('wf-cs').textContent = wfU === 'usd' ? 'Milyar dolar, 2 Kasım kuruyla' : 'Milyar TL, 28 Ağustos bazlı';
+  const st = [
+    ['Altın', oz.altin_yastik.net + oz.altin_banka.net, 'var(--hh)', 'Hanehalkı'], ['Hisse', oz.hisse.net, 'var(--hh)', 'Hanehalkı'], ['Fon', oz.fon_diger.net + oz.fon_tasfiye.net, 'var(--hh)', 'Hanehalkı'], ['BES', oz.bes.net, 'var(--hh)', 'Hanehalkı'],
+    ['Hisse', tzH.mtm, 'var(--tz)', 'Yerli şirket ve kurumlar'], ['Fon', B.fon_kurumsal.mtm, 'var(--tz)', 'Yerli şirket ve kurumlar'], ['Altın', B.tuzel_altin.mtm, 'var(--tz)', 'Yerli şirket ve kurumlar'],
+    ['Hisse', T.yb, 'var(--yb)', 'Yabancı'],
+  ].map((s) => [s[0], s[1] * k, s[2], s[3]]);
+  if (width(box) < 520) {
+    hbar('c-wf', [...st.map((x) => ({l: `${x[3] === 'Yabancı' ? 'Yabancı' : x[3] === 'Hanehalkı' ? 'Hanehalkı' : 'Şirket'} · ${x[0]}`, v: x[1], c: x[2], vl: sg(x[1], wfU === 'usd' ? f1 : f0)})),
+      {l: 'Toplam', v: st.reduce((a, x) => a + x[1], 0), c: 'var(--ink)', vl: sg(st.reduce((a, x) => a + x[1], 0), wfU === 'usd' ? f1 : f0)}], {vw: 70});
+    return;
+  }
+  const W = width(box), H = 320, m = {l: 8, r: 8, t: 18, b: 52};
+  const svg = svgOf(box, W, H, 'Kayıp dağılımı şelale grafiği');
+  const tot = st.reduce((s, x) => s + x[1], 0), n = st.length + 1;
+  const sy = (v) => m.t + (0 - v) / (0 - tot * 1.12) * (H - m.t - m.b);
+  const cw = (W - m.l - m.r) / n, bw = Math.min(64, cw * .62);
+  const tip = tipFor(box);
+  let run = 0;
+  for (let v = 0; v >= tot * 1.12; v -= (wfU === 'usd' ? 20 : 1000)) { el('line', {x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v), stroke: 'var(--grid)'}, svg); }
+  el('line', {x1: m.l, x2: W - m.r, y1: sy(0), y2: sy(0), stroke: 'var(--axis)'}, svg);
+  const secs = {};
+  st.forEach((s, i) => {
+    const cx = m.l + (i + .5) * cw, y0 = sy(run), y1 = sy(run + s[1]);
+    el('path', {d: rbar(cx - bw / 2, y0 + (i ? 1 : 0), bw, Math.max(2, y1 - y0 - (i ? 1 : 0)), 'b'), fill: s[2]}, svg);
+    if (i < st.length) el('line', {x1: cx + bw / 2, x2: cx + cw - bw / 2, y1: y1, y2: y1, stroke: 'var(--axis)', 'stroke-dasharray': '2 3'}, svg);
+    tx(svg, cx, y1 + 14, sg(s[1], wfU === 'usd' ? f1 : f0), {'text-anchor': 'middle', 'font-size': 11.5, fill: 'var(--ink)'});
+    tx(svg, cx, H - m.b + 18, s[0], {'text-anchor': 'middle', 'font-size': 11.5});
+    (secs[s[3]] = secs[s[3]] || []).push(cx);
+    const hit = el('rect', {x: cx - cw / 2, y: m.t, width: cw, height: H - m.t - m.b, fill: 'transparent'}, svg);
+    hit.addEventListener('mousemove', (e) => tip.show(e, `<div class="t">${s[3]}</div>${s[0]} <b>${sg(s[1], wfU === 'usd' ? f1 : f0)} ${uL}</b><br>Toplamın ${ek(pa(100 * s[1] / tot, f0),'i')}`));
+    hit.addEventListener('mouseleave', () => tip.hide());
+    run += s[1];
+  });
+  const cx = m.l + (n - .5) * cw;
+  el('path', {d: rbar(cx - bw / 2, sy(0), bw, sy(tot) - sy(0), 'b'), fill: 'var(--ink)'}, svg);
+  tx(svg, cx, sy(tot) + 14, sg(tot, wfU === 'usd' ? f1 : f0), {'text-anchor': 'middle', 'font-size': 11.5, fill: 'var(--ink)', 'font-weight': 600});
+  tx(svg, cx, H - m.b + 18, 'Toplam', {'text-anchor': 'middle', 'font-size': 11.5, fill: 'var(--ink)', 'font-weight': 600});
+  if (W > 460) Object.entries(secs).forEach(([nm, xs]) => {
+    const a = Math.min(...xs) - bw / 2, b = Math.max(...xs) + bw / 2;
+    el('line', {x1: a, x2: b, y1: H - 14, y2: H - 14, stroke: 'var(--line)', 'stroke-width': 2}, svg);
+    tx(svg, (a + b) / 2, H - 2, nm, {'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink3)'});
+  });
+}
+$('wf-seg').querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { wfU = b.dataset.u; $('wf-seg').querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); drawWF(); }));
+
+// ---------- stacked area 12 months ----------
+const MON = {'01': 'Oca', '02': 'Şub', '03': 'Mar', '04': 'Nis', '05': 'May', '06': 'Haz', '07': 'Tem', '08': 'Ağu', '09': 'Eyl', '10': 'Eki', '11': 'Kas', '12': 'Ara'};
+const mlab = (a) => MON[a.slice(5)] + (a.slice(5) === '01' || a === m12[0].ay ? ' ' + a.slice(2, 4) : '');
+function drawArea() {
+  const box = $('c-area'); box.replaceChildren();
+  const W = width(box), H = 300, m = {l: 46, r: W < 520 ? 10 : 132, t: 10, b: 28};
+  const svg = svgOf(box, W, H, 'Pay senedi portföy değeri');
+  const keys = [['yerli_gercek', 'var(--hh)', 'Yerli gerçek kişi'], ['yerli_tuzel', 'var(--tz)', 'Yerli tüzel'], ['yerli_diger', 'var(--dg)', 'Yerli diğer'], ['yabanci', 'var(--yb)', 'Yabancı']];
+  const n = m12.length, mx = Math.ceil(Math.max(...m12.map((r) => r.toplam)) / 2000) * 2000;
+  const sx = (i) => m.l + i * (W - m.l - m.r) / (n - 1), sy = (v) => m.t + (1 - v / mx) * (H - m.t - m.b);
+  const ia = m12.findIndex((r) => r.ay === '2026-08');
+  el('rect', {x: sx(ia), y: m.t, width: sx(n - 1) - sx(ia), height: H - m.t - m.b, fill: 'var(--shade)'}, svg);
+  for (let v = 0; v <= mx; v += 2000) { el('line', {x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v), stroke: 'var(--grid)'}, svg); tx(svg, m.l - 6, sy(v), f0.format(v), {'text-anchor': 'end', 'dominant-baseline': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); }
+  const base = m12.map(() => 0);
+  keys.forEach(([k, c, nm]) => {
+    const top = m12.map((r, i) => base[i] + r[k]);
+    const d = top.map((v, i) => (i ? 'L' : 'M') + sx(i) + ',' + sy(v)).join('') + base.map((v, i) => 'L' + sx(n - 1 - i) + ',' + sy(base[n - 1 - i])).join('') + 'Z';
+    el('path', {d, fill: c, 'fill-opacity': .85, stroke: 'var(--panel)', 'stroke-width': 1.5}, svg);
+    if (m.r > 20) tx(svg, W - m.r + 8, sy((base[n - 1] + top[n - 1]) / 2), `${nm} ${f0.format(m12[n - 1][k])}`, {'dominant-baseline': 'middle', 'font-size': 11.5, fill: 'var(--ink)'});
+    top.forEach((v, i) => base[i] = v);
+  });
+  m12.forEach((r, i) => { if (W > 520 || i % 2 === 1) tx(svg, sx(i), H - 8, mlab(r.ay), {'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); });
+  const tip = tipFor(box), rule = el('line', {y1: m.t, y2: H - m.b, stroke: 'var(--ink3)', visibility: 'hidden'}, svg);
+  const ov = el('rect', {x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent'}, svg);
+  ov.addEventListener('mousemove', (e) => {
+    const rc = box.getBoundingClientRect(), px = (e.clientX - rc.left) * W / rc.width, i = Math.max(0, Math.min(n - 1, Math.round((px - m.l) / ((W - m.l - m.r) / (n - 1))))), r = m12[i];
+    rule.setAttribute('x1', sx(i)); rule.setAttribute('x2', sx(i)); rule.setAttribute('visibility', 'visible');
+    tip.show(e, `<div class="t">${MON[r.ay.slice(5)]} ${r.ay.slice(0, 4)}</div>` + keys.slice().reverse().map(([k, c, nm]) => `<i class="sw" style="background:${c}"></i> ${nm} ${f0.format(r[k])}`).join('<br>') + `<br><b>Toplam ${f0.format(r.toplam)} milyar TL</b>`);
+  });
+  ov.addEventListener('mouseleave', () => { tip.hide(); rule.setAttribute('visibility', 'hidden'); });
+}
+
+function drawGrp() {
+  const rows = [...grp.map(([u, k, key, c, nm]) => [nm, AT(m12, '2026-08', key), AT(m12, '2026-10', key), c]),
+    ...yabH.map((h) => [`Yabancı ${h.kimlik === 'Gerçek' ? 'gerçek kişi' : h.kimlik.toLowerCase()}`, h.ag, h.ek, 'var(--yb)'])]
+    .map(([l, a, b, c]) => ({l, v: b - a, c, vl: `${sg(b - a)} · ${pc(100 * (b / a - 1), f0)}`, tip: `<div class="t">${l}</div>31 Ağustos ${f0.format(a)}<br>31 Ekim ${f0.format(b)}<br><b>${sg(b - a)} milyar TL, ${pc(100 * (b / a - 1))}</b>`}));
+  rows.sort((a, b) => a.v - b.v);
+  rows.push({l: 'Piyasa toplamı', v: piyD, c: 'var(--ink)', vl: `${sg(piyD)} · ${pc(100 * piyD / piy0, f0)}`, tip: `<div class="t">Tüm yatırımcılar</div>${f0.format(piy0)} → ${f0.format(piy1)} milyar TL`});
+  hbar('c-grp', rows, {vw: 100});
+}
+function vbars(id, items, o = {}) {
+  const box = $(id); box.replaceChildren();
+  const W = width(box), H = o.h || 200, m = {l: 6, r: 6, t: 24, b: 24};
+  const svg = svgOf(box, W, H);
+  const mx = Math.max(...items.map((x) => Math.max(x.v, x.v2 || 0))) * 1.08, mn = o.min || 0;
+  const cw = (W - m.l - m.r) / items.length, bw = Math.min(o.bw || 46, cw * (o.pair ? .38 : .64));
+  const sy = (v) => (H - m.t - m.b) * (v - mn) / (mx - mn);
+  const tip = tipFor(box);
+  items.forEach((x, i) => {
+    const cx = m.l + (i + .5) * cw;
+    if (o.pair) {
+      const h0 = sy(x.v2), h1 = sy(x.v);
+      el('path', {d: rbar(cx - bw - 1, H - m.b - h0, bw, h0, 't'), fill: x.c2 || 'var(--dg)'}, svg);
+      el('path', {d: rbar(cx + 1, H - m.b - h1, bw, h1, 't'), fill: x.c}, svg);
+      if (x.lab) tx(svg, cx + 1 + bw / 2, H - m.b - h1 - 7, x.lab, {'text-anchor': 'middle', fill: 'var(--ink)', 'font-size': 11.5});
+      if (x.lab2) tx(svg, cx - 1 - bw / 2, H - m.b - h0 - 7, x.lab2, {'text-anchor': 'middle', fill: 'var(--ink3)', 'font-size': 11});
+    } else {
+      const h = sy(x.v); el('path', {d: rbar(cx - bw / 2, H - m.b - h, bw, h, 't'), fill: x.c}, svg);
+      if (x.lab) tx(svg, cx, H - m.b - h - 7, x.lab, {'text-anchor': 'middle', fill: 'var(--ink)', 'font-size': 11.5});
+    }
+    if (!o.skip || i % o.skip === 0 || (W > 560 && !o.force)) tx(svg, cx, H - 7, x.l, {'text-anchor': 'middle', 'font-size': 10.5, fill: 'var(--ink3)'});
+    const hit = el('rect', {x: cx - cw / 2, y: 0, width: cw, height: H, fill: 'transparent'}, svg);
+    if (x.tip) { hit.addEventListener('mousemove', (e) => tip.show(e, x.tip)); hit.addEventListener('mouseleave', () => tip.hide()); }
+  });
+  el('line', {x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b, stroke: 'var(--axis)'}, svg);
+  if (o.corner) tx(svg, W - m.r, 12, o.corner, {'text-anchor': 'end', fill: 'var(--ink)', 'font-weight': 600});
+}
+function drawYat() {
+  const mn = Math.floor(Math.min(...m12.map((r) => r.yatirimci_yerli_gercek)) / 1e5) * 1e5 - 2e5;
+  vbars('c-yat', m12.map((r, i) => ({l: MON[r.ay.slice(5)], v: r.yatirimci_yerli_gercek, c: r.ay >= '2026-08' ? 'var(--hh)' : 'var(--dg)',
+    lab: (r.ay >= '2026-08' || i === 0) ? f2.format(r.yatirimci_yerli_gercek / 1e6) : '',
+    tip: `<div class="t">${MON[r.ay.slice(5)]} ${r.ay.slice(0, 4)}</div><b>${f0.format(r.yatirimci_yerli_gercek)}</b> yerli bireysel yatırımcı`})), {min: mn, bw: 30, skip: 2});
+}
+function drawDilim() {
+  vbars('c-dilim', dil.map((d) => ({l: d.dilim, v: d.n1, v2: d.n0, c: 'var(--ink2)', c2: 'var(--dg)',
+    tip: `<div class="t">${d.dilim} TL</div>Eylül ${f0.format(d.n0)} hesap, ${f1.format(d.v0)} milyar TL<br>Ekim ${f0.format(d.n1)} hesap, ${f1.format(d.v1)} milyar TL<br><b>${sg(d.n1 - d.n0)} hesap</b>`})), {pair: true, h: 220, skip: width($('c-dilim')) > 560 ? 3 : 4, force: true});
+}
+function drawMap() {
+  const box = $('c-map'); box.replaceChildren();
+  const W = width(box), H = Math.round(W * .48), m = 10;
+  const svg = svgOf(box, W, H, 'İllere göre portföy');
+  const lon0 = 25.6, lon1 = 44.9, lat0 = 35.8, lat1 = 42.2;
+  const sx = (lo) => m + (lo - lon0) / (lon1 - lon0) * (W - 2 * m), sy = (la) => m + (lat1 - la) / (lat1 - lat0) * (H - 2 * m);
+  const mx = Math.max(...P.iller.map((i) => i.v)), R = Math.min(W, 700) * .075;
+  const tip = tipFor(box);
+  P.iller.slice().sort((a, b) => b.v - a.v).forEach((i, k) => {
+    const r = Math.max(1.6, R * Math.sqrt(i.v / mx));
+    const c = el('circle', {cx: sx(i.lon), cy: sy(i.lat), r, fill: 'var(--hh)', 'fill-opacity': k < 10 ? .78 : .5, stroke: 'var(--panel)', 'stroke-width': 1}, svg);
+    if (k < 5 && W > 420) tx(svg, sx(i.lon) + (k === 0 ? -r - 6 : r + 4), sy(i.lat) + (k === 0 ? 0 : 0), i.il, {'font-size': 11, fill: 'var(--ink)', 'text-anchor': k === 0 ? 'end' : 'start', 'dominant-baseline': 'middle'});
+    const hit = el('circle', {cx: sx(i.lon), cy: sy(i.lat), r: Math.max(r, 7), fill: 'transparent'}, svg);
+    hit.addEventListener('mousemove', (e) => tip.show(e, `<div class="t">${i.il}</div><b>${f1.format(i.v)} milyar TL</b>${i.n ? `<br>${f0.format(i.n)} yatırımcı` : ''}<br>Toplamın ${ek(pa(100 * i.v / P.il_toplam_ekim),'i')}`));
+    hit.addEventListener('mouseleave', () => tip.hide());
+  });
+}
+
+// ---------- hanehalki ----------
+function drawHHK() {
+  hbar('c-hhk', [['Yastık altı altın', oz.altin_yastik], ['Bankadaki altın', oz.altin_banka], ['Doğrudan hisse', oz.hisse], ['Tasfiyedeki fonlar', oz.fon_tasfiye], ['Diğer fonlar', oz.fon_diger], ['BES ve OKS', oz.bes]]
+    .map(([l, r]) => ({l, v: r.net, c: r.net < 0 ? 'var(--hh)' : 'var(--pos)', vl: `${sg(r.net)} · ${pc(100 * r.net / r.baz, f0)}`,
+      tip: `<div class="t">${l}</div>Baz ${f0.format(r.baz)} milyar TL<br><b>${sg(r.net)} milyar TL</b>${r.brut !== r.net ? `<br>Brüt ${sg(r.brut)}` : ''}`})), {vw: 100});
+}
+function drawSeyir() {
+  const box = $('c-seyir'); box.replaceChildren();
+  const rows = Hd.seyir.map((r) => ({...r, t: new Date(r.tarih + 'T00:00:00Z')}));
+  const W = width(box), H = 260, m = {l: 50, r: W < 480 ? 12 : 86, t: 10, b: 26};
+  const svg = svgOf(box, W, H);
+  const vals = rows.flatMap((r) => [r.hisse, r.altin, r.fon, r.bes].filter((v) => v != null));
+  const mn = Math.floor(Math.min(...vals) / 1000) * 1000, mx = 200;
+  const t0 = +rows[0].t, t1 = +rows[rows.length - 1].t;
+  const sx = (t) => m.l + (t - t0) / (t1 - t0) * (W - m.l - m.r), sy = (v) => m.t + (mx - v) / (mx - mn) * (H - m.t - m.b);
+  for (let v = mn; v <= 0; v += 1000) { el('line', {x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v), stroke: v === 0 ? 'var(--axis)' : 'var(--grid)'}, svg); tx(svg, m.l - 6, sy(v), f0.format(v), {'text-anchor': 'end', 'dominant-baseline': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); }
+  [['2026-09-01', '1 Eyl'], ['2026-10-01', '1 Eki'], ['2026-11-01', '1 Kas']].forEach(([d, l]) => { const x = sx(+new Date(d + 'T00:00:00Z')); tx(svg, x, H - 8, l, {'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); });
+  const line = (k, c, dash) => { const pts = rows.filter((r) => r[k] != null); el('path', {d: pts.map((r, i) => (i ? 'L' : 'M') + sx(+r.t) + ',' + sy(r[k])).join(''), fill: 'none', stroke: c, 'stroke-width': 2, 'stroke-dasharray': dash || '', 'stroke-linejoin': 'round'}, svg); return pts; };
+  line('altin', 'var(--hh)'); line('hisse', 'var(--hh)', '5 4');
+  const fb = rows.filter((r) => r.fon != null).map((r) => ({t: r.t, v: r.fon + r.bes}));
+  el('path', {d: fb.map((r, i) => (i ? 'L' : 'M') + sx(+r.t) + ',' + sy(r.v)).join(''), fill: 'none', stroke: 'var(--ink3)', 'stroke-width': 2, 'stroke-dasharray': '2 3'}, svg);
+  fb.forEach((r) => el('circle', {cx: sx(+r.t), cy: sy(r.v), r: 4, fill: 'var(--ink3)', stroke: 'var(--panel)', 'stroke-width': 2}, svg));
+  const L = rows[rows.length - 1];
+  if (m.r > 30) { const e = [['Altın', L.altin], ['Hisse', L.hisse], ['Fon+BES', fb[fb.length - 1].v]].map(([n, v]) => ({n, v, y: sy(v)})).sort((a, b) => a.y - b.y);
+    for (let i = 1; i < e.length; i++) if (e[i].y - e[i - 1].y < 14) e[i].y = e[i - 1].y + 14;
+    e.forEach((x) => tx(svg, W - m.r + 6, x.y, `${x.n} ${f0.format(x.v)}`, {'dominant-baseline': 'middle', 'font-size': 11, fill: 'var(--ink)'})); }
+  const tip = tipFor(box), rule = el('line', {y1: m.t, y2: H - m.b, stroke: 'var(--ink3)', visibility: 'hidden'}, svg);
+  const ov = el('rect', {x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent'}, svg);
+  ov.addEventListener('mousemove', (e) => {
+    const rc = box.getBoundingClientRect(), t = t0 + ((e.clientX - rc.left) * W / rc.width - m.l) / (W - m.l - m.r) * (t1 - t0);
+    let r = rows[0]; rows.forEach((x) => { if (Math.abs(+x.t - t) < Math.abs(+r.t - t)) r = x; });
+    rule.setAttribute('x1', sx(+r.t)); rule.setAttribute('x2', sx(+r.t)); rule.setAttribute('visibility', 'visible');
+    tip.show(e, `<div class="t">${r.t.toLocaleDateString('tr-TR', {day: 'numeric', month: 'long', timeZone: 'UTC'})}</div>Hisse ${sg(r.hisse)}${r.altin != null ? `<br>Altın ${sg(r.altin)}` : ''}${r.fon != null ? `<br>Fon ve BES ${sg(r.fon + r.bes)}` : ''}<br><span class="t">BIST Tüm ${f0.format(r.xutum)}${r.gram ? `, gram ${f0.format(r.gram)}` : ''}</span>`);
+  });
+  ov.addEventListener('mouseleave', () => { tip.hide(); rule.setAttribute('visibility', 'hidden'); });
+}
+function drawTon() {
+  const t = Hd.altin_ton, g = (s) => t.find((r) => r.kalem.includes(s)).ton;
+  const items = [['Yurt içi stok', g('stoku'), 'var(--dg)'], ['Tüzel banka altını', g('tüzel'), 'var(--tz)'], ['BES fonları', g('BES'), 'var(--dg)'], ['Yatırım fonları', g('yatırım fonu'), 'var(--dg)'], ['Altın BYF', g('BYF'), 'var(--dg)'], ['Hanehalkı, bankada', g('bankada'), 'var(--hh)'], ['Hanehalkı, yastık altı', g('yastık'), 'var(--hh)']];
+  hbar('c-ton', items.map(([l, v, c]) => ({l, v: Math.abs(v), c, o: c === 'var(--hh)' ? 1 : .8, vl: f0.format(Math.abs(v)) + ' ton',
+    tip: `<div class="t">${l}</div><b>${f1.format(Math.abs(v))} ton</b><br>${f0.format(Math.abs(v) * M.gram0 / 1000)} milyar TL, 28 Ağustos`})), {vw: 70});
+}
+function drawGram() {
+  const box = $('c-gram'); box.replaceChildren();
+  const rows = Hd.seyir.filter((r) => r.gram != null).map((r) => ({t: new Date(r.tarih + 'T00:00:00Z'), v: r.gram}));
+  const W = width(box), H = 220, m = {l: 50, r: 64, t: 12, b: 26};
+  const svg = svgOf(box, W, H);
+  const mn = 6000, mx = 7200, t0 = +rows[0].t, t1 = +rows[rows.length - 1].t;
+  const sx = (t) => m.l + (t - t0) / (t1 - t0) * (W - m.l - m.r), sy = (v) => m.t + (mx - v) / (mx - mn) * (H - m.t - m.b);
+  for (let v = mn; v <= mx; v += 300) { el('line', {x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v), stroke: 'var(--grid)'}, svg); tx(svg, m.l - 6, sy(v), f0.format(v), {'text-anchor': 'end', 'dominant-baseline': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); }
+  [['2026-09-01', '1 Eyl'], ['2026-10-01', '1 Eki'], ['2026-11-01', '1 Kas']].forEach(([d, l]) => tx(svg, sx(+new Date(d + 'T00:00:00Z')), H - 8, l, {'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink3)'}));
+  el('path', {d: rows.map((r, i) => (i ? 'L' : 'M') + sx(+r.t) + ',' + sy(r.v)).join(''), fill: 'none', stroke: 'var(--hh)', 'stroke-width': 2, 'stroke-linejoin': 'round'}, svg);
+  const a = rows[0], z = rows[rows.length - 1];
+  [a, z].forEach((r) => el('circle', {cx: sx(+r.t), cy: sy(r.v), r: 4, fill: 'var(--hh)', stroke: 'var(--panel)', 'stroke-width': 2}, svg));
+  tx(svg, sx(+a.t) + 8, sy(a.v) - 8, f0.format(a.v), {'font-size': 11.5, fill: 'var(--ink)'});
+  tx(svg, sx(+z.t) + 8, sy(z.v), `${f0.format(z.v)} · ${pc(gramD)}`, {'font-size': 11.5, fill: 'var(--ink)', 'dominant-baseline': 'middle'});
+  const tip = tipFor(box), ov = el('rect', {x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent'}, svg);
+  ov.addEventListener('mousemove', (e) => { const rc = box.getBoundingClientRect(), t = t0 + ((e.clientX - rc.left) * W / rc.width - m.l) / (W - m.l - m.r) * (t1 - t0);
+    let r = rows[0]; rows.forEach((x) => { if (Math.abs(+x.t - t) < Math.abs(+r.t - t)) r = x; });
+    tip.show(e, `<div class="t">${r.t.toLocaleDateString('tr-TR', {day: 'numeric', month: 'long', timeZone: 'UTC'})}</div><b>${f0.format(r.v)} TL</b> · ${pc(100 * (r.v / a.v - 1))}`); });
+  ov.addEventListener('mouseleave', () => tip.hide());
+}
+function drawFK() {
+  hbar('c-fk', Hd.fon_kategori.slice().sort((a, b) => a.mtm - b.mtm).map((r) => ({l: r.kategori, v: r.mtm, c: r.mtm < 0 ? 'var(--hh)' : 'var(--pos)', vl: sg(r.mtm, f1),
+    tip: `<div class="t">${r.kategori}, ${r.fon_sayisi} fon</div>Hanehalkı payı ${f1.format(r.baz)} milyar TL<br><b>${sg(r.mtm, f1)} milyar TL, ${pc(r.getiri)}</b>`})), {bh: 14, vw: 64, lab: 160});
+}
+function drawTas() {
+  hbar('c-tas', Hd.tasfiye.map((r) => ({l: `${r.portfoy.replace('Capi̇tal', 'Capital')} · ${r.fon_sayisi} fon`, v: r.hanehalki_mtm, c: 'var(--hh)', vl: sg(r.hanehalki_mtm, f1),
+    tip: `<div class="t">${r.portfoy}, ${r.fon_sayisi} fon</div>Toplam büyüklük ${f1.format(r.toplam_buyukluk)} milyar TL<br>Hanehalkı payı ${f1.format(r.hanehalki_payi)}<br><b>Hanehalkı ${sg(r.hanehalki_mtm, f1)} milyar TL</b><br>Tüm yatırımcılar ${sg(r.karar_oncesi + r.karar_sonrasi, f1)}`})), {vw: 64});
+}
+function drawTop() {
+  $('t-top').innerHTML = `<thead><tr><th>Fon</th><th></th><th class="n">Baz</th><th class="n">Değişim</th><th class="n">%</th></tr></thead><tbody>` +
+    Hd.en_cok_kaybettiren.map((r) => `<tr><td><b>${r.kod}</b> <span style="color:var(--ink3)">${r.fon.replace(/ \(Hisse Senedi Yoğun Fon\)/, '').slice(0, 30)}${r.fon.length > 30 ? '…' : ''}</span></td><td>${r.tasfiye === 'Evet' ? '<span class="pill">tasfiye</span>' : ''}</td><td class="n">${f1.format(r.hanehalki_baz)}</td><td class="n">${sg(r.hanehalki_mtm, f1)}</td><td class="n">${pc(100 * r.hanehalki_mtm / r.hanehalki_baz, f0)}</td></tr>`).join('') + '</tbody>';
+}
+function drawBES() {
+  hbar('c-bes', Hd.bes_kategori.slice().sort((a, b) => a.mtm - b.mtm).map((r) => ({l: r.kategori, v: r.mtm, c: r.mtm < 0 ? 'var(--hh)' : 'var(--pos)', vl: sg(r.mtm, f1),
+    tip: `<div class="t">${r.kategori}, ${r.fon_sayisi} fon</div>Büyüklük ${f1.format(r.baz)} milyar TL<br><b>${sg(r.mtm, f1)} milyar TL, ${pc(r.getiri)}</b>`})), {bh: 14, vw: 64, lab: 170});
+}
+// ---------- sirketler ----------
+function drawTZ() {
+  hbar('c-tzk', [
+    {l: 'Hisse', v: tzH.mtm, c: 'var(--tz)', vl: `${sg(tzH.mtm)} · ${pc(tzH.getiri, f0)}`, tip: `<div class="t">MKK yerli tüzel, beta ${f2.format(tzH.beta)}</div>Baz ${f0.format(tzH.baz)} milyar TL<br><b>${sg(tzH.mtm)} milyar TL</b>`},
+    {l: 'Tasfiyedeki fonlar', v: B.fon_kurumsal.tasfiye, c: 'var(--tz)', vl: sg(B.fon_kurumsal.tasfiye), tip: `<div class="t">Hanehalkı dışı pay</div><b>${sg(B.fon_kurumsal.tasfiye)} milyar TL</b>`},
+    {l: 'Diğer fonlar', v: B.fon_kurumsal.diger, c: 'var(--pos)', vl: sg(B.fon_kurumsal.diger), tip: `<div class="t">Hanehalkı dışı pay</div><b>${sg(B.fon_kurumsal.diger)} milyar TL</b>`},
+    {l: 'Altın hesabı', v: B.tuzel_altin.mtm, c: 'var(--tz)', vl: sg(B.tuzel_altin.mtm), tip: `<div class="t">TCMB tüzel kişi altın hesabı</div>${f1.format(B.tuzel_altin.ton)} ton<br><b>${sg(B.tuzel_altin.mtm)} milyar TL</b>`},
+    {l: 'Toplam', v: T.tz, c: 'var(--ink)', vl: sg(T.tz), tip: `<b>${sg(T.tz)} milyar TL</b>`},
+    {l: 'Döviz mevduatı kur kazancı', v: B.tuzel_kur.kazanc, c: 'var(--pos)', o: .55, vl: sg(B.tuzel_kur.kazanc), tip: `<div class="t">Toplamın dışında</div>${f1.format(B.tuzel_kur.usd)} milyar $<br><b>${sg(B.tuzel_kur.kazanc)} milyar TL</b>`},
+  ], {vw: 100});
+  hbar('c-tzf', B.fon_kurumsal.kategori.filter((r) => Math.abs(r.mtm) >= .05).sort((a, b) => a.mtm - b.mtm).map((r) => ({l: r.kategori, v: r.mtm, c: r.mtm < 0 ? 'var(--tz)' : 'var(--pos)', vl: sg(r.mtm, f1),
+    tip: `<div class="t">${r.kategori}</div>Hanehalkı dışı pay ${f1.format(r.baz)} milyar TL<br><b>${sg(r.mtm, f1)} milyar TL, ${pc(100 * r.mtm / r.baz)}</b>`})), {bh: 14, vw: 64, lab: 160});
+  vbars('c-dg', [['Ağustos', dgH.ag], ['Eylül', dgH.ey], ['Ekim', dgH.ek]].map(([l, v], i, a) => ({l, v, c: 'var(--dg)', lab: f0.format(v),
+    tip: `<div class="t">Yerli diğer, ${l}</div><b>${f0.format(v)} milyar TL</b>${i ? `<br>${pc(100 * (v / a[i - 1][1] - 1))}` : ''}`})), {h: 190, bw: 60, corner: pc(dgH.mkk_2ay, f0)});
+  vbars('c-dibs-y', [['Gerçek kişi', 'Gerçek', 'var(--hh)'], ['Tüzel', 'Tüzel', 'var(--tz)'], ['Diğer', 'Diğer', 'var(--dg)']].map(([l, k, c]) => { const x = dY('Yerli', k);
+    return {l: `${l} ${pc(x.pct, f0)}`, v: x.ek, v2: x.ag, lab: f0.format(x.ek), lab2: f0.format(x.ag), c, c2: 'color-mix(in srgb,' + c + ' 35%,var(--panel))', tip: `<div class="t">Yerli ${l.toLowerCase()}, DİBS</div>Ağustos ${f0.format(x.ag)}<br>Ekim ${f0.format(x.ek)}<br><b>${sg(x.degisim)} milyar TL</b>`}; }), {pair: true, h: 190, bw: 40});
+}
+function drawTC() {
+  $('tc-stat').innerHTML = [['Yatırım', f1.format(TC.tutar), `yaklaşık ${f1.format(TC.firma / 1000)} bin firma`], ['Para piyasası fonlarında', f0.format(TC.pp), `yatırımın ${ek(pa(100 * TC.pp / TC.tutar, f0), 'i')}`], ['Tahmini kayıp', sg(TC.kayip), `yatırımın ${ek(pa(100 * TC.kayip / TC.tutar, f0), 'i')}`]]
+    .map(([l, x, d]) => `<div><div class="l">${l}</div><div class="x">${x}</div><div class="d">${d}</div></div>`).join('');
+  hbar('c-tc', [
+    {l: 'Para piyasası fonları', v: TC.kayip_pp, c: 'var(--tz)', vl: `${sg(TC.kayip_pp, f1)} · ${pc(100 * TC.rpp, f0)}`, tip: `<div class="t">${f0.format(TC.pp)} milyar TL yatırım</div>Tasfiyedeki para piyasası fonlarının ortalama getirisi ${pc(100 * TC.rpp)}<br><b>${sg(TC.kayip_pp, f1)} milyar TL</b>`},
+    {l: 'Hisse ve diğer fonlar', v: TC.kayip_d, c: 'var(--tz)', vl: `${sg(TC.kayip_d, f1)} · ${pc(100 * TC.rnpp, f0)}`, tip: `<div class="t">${f1.format(TC.tutar - TC.pp)} milyar TL yatırım</div>Tasfiyedeki diğer fonların ortalama getirisi ${pc(100 * TC.rnpp)}<br><b>${sg(TC.kayip_d, f1)} milyar TL</b>`},
+  ], {vw: 110, lab: 150});
+  $('tc-note').textContent = `TCMB'nin 116,2 milyar TL'lik reel sektör yatırımına tasfiyedeki fonların 28 Ağustos - 2 Kasım değer ağırlıklı getirisi uygulandı. Reel sektör, hanehalkı dışındaki ${f0.format(B.fon_kurumsal.baz_tasfiye)} milyar TL'lik tasfiye payının ${ek(pa(100 * TC.tutar / B.fon_kurumsal.baz_tasfiye, f0), 'ini')} oluşturuyor, kalanı finansal kurumlar ve fon sepetleri.`;
+  const box = $('c-tcpay'); box.replaceChildren();
+  const W = width(box), rows = TC.pay, bh = 14, gap = 16, lab = Math.min(120, W * .3), H = rows.length * (2 * bh + gap) + 4;
+  const svg = svgOf(box, W, H, 'Ekonomideki pay'); const mx = 1.6, sx = (v) => lab + v / mx * (W - lab - 60);
+  el('line', {x1: lab, x2: lab, y1: 0, y2: H, stroke: 'var(--axis)'}, svg);
+  const tip = tipFor(box);
+  rows.forEach(([l, a, b], i) => { const y = 2 + i * (2 * bh + gap);
+    tx(svg, 0, y + bh, l, {'dominant-baseline': 'middle', fill: 'var(--ink)'});
+    el('path', {d: rbar(lab, y, sx(a) - lab, bh, 'r'), fill: 'var(--tz)'}, svg); tx(svg, sx(a) + 6, y + bh / 2, '%' + f1.format(a), {'dominant-baseline': 'middle', fill: 'var(--ink)'});
+    if (b != null) { el('path', {d: rbar(lab, y + bh + 2, sx(b) - lab, bh, 'r'), fill: 'var(--dg)'}, svg); tx(svg, sx(b) + 6, y + bh * 1.5 + 2, '%' + f1.format(b), {'dominant-baseline': 'middle', fill: 'var(--ink)'}); }
+    const hit = el('rect', {x: 0, y: y - 4, width: W, height: 2 * bh + 8, fill: 'transparent'}, svg);
+    hit.addEventListener('mousemove', (e) => tip.show(e, `<div class="t">${l}</div>Fon yatırımcısı firmalar %${f1.format(a)}${b != null ? `<br>Tedarikçiler %${f1.format(b)}` : ''}`)); hit.addEventListener('mouseleave', () => tip.hide());
+  });
+}
+// ---------- yabanci ----------
+function drawYPay() {
+  const box = $('c-ypay'); box.replaceChildren();
+  const W = width(box), H = 240, m = {l: 34, r: 104, t: 10, b: 26};
+  const svg = svgOf(box, W, H), n = p12.length;
+  const all = [...p12, ...d12].map((r) => r.pay), lo = Math.floor(Math.min(...all) / 5) * 5, hi = Math.ceil(Math.max(...all) / 5) * 5;
+  const sx = (i) => m.l + i * (W - m.l - m.r) / (n - 1), sy = (v) => m.t + (hi - v) / (hi - lo) * (H - m.t - m.b);
+  const ia = p12.findIndex((r) => r.ay === '2026-08');
+  el('rect', {x: sx(ia), y: m.t, width: sx(n - 1) - sx(ia), height: H - m.t - m.b, fill: 'var(--shade)'}, svg);
+  for (let v = lo; v <= hi; v += 5) { el('line', {x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v), stroke: 'var(--grid)'}, svg); tx(svg, m.l - 6, sy(v), '%' + v, {'text-anchor': 'end', 'dominant-baseline': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); }
+  p12.forEach((r, i) => { if (W > 480 || i % 2) tx(svg, sx(i), H - 8, MON[r.ay.slice(5)], {'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); });
+  const ly = [sy(p12[n - 1].pay), sy(d12[n - 1].pay)];
+  if (Math.abs(ly[0] - ly[1]) < 15) { const mid = (ly[0] + ly[1]) / 2, up = p12[n - 1].pay >= d12[n - 1].pay ? 0 : 1; ly[up] = mid - 8; ly[1 - up] = mid + 8; }
+  [[p12, '', 'Pay senedi', 0], [d12, '5 4', 'DİBS', 1]].forEach(([s, dash, nm, li]) => {
+    el('path', {d: s.map((r, i) => (i ? 'L' : 'M') + sx(i) + ',' + sy(r.pay)).join(''), fill: 'none', stroke: 'var(--yb)', 'stroke-width': 2, 'stroke-dasharray': dash, 'stroke-linejoin': 'round'}, svg);
+    s.forEach((r, i) => { if (i >= ia) el('circle', {cx: sx(i), cy: sy(r.pay), r: 4, fill: 'var(--yb)', stroke: 'var(--panel)', 'stroke-width': 2}, svg); });
+    tx(svg, sx(n - 1) + 8, ly[li], `${nm} %${f1.format(s[n - 1].pay)}`, {'dominant-baseline': 'middle', 'font-size': 11.5, fill: 'var(--ink)'});
+  });
+  const tip = tipFor(box), rule = el('line', {y1: m.t, y2: H - m.b, stroke: 'var(--ink3)', visibility: 'hidden'}, svg);
+  const ov = el('rect', {x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent'}, svg);
+  ov.addEventListener('mousemove', (e) => { const rc = box.getBoundingClientRect(), i = Math.max(0, Math.min(n - 1, Math.round(((e.clientX - rc.left) * W / rc.width - m.l) / ((W - m.l - m.r) / (n - 1)))));
+    rule.setAttribute('x1', sx(i)); rule.setAttribute('x2', sx(i)); rule.setAttribute('visibility', 'visible');
+    tip.show(e, `<div class="t">${MON[p12[i].ay.slice(5)]} ${p12[i].ay.slice(0, 4)}</div>Pay senedi %${f1.format(p12[i].pay)} · ${f0.format(p12[i].yabanci)} milyar TL<br>DİBS %${f1.format(d12[i].pay)} · ${f0.format(d12[i].yabanci)} milyar TL`); });
+  ov.addEventListener('mouseleave', () => { tip.hide(); rule.setAttribute('visibility', 'hidden'); });
+}
+let ykV = 'pay';
+function drawYK() {
+  const rows = Y[ykV + '_kimlik'].filter((r) => r.uyruk === 'Yabancı');
+  const nm = {'Gerçek': 'Gerçek kişi', 'Tüzel': 'Tüzel', 'Diğer': 'Diğer, fon vb.'};
+  vbars('c-yk', ['Tüzel', 'Diğer', 'Gerçek'].map((k) => { const r = rows.find((x) => x.kimlik === k);
+    return {l: `${nm[k]} ${pc(100 * (r.usd['2026-10'] / r.usd['2026-08'] - 1), f0)}`, v: r.usd['2026-10'], v2: r.usd['2026-08'], lab: f1.format(r.usd['2026-10']), lab2: f1.format(r.usd['2026-08']), c: 'var(--yb)', c2: 'color-mix(in srgb,var(--yb) 40%,var(--panel))',
+      tip: `<div class="t">Yabancı ${nm[k].toLowerCase()}, ${ykV === 'pay' ? 'pay senedi' : 'DİBS'}</div>Ağustos ${f2.format(r.usd['2026-08'])} milyar $<br>Ekim ${f2.format(r.usd['2026-10'])} milyar $<br>Yatırımcı ${f0.format(r.yatirimci['2026-08'])} → ${f0.format(r.yatirimci['2026-10'])}`}; }), {pair: true, h: 210, bw: 42});
+  const s0 = rows.reduce((s, r) => s + r.usd['2026-08'], 0), s1 = rows.reduce((s, r) => s + r.usd['2026-10'], 0);
+  $('yk-note').textContent = `Toplam ${f1.format(s0)} milyar $'dan ${f1.format(s1)} milyar $'a, ${pc(100 * (s1 / s0 - 1))}. MKK ay sonu, TCMB döviz alış kuru.`;
+}
+$('yk-seg').querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { ykV = b.dataset.v; $('yk-seg').querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); drawYK(); }));
+function drawUlke() {
+  hbar('c-ulke', Y.ulke.slice(0, 10).map((u) => ({l: u.ulke, v: u.portfoy, c: 'var(--yb)', vl: f0.format(u.portfoy),
+    tip: `<div class="t">${u.ulke}</div><b>${f1.format(u.portfoy)} milyar TL</b><br>${f0.format(u.yatirimci)} yatırımcı<br>Yatırımcı başına ${f1.format(u.portfoy / u.yatirimci)} milyar TL`})), {bh: 14, vw: 50, lab: 130});
+  const r = (k) => Y.pay_kimlik.find((x) => x.uyruk === 'Yabancı' && x.kimlik === k);
+  $('t-yyat').innerHTML = `<thead><tr><th></th><th class="n">Temmuz</th><th class="n">Ağustos</th><th class="n">Eylül</th><th class="n">Ekim</th></tr></thead><tbody>` +
+    [['Gerçek kişi', 'Gerçek'], ['Tüzel', 'Tüzel'], ['Diğer', 'Diğer']].map(([l, k]) => `<tr><td>${l}</td>${['2026-07', '2026-08', '2026-09', '2026-10'].map((m) => `<td class="n">${f0.format(r(k).yatirimci[m])}</td>`).join('')}</tr>`).join('') + '</tbody>';
+  hbar('c-dibs-all', B.dibs.slice().sort((a, b) => a.degisim - b.degisim).map((x) => ({l: `${x.uyruk} ${x.kimlik === 'Gerçek' ? 'gerçek kişi' : x.kimlik.toLowerCase()}`, v: x.degisim,
+    c: x.uyruk === 'Yabancı' ? 'var(--yb)' : x.kimlik === 'Gerçek' ? 'var(--hh)' : x.kimlik === 'Tüzel' ? 'var(--tz)' : 'var(--dg)', vl: `${sg(x.degisim)} · ${pc(x.pct, f0)}`,
+    tip: `<div class="t">${x.uyruk} ${x.kimlik.toLowerCase()}, DİBS</div>Ağustos ${f0.format(x.ag)}<br>Ekim ${f0.format(x.ek)}<br><b>${sg(x.degisim)} milyar TL</b>`})), {bh: 14, vw: 86, lab: 150});
+}
+// ---------- duyarlilik ----------
+const SC = {g: M.gram1, b: 0};
+function scen() {
+  const dgm = (SC.g - M.gram1) / 1000;
+  const hhG = (M.hh_altin_ton) * dgm, tzG = B.tuzel_altin.ton * dgm;
+  const eq = (h) => (h.baz + h.mtm) * h.beta * SC.b / 100;
+  const r = {hh: T.hh + hhG + eq(ygH), tz: T.tz + tzG + eq(tzH), yb: T.yb + yabH.reduce((s, h) => s + eq(h), 0)};
+  r.all = r.hh + r.tz + r.yb; return r;
+}
+function drawSC() {
+  $('sl-g').value = SC.g; $('sl-b').value = SC.b;
+  $('lb-g').textContent = f0.format(SC.g) + ' TL'; $('lb-b').textContent = (SC.b > 0 ? '+' : '') + SC.b + '%';
+  const r = scen();
+  $('sc-out').innerHTML = [['Toplam', r.all, T.all], ['Hanehalkı', r.hh, T.hh], ['Yerli şirket ve kurumlar', r.tz, T.tz], ['Yabancılar', r.yb, T.yb]].map(([l, v, b]) =>
+    `<div><div class="l">${l}</div><div class="x">${sg(v)}</div><div class="d">milyar TL · bazdan ${Math.abs(v - b) < .5 ? 'fark yok' : sg(v - b)}</div></div>`).join('') +
+    `<div><div class="l">Hanehalkı varlığına oranı</div><div class="x">${pc(100 * r.hh / (hh.genis_payda), f2)}</div><div class="d">baz ${pc(100 * T.hh / hh.genis_payda, f2)}</div></div>`;
+  hbar('c-sc', [['Hanehalkı', r.hh, T.hh, 'var(--hh)'], ['Yerli şirket ve kurumlar', r.tz, T.tz, 'var(--tz)'], ['Yabancılar', r.yb, T.yb, 'var(--yb)']].map(([l, v, b, c]) => ({l, v, c, vl: sg(v), tip: `<div class="t">${l}</div>Senaryo <b>${sg(v)}</b><br>Baz ${sg(b)} milyar TL`})), {vw: 70});
+}
+['g', 'b'].forEach((k) => $('sl-' + k).addEventListener('input', (e) => { SC[k] = +e.target.value; drawSC(); }));
+$('sc-reset').addEventListener('click', () => { SC.g = M.gram1; SC.b = 0; drawSC(); });
+// ---------- full table ----------
+(function () {
+  const r = (a, b = '') => `<tr${b}>${a.map((c, i) => `<td${i ? ' class="n"' : ''}>${c}</td>`).join('')}</tr>`;
+  let h = '<thead><tr><th>Kalem</th><th class="n">Baz, milyar TL</th><th class="n">Değişim, milyar TL</th><th class="n">%</th></tr></thead><tbody>';
+  h += r(['<b>Hanehalkı</b>', f0.format(hh.genis_payda), `<b>${sg(T.hh)}</b>`, pc(100 * T.hh / hh.genis_payda)]);
+  Hd.ozet.forEach((x) => { h += r([`&nbsp;&nbsp;${x.ad}`, f0.format(x.baz), sg(x.net), pc(100 * x.net / x.baz)]); });
+  h += r(['<b>Yerli şirket ve kurumlar</b>', '', `<b>${sg(T.tz)}</b>`, '']);
+  h += r(['&nbsp;&nbsp;Hisse', f0.format(tzH.baz), sg(tzH.mtm), pc(tzH.getiri)]) + r(['&nbsp;&nbsp;Fonlar, hanehalkı dışı pay', f0.format(B.fon_kurumsal.baz), sg(B.fon_kurumsal.mtm), pc(100 * B.fon_kurumsal.mtm / B.fon_kurumsal.baz)]) + r(['&nbsp;&nbsp;Altın hesabı', f0.format(B.tuzel_altin.baz), sg(B.tuzel_altin.mtm), pc(100 * B.tuzel_altin.mtm / B.tuzel_altin.baz)]) + r(['&nbsp;&nbsp;Döviz mevduatı kur kazancı, toplam dışı', f1.format(B.tuzel_kur.usd) + ' milyar $', sg(B.tuzel_kur.kazanc), '']);
+  h += r(['<b>Yabancı yatırımcılar, pay senedi</b>', f0.format(yabH.reduce((s, x) => s + x.baz, 0)), `<b>${sg(T.yb)}</b>`, pc(100 * T.yb / yabH.reduce((s, x) => s + x.baz, 0))]);
+  yabH.forEach((x) => { h += r([`&nbsp;&nbsp;${x.kimlik}`, f0.format(x.baz), sg(x.mtm), pc(x.getiri)]); });
+  h += r(['Yerli diğer, pay senedi, toplam dışı', f0.format(dgH.baz), sg(dgH.mtm), pc(dgH.getiri)]);
+  $('t-all').innerHTML = h + '</tbody>';
+})();
+
+// ---------- nav, theme, print ----------
+const secs = [...document.querySelectorAll('section.s')], links = [...document.querySelectorAll('nav.toc a')];
+const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) links.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), {rootMargin: '-40% 0px -55% 0px'});
+secs.forEach((s) => io.observe(s));
+$('b-theme').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+});
+const all = () => { drawWF(); drawArea(); drawGrp(); drawYat(); drawDilim(); drawMap(); drawHHK(); drawSeyir(); drawTon(); drawGram(); drawFK(); drawTas(); drawTop(); drawBES(); drawTZ(); drawTC(); drawYPay(); drawYK(); drawUlke(); drawSC(); };
+all();
+let rt; addEventListener('resize', () => { if (PRINT) return; clearTimeout(rt); rt = setTimeout(all, 120); });
+addEventListener('beforeprint', () => { PRINT = true; all(); });
+addEventListener('afterprint', () => { PRINT = false; all(); });
+$('b-pdf').addEventListener('click', () => { PRINT = true; all(); setTimeout(() => window.print(), 60); });
+})();
+</script>
+</body></html>
