@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fon Krizinin Faturası</title>
+<meta name="description" content="28 Ağustos 2026'dan bu yana hanehalkı, şirketler ve yabancıların varlık kayıpları: MKK, TEFAS, TCMB ve EVDS verileriyle.">
+<style>
+:root{color-scheme:light;
+--bg:#fcfcfb;--panel:#f4f3f0;--line:#e2e0da;--ink:#0b0b0b;--ink2:#52514e;--ink3:#7c7a74;
+--yerli:#2a78d6;--yabanci:#eb6834;--kurum:#1baf7a;--pos:#5d6f5a;--grid:#e8e6e1;--axis:#9a988f;
+--tip:#ffffff;--tipline:#d6d4ce;--shadow:0 6px 24px rgba(20,20,10,.12);
+--serif:"Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){color-scheme:dark;
+--bg:#1a1a19;--panel:#222220;--line:#34332f;--ink:#f0efec;--ink2:#c3c2b7;--ink3:#96948a;
+--yerli:#3987e5;--yabanci:#d95926;--kurum:#199e70;--pos:#9fb39b;--grid:#2c2b28;--axis:#6f6d66;
+--tip:#2a2a27;--tipline:#45443f;--shadow:0 6px 24px rgba(0,0,0,.5)}}
+:root[data-theme="dark"]{color-scheme:dark;
+--bg:#1a1a19;--panel:#222220;--line:#34332f;--ink:#f0efec;--ink2:#c3c2b7;--ink3:#96948a;
+--yerli:#3987e5;--yabanci:#d95926;--kurum:#199e70;--pos:#9fb39b;--grid:#2c2b28;--axis:#6f6d66;
+--tip:#2a2a27;--tipline:#45443f;--shadow:0 6px 24px rgba(0,0,0,.5)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-variant-numeric:tabular-nums;line-height:1.5}
+.w{max-width:1120px;margin:0 auto;padding:28px 16px 56px}
+.kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,46px);line-height:1.08;margin:10px 0 14px;text-wrap:balance}
+.lede{font-size:17px;max-width:68ch;color:var(--ink2);margin:0}
+.lede b{color:var(--ink);font-weight:600}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:14px;margin:30px 0 8px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tile .k{font-size:13px;color:var(--ink2);display:flex;align-items:center;gap:8px}
+.tile .v{font-family:var(--serif);font-size:38px;line-height:1.1}
+.tile .s{font-size:13px;color:var(--ink3)}
+.dot{width:10px;height:10px;border-radius:3px;display:inline-block;flex:none}
+section{margin-top:52px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(23px,3.2vw,30px);line-height:1.2;margin:0 0 8px;text-wrap:balance}
+.sub{color:var(--ink2);max-width:70ch;margin:0 0 18px}
+.sub b{color:var(--ink);font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;min-width:0}
+.card h3{font-size:15px;font-weight:600;margin:0 0 4px}
+.card .note{font-size:12.5px;color:var(--ink3);margin:6px 0 0;line-height:1.5}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,30rem),1fr));gap:14px}
+.chart{position:relative;width:100%}
+.chart svg{display:block;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--ink2);margin:6px 0 10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.tip{position:absolute;pointer-events:none;background:var(--tip);border:1px solid var(--tipline);border-radius:8px;box-shadow:var(--shadow);padding:7px 10px;font-size:12.5px;white-space:nowrap;z-index:5;line-height:1.45}
+.tip .t{color:var(--ink3);font-size:11.5px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}
+.seg button{font:inherit;font-size:12.5px;padding:5px 12px;border:0;background:transparent;color:var(--ink2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.callout{border-left:3px solid var(--line);padding:4px 0 4px 14px;color:var(--ink2);font-size:14.5px;max-width:70ch;margin:14px 0 0}
+.callout b{color:var(--ink)}
+details{margin-top:14px}
+summary{cursor:pointer;color:var(--ink2);font-size:13.5px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font-weight:600;color:var(--ink2)}
+td.n,th.n{text-align:right}
+.method{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:12px 28px;font-size:13.5px;color:var(--ink2)}
+.method h4{font-size:13.5px;color:var(--ink);margin:0 0 4px}
+.method p{margin:0}
+.foot{margin-top:36px;font-size:12px;color:var(--ink3);max-width:90ch}
+a{color:inherit}
+</style></head>
+<body>
+<div class="w">
+  <div class="kicker">28 Ağustos – 2 Kasım 2026 · piyasa değeri değişimi</div>
+  <h1>Fon krizinin faturası: kim ne kaybetti?</h1>
+  <p class="lede" id="lede"></p>
+
+  <div class="hero" id="hero"></div>
+
+  <section id="s-borsa">
+    <h2>Borsadaki 3,3 trilyonluk erime kimin cebinden çıktı?</h2>
+    <p class="sub" id="borsa-sub"></p>
+    <div class="card">
+      <h3>Pay senedi portföyündeki değişim, 31 Ağustos → 31 Ekim, milyar TL</h3>
+      <div class="legend"><span><i class="dot" style="background:var(--yerli)"></i>Yerli</span><span><i class="dot" style="background:var(--yabanci)"></i>Yabancı</span></div>
+      <div class="chart" id="c-borsa"></div>
+      <p class="note">MKK Veri Analiz Platformu, ay sonu portföy değerleri. Gruplar arasındaki alım satım toplamda birbirini götürür, bu yüzden toplam neredeyse saf fiyat etkisidir. Grup bazında rakamlar el değiştirmeyi de içerir.</p>
+    </div>
+    <p class="callout" id="borsa-call"></p>
+  </section>
+
+  <section id="s-hh">
+    <h2>Hanehalkı: asıl yara yastığın altında</h2>
+    <p class="sub" id="hh-sub"></p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Hanehalkı kaybı kalem kalem, milyar TL</h3>
+        <div class="chart" id="c-hh"></div>
+        <p class="note">28 Ağustos'taki elde tutulan miktar 2 Kasım fiyatıyla. Ayrıntı ve yöntem <a href="index.html">hanehalkı sayfasında</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Ne kadar büyük?</h3>
+        <div class="chart" id="c-hh-oran"></div>
+        <p class="note">Payda: TCMB finansal varlık tanımına yastık altı altın eklenmiş hanehalkı varlığı. Konut dahil değil.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s-tuzel">
+    <h2>Şirketler: KOBİ'yi ayrı göremiyoruz ama tablo net</h2>
+    <p class="sub" id="tz-sub"></p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Yerli tüzel kişilerin kaybı, milyar TL</h3>
+        <div class="chart" id="c-tz"></div>
+        <p class="note" id="tz-note"></p>
+      </div>
+      <div class="card">
+        <h3>MKK'nın "Diğer" sınıfı ayrı bir dünya</h3>
+        <div class="chart" id="c-diger"></div>
+        <p class="note">Yerli "Diğer" kimlik sınıfı, 31 Ağustos'tan bu yana pay senedi değeri. MKK bu sınıfı ayrıştırmıyor. Fonların tamamının kaybı bu rakamın yarısına bile ulaşmadığı için sınıf fonlardan fazlasını içeriyor. Çift sayım riskine karşı toplama katılmadı.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s-yab">
+    <h2>Yabancılar: kaçmadılar, daha az kaybettiler</h2>
+    <p class="sub" id="yab-sub"></p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Yabancıların payı, yüzde</h3>
+        <div class="legend"><span><svg width="22" height="8"><line x1="1" y1="4" x2="21" y2="4" stroke="var(--yabanci)" stroke-width="2"/></svg>Pay senedi</span><span><svg width="22" height="8"><line x1="1" y1="4" x2="21" y2="4" stroke="var(--yabanci)" stroke-width="2" stroke-dasharray="4 3"/></svg>DİBS</span></div>
+        <div class="chart" id="c-pay"></div>
+        <p class="note">Yabancı portföy / toplam portföy, ay sonu. Gölgeli alan fon krizi dönemi.</p>
+      </div>
+      <div class="card">
+        <h3>Yabancı portföyü, milyar $</h3>
+        <div class="seg" role="group" aria-label="Varlık"><button type="button" data-v="pay" aria-pressed="true">Pay senedi</button><button type="button" data-v="dibs" aria-pressed="false">DİBS</button></div>
+        <div class="legend"><span><i class="dot" style="background:var(--yerli)"></i>Gerçek kişi</span><span><i class="dot" style="background:var(--yabanci)"></i>Tüzel</span><span><i class="dot" style="background:var(--kurum)"></i>Diğer (fon vb.)</span></div>
+        <div class="chart" id="c-usd"></div>
+        <p class="note">MKK ay sonu değerleri, TCMB döviz alış kuruyla. Fiyat etkisi ve alım satım birlikte.</p>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:14px">
+      <div class="card">
+        <h3>Yabancı pay senedi portföyü ülkelere göre, Ekim, milyar TL</h3>
+        <div class="chart" id="c-ulke"></div>
+        <p class="note" id="ulke-note"></p>
+      </div>
+      <div class="card">
+        <h3>Para nereye gitti? DİBS portföyündeki değişim, Ağustos → Ekim</h3>
+        <div class="chart" id="c-dibs"></div>
+        <p class="note">Milyar TL, MKK ay sonu. DİBS rakamları fiyat ve alım satımı birlikte içerir, bir kayıp ölçüsü değildir.</p>
+      </div>
+    </div>
+    <p class="callout" id="yab-call"></p>
+  </section>
+
+  <section id="s-tablo">
+    <h2>Rakamların tamamı</h2>
+    <details><summary>Tabloyu göster</summary><div class="tw"><table id="t-all"></table></div></details>
+  </section>
+
+  <section id="s-yontem">
+    <h2>Nasıl hesaplandı, nerede sınırlı?</h2>
+    <div class="method">
+      <div><h4>Dönem</h4><p>Baz 28 Ağustos 2026, fon krizinin başladığı hafta. Hanehalkı, tüzel ve yabancı hisse kayıpları 2 Kasım kapanışına kadar. MKK portföy verileri ay sonu, son veri 31 Ekim.</p></div>
+      <div><h4>Hisse</h4><p>Her grup için MKK'daki 31 Ağustos-31 Ekim portföy değişimine kalibre edilmiş BIST Tüm betası. 28 Ağustos'a geri, 2 Kasım'a ileri taşındı. Bu yüzden grup rakamları portföy el değiştirmesini de taşır.</p></div>
+      <div><h4>Fonlar</h4><p>TEFAS'ta her fon için 28 Ağustos pay adedi ile 2 Kasım fiyat farkı. Hanehalkı payı yatırımcı başına ortalama büyüklüğe göre verildi, kalanı hanehalkı dışı sahiplere (şirketler, kurumlar, fon sepetleri) yazıldı.</p></div>
+      <div><h4>Altın ve döviz</h4><p>Gram altın EVDS BİST serisi. Tüzel kişi altın hesabı ve döviz mevduatı TCMB haftalık verisinden, 28 Ağustos stoku 23 Ekim'den geriye akış ve parite etkisiyle bulundu. Kur kazancı kayıplardan ayrı gösterildi.</p></div>
+      <div><h4>KOBİ</h4><p>MKK, TEFAS ve TCMB mevduat tabloları şirket ölçeğine göre ayrışmıyor. KOBİ'ler tüzel kişilerin içinde. Ayrı bir KOBİ rakamı üretmek varsayım gerektirir, bu yüzden üretilmedi.</p></div>
+      <div><h4>Ne değil?</h4><p>Bu bir piyasa değeri hesabı. Satmayan için kayıp kâğıt üstünde. Tera fonları ve fiyat yayımı duran fonlar tahmin, DİBS'te yalnızca pozisyon değişimi var.</p></div>
+    </div>
+  </section>
+  <p class="foot">Kaynaklar MKK Veri Analiz Platformu ve Aylık Piyasa Bülteni, TEFAS, TCMB EVDS ve haftalık para ve banka istatistikleri, Bloomberg BIST Tüm. Hesaplama 4 Kasım 2026. Rakamlar model tahminidir.</p>
+</div>
+
+<script>
+const D = {"b": {"hisse": [{"uyruk": "Yerli", "kimlik": "Gerçek", "ag": 2852.59, "ey": 2111.0, "ek": 1841.19, "mkk_2ay": -35.46, "beta": 0.58, "baz": 2890.22, "mtm": -1054.49, "getiri": -36.48, "usd_baz": 60.15, "usd_son": 36.88}, {"uyruk": "Yerli", "kimlik": "Tüzel", "ag": 1563.74, "ey": 1368.92, "ek": 1151.5, "mkk_2ay": -26.36, "beta": 0.41, "baz": 1578.26, "mtm": -432.09, "getiri": -27.38, "usd_baz": 32.85, "usd_son": 23.03}, {"uyruk": "Yerli", "kimlik": "Diğer", "ag": 1997.12, "ey": 1147.78, "ek": 853.5, "mkk_2ay": -57.26, "beta": 1.11, "baz": 2048.15, "mtm": -1195.94, "getiri": -58.39, "usd_baz": 42.63, "usd_son": 17.12}, {"uyruk": "Yabancı", "kimlik": "Gerçek", "ag": 23.52, "ey": 20.02, "ek": 18.29, "mkk_2ay": -22.26, "beta": 0.33, "baz": 23.7, "mtm": -5.37, "getiri": -22.67, "usd_baz": 0.49, "usd_son": 0.37}, {"uyruk": "Yabancı", "kimlik": "Tüzel", "ag": 1829.52, "ey": 1615.86, "ek": 1424.0, "mkk_2ay": -22.17, "beta": 0.33, "baz": 1843.17, "mtm": -417.89, "getiri": -22.67, "usd_baz": 38.36, "usd_son": 28.63}, {"uyruk": "Yabancı", "kimlik": "Diğer", "ag": 1249.39, "ey": 1079.52, "ek": 940.88, "mkk_2ay": -24.69, "beta": 0.38, "baz": 1260.14, "mtm": -323.18, "getiri": -25.65, "usd_baz": 26.23, "usd_son": 18.82}], "piyasa": {"2026-08": 9515.89, "2026-09": 7343.09, "2026-10": 6229.35}, "fon_kurumsal": {"baz": 3947.46, "mtm": -174.02, "tasfiye": -392.07, "diger": 218.05}, "tuzel_altin": {"ton": 60.5, "baz": 429.08, "mtm": -49.61}, "tuzel_kur": {"usd": 73.58, "kazanc": 127.15}, "gercek_kur": 102.42, "dibs": [{"uyruk": "Yerli", "kimlik": "Gerçek", "ag": 542.4, "ek": 728.56, "degisim": 186.16, "pct": 34.32}, {"uyruk": "Yerli", "kimlik": "Tüzel", "ag": 962.55, "ek": 1074.36, "degisim": 111.81, "pct": 11.62}, {"uyruk": "Yerli", "kimlik": "Diğer", "ag": 71.81, "ek": 86.04, "degisim": 14.24, "pct": 19.83}, {"uyruk": "Yabancı", "kimlik": "Gerçek", "ag": 9.98, "ek": 13.37, "degisim": 3.39, "pct": 33.99}, {"uyruk": "Yabancı", "kimlik": "Tüzel", "ag": 305.1, "ek": 296.45, "degisim": -8.65, "pct": -2.84}, {"uyruk": "Yabancı", "kimlik": "Diğer", "ag": 907.7, "ek": 842.41, "degisim": -65.28, "pct": -7.19}], "hanehalki": {"toplam": -4959.38, "hisse": -1054.49, "altin": -3512.76, "fon": -217.02, "bes": -175.11, "genis_payda": 59077.81}, "usd0": 48.0466, "usd1": 49.7747, "g0": 7092.0, "g1": 6272.0}, "y": {"kur": {"2026-06": 46.5551, "2026-07": 47.3274, "2026-08": 48.0732, "2026-09": 48.9131, "2026-10": 49.6997}, "pay_12ay": [{"ay": "2025-11", "yabanci": 2657.23, "toplam": 7283.68, "yerli": 4626.45, "pay": 36.48, "yab_yatirimci": 29515}, {"ay": "2025-12", "yabanci": 2709.08, "toplam": 7470.75, "yerli": 4761.67, "pay": 36.26, "yab_yatirimci": 29891}, {"ay": "2026-01", "yabanci": 3238.67, "toplam": 8716.45, "yerli": 5477.78, "pay": 37.16, "yab_yatirimci": 30314}, {"ay": "2026-02", "yabanci": 3229.26, "toplam": 8779.59, "yerli": 5550.32, "pay": 36.78, "yab_yatirimci": 31149}, {"ay": "2026-03", "yabanci": 2973.24, "toplam": 8344.72, "yerli": 5371.48, "pay": 35.63, "yab_yatirimci": 30627}, {"ay": "2026-04", "yabanci": 3223.64, "toplam": 9217.98, "yerli": 5994.34, "pay": 34.97, "yab_yatirimci": 30823}, {"ay": "2026-05", "yabanci": 3028.88, "toplam": 8929.61, "yerli": 5900.73, "pay": 33.92, "yab_yatirimci": 31585}, {"ay": "2026-06", "yabanci": 2999.95, "toplam": 9295.31, "yerli": 6295.36, "pay": 32.27, "yab_yatirimci": 32219}, {"ay": "2026-07", "yabanci": 2971.75, "toplam": 9219.71, "yerli": 6247.96, "pay": 32.23, "yab_yatirimci": 33049}, {"ay": "2026-08", "yabanci": 3102.43, "toplam": 9515.89, "yerli": 6413.46, "pay": 32.6, "yab_yatirimci": 33273}, {"ay": "2026-09", "yabanci": 2715.39, "toplam": 7343.09, "yerli": 4627.7, "pay": 36.98, "yab_yatirimci": 33401}, {"ay": "2026-10", "yabanci": 2383.17, "toplam": 6229.35, "yerli": 3846.18, "pay": 38.26, "yab_yatirimci": 32978}], "pay_kimlik": [{"uyruk": "Yabancı", "kimlik": "Gerçek", "tl": {"2026-07": 22.58, "2026-08": 23.52, "2026-09": 20.02, "2026-10": 18.29}, "usd": {"2026-07": 0.477, "2026-08": 0.489, "2026-09": 0.409, "2026-10": 0.368}, "yatirimci": {"2026-07": 30324, "2026-08": 30524, "2026-09": 30657, "2026-10": 30229}}, {"uyruk": "Yabancı", "kimlik": "Tüzel", "tl": {"2026-07": 1775.11, "2026-08": 1829.52, "2026-09": 1615.86, "2026-10": 1424.0}, "usd": {"2026-07": 37.507, "2026-08": 38.057, "2026-09": 33.035, "2026-10": 28.652}, "yatirimci": {"2026-07": 1234, "2026-08": 1247, "2026-09": 1251, "2026-10": 1256}}, {"uyruk": "Yabancı", "kimlik": "Diğer", "tl": {"2026-07": 1174.06, "2026-08": 1249.39, "2026-09": 1079.52, "2026-10": 940.88}, "usd": {"2026-07": 24.807, "2026-08": 25.989, "2026-09": 22.07, "2026-10": 18.931}, "yatirimci": {"2026-07": 1491, "2026-08": 1502, "2026-09": 1493, "2026-10": 1493}}, {"uyruk": "Yerli", "kimlik": "Gerçek", "tl": {"2026-07": 2873.94, "2026-08": 2852.59, "2026-09": 2111.0, "2026-10": 1841.19}, "usd": {"2026-07": 60.725, "2026-08": 59.339, "2026-09": 43.158, "2026-10": 37.046}, "yatirimci": {"2026-07": 6852562, "2026-08": 6752662, "2026-09": 6647540, "2026-10": 6496357}}, {"uyruk": "Yerli", "kimlik": "Tüzel", "tl": {"2026-07": 1492.83, "2026-08": 1563.74, "2026-09": 1368.92, "2026-10": 1151.5}, "usd": {"2026-07": 31.543, "2026-08": 32.528, "2026-09": 27.987, "2026-10": 23.169}, "yatirimci": {"2026-07": 10308, "2026-08": 10401, "2026-09": 10424, "2026-10": 10488}}, {"uyruk": "Yerli", "kimlik": "Diğer", "tl": {"2026-07": 1881.2, "2026-08": 1997.12, "2026-09": 1147.78, "2026-10": 853.5}, "usd": {"2026-07": 39.749, "2026-08": 41.543, "2026-09": 23.466, "2026-10": 17.173}, "yatirimci": {"2026-07": 1733, "2026-08": 1737, "2026-09": 1689, "2026-10": 1612}}], "dibs_12ay": [{"ay": "2025-11", "yabanci": 908.41, "toplam": 2067.67, "yerli": 1159.26, "pay": 43.93, "yab_yatirimci": 1274}, {"ay": "2025-12", "yabanci": 1037.21, "toplam": 2302.93, "yerli": 1265.73, "pay": 45.04, "yab_yatirimci": 1321}, {"ay": "2026-01", "yabanci": 1215.54, "toplam": 2576.97, "yerli": 1361.43, "pay": 47.17, "yab_yatirimci": 1377}, {"ay": "2026-02", "yabanci": 1223.92, "toplam": 2585.6, "yerli": 1361.68, "pay": 47.34, "yab_yatirimci": 1283}, {"ay": "2026-03", "yabanci": 886.71, "toplam": 2373.25, "yerli": 1486.55, "pay": 37.36, "yab_yatirimci": 1310}, {"ay": "2026-04", "yabanci": 882.62, "toplam": 2386.06, "yerli": 1503.44, "pay": 36.99, "yab_yatirimci": 1292}, {"ay": "2026-05", "yabanci": 864.44, "toplam": 2418.72, "yerli": 1554.27, "pay": 35.74, "yab_yatirimci": 1289}, {"ay": "2026-06", "yabanci": 1076.5, "toplam": 2531.28, "yerli": 1454.78, "pay": 42.53, "yab_yatirimci": 1229}, {"ay": "2026-07", "yabanci": 1185.14, "toplam": 2696.4, "yerli": 1511.27, "pay": 43.95, "yab_yatirimci": 1275}, {"ay": "2026-08", "yabanci": 1222.78, "toplam": 2799.53, "yerli": 1576.76, "pay": 43.68, "yab_yatirimci": 1268}, {"ay": "2026-09", "yabanci": 1186.42, "toplam": 2911.61, "yerli": 1725.19, "pay": 40.75, "yab_yatirimci": 1336}, {"ay": "2026-10", "yabanci": 1152.24, "toplam": 3041.2, "yerli": 1888.96, "pay": 37.89, "yab_yatirimci": 1409}], "dibs_kimlik": [{"uyruk": "Yabancı", "kimlik": "Gerçek", "tl": {"2026-07": 9.48, "2026-08": 9.98, "2026-09": 11.59, "2026-10": 13.37}, "usd": {"2026-07": 0.2, "2026-08": 0.208, "2026-09": 0.237, "2026-10": 0.269}, "yatirimci": {"2026-07": 705, "2026-08": 713, "2026-09": 777, "2026-10": 854}}, {"uyruk": "Yabancı", "kimlik": "Tüzel", "tl": {"2026-07": 280.1, "2026-08": 305.1, "2026-09": 306.7, "2026-10": 296.45}, "usd": {"2026-07": 5.918, "2026-08": 6.347, "2026-09": 6.27, "2026-10": 5.965}, "yatirimci": {"2026-07": 212, "2026-08": 205, "2026-09": 202, "2026-10": 207}}, {"uyruk": "Yabancı", "kimlik": "Diğer", "tl": {"2026-07": 895.55, "2026-08": 907.7, "2026-09": 868.13, "2026-10": 842.41}, "usd": {"2026-07": 18.923, "2026-08": 18.882, "2026-09": 17.748, "2026-10": 16.95}, "yatirimci": {"2026-07": 358, "2026-08": 350, "2026-09": 357, "2026-10": 348}}, {"uyruk": "Yerli", "kimlik": "Gerçek", "tl": {"2026-07": 488.63, "2026-08": 542.4, "2026-09": 629.96, "2026-10": 728.56}, "usd": {"2026-07": 10.325, "2026-08": 11.283, "2026-09": 12.879, "2026-10": 14.659}, "yatirimci": {"2026-07": 28091, "2026-08": 28893, "2026-09": 33086, "2026-10": 38215}}, {"uyruk": "Yerli", "kimlik": "Tüzel", "tl": {"2026-07": 959.91, "2026-08": 962.55, "2026-09": 1015.97, "2026-10": 1074.36}, "usd": {"2026-07": 20.282, "2026-08": 20.023, "2026-09": 20.771, "2026-10": 21.617}, "yatirimci": {"2026-07": 409, "2026-08": 410, "2026-09": 435, "2026-10": 487}}, {"uyruk": "Yerli", "kimlik": "Diğer", "tl": {"2026-07": 62.73, "2026-08": 71.81, "2026-09": 79.26, "2026-10": 86.04}, "usd": {"2026-07": 1.325, "2026-08": 1.494, "2026-09": 1.62, "2026-10": 1.731}, "yatirimci": {"2026-07": 55, "2026-08": 51, "2026-09": 53, "2026-10": 58}}], "ulke": [{"ulke": "ABD", "portfoy": 593.78, "yatirimci": 995}, {"ulke": "Birleşik Krallık", "portfoy": 403.03, "yatirimci": 298}, {"ulke": "Katar", "portfoy": 339.17, "yatirimci": 9}, {"ulke": "İspanya", "portfoy": 248.46, "yatirimci": 14}, {"ulke": "Hollanda", "portfoy": 106.54, "yatirimci": 152}, {"ulke": "Lüksemburg", "portfoy": 100.39, "yatirimci": 212}, {"ulke": "Cayman Adaları", "portfoy": 66.22, "yatirimci": 73}, {"ulke": "İrlanda", "portfoy": 58.77, "yatirimci": 173}, {"ulke": "İsviçre", "portfoy": 40.13, "yatirimci": 104}, {"ulke": "Fransa", "portfoy": 38.5, "yatirimci": 47}, {"ulke": "Almanya", "portfoy": 23.6, "yatirimci": 2437}, {"ulke": "Kanada", "portfoy": 20.33, "yatirimci": 150}, {"ulke": "Avusturya", "portfoy": 10.86, "yatirimci": 432}, {"ulke": "KKTC", "portfoy": 1.55, "yatirimci": 2361}], "ulke_panel_toplam_ekim": 2051.33}};
+(() => {
+const B = D.b, Y = D.y;
+const nf = (d) => new Intl.NumberFormat('tr-TR', {minimumFractionDigits: d, maximumFractionDigits: d});
+const f0 = nf(0), f1 = nf(1);
+const sg = (v, f = f0) => (v > 0 ? '+' : v < 0 ? '−' : '') + f.format(Math.abs(v));
+const pct = (v, f = f1) => (v > 0 ? '+%' : v < 0 ? '−%' : '%') + f.format(Math.abs(v));
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, at = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (parent) parent.append(e); return e; };
+const txt = (parent, x, y, s, at = {}) => { const t = el('text', Object.assign({x, y, 'font-size': 12, fill: 'var(--ink2)'}, at), parent); t.textContent = s; return t; };
+const H = (uy, kim) => B.hisse.find((h) => h.uyruk === uy && h.kimlik === kim);
+const KIM = {'Gerçek': 'gerçek kişi', 'Tüzel': 'tüzel', 'Diğer': 'diğer'};
+
+// ---------- tooltip ----------
+function tipFor(box) {
+  const t = document.createElement('div'); t.className = 'tip'; t.hidden = true; box.append(t);
+  return {
+    show(ev, html) { t.innerHTML = html; t.hidden = false; const r = box.getBoundingClientRect();
+      let x = ev.clientX - r.left + 12, y = ev.clientY - r.top + 12;
+      if (x + t.offsetWidth > box.clientWidth) x = ev.clientX - r.left - t.offsetWidth - 12;
+      t.style.left = Math.max(0, x) + 'px'; t.style.top = y + 'px'; },
+    hide() { t.hidden = true; }
+  };
+}
+
+// ---------- numbers ----------
+const hh = B.hanehalki;
+const tzH = H('Yerli', 'Tüzel'), dg = H('Yerli', 'Diğer');
+const tz = {hisse: tzH.mtm, fon: B.fon_kurumsal.mtm, altin: B.tuzel_altin.mtm};
+const tzTop = tz.hisse + tz.fon + tz.altin;
+const yabH = ['Gerçek', 'Tüzel', 'Diğer'].map((k) => H('Yabancı', k));
+const yabTL = yabH.reduce((s, h) => s + h.mtm, 0);
+const yabUsd0 = yabH.reduce((s, h) => s + h.usd_baz, 0), yabUsd1 = yabH.reduce((s, h) => s + h.usd_son, 0);
+const p12 = Y.pay_12ay, d12 = Y.dibs_12ay;
+const last = (a, k) => a[a.length - 1][k], at = (a, m, k) => a.find((r) => r.ay === m)[k];
+const piy = B.piyasa, piyD = piy['2026-10'] - piy['2026-08'];
+
+document.getElementById('lede').innerHTML =
+  `28 Ağustos'ta başlayan fon krizinden bu yana hanehalkının borsa, altın, fon ve BES varlıklarının değeri <b>${f1.format(-hh.toplam / 1000)} trilyon lira</b> azaldı. ` +
+  `Şirketler <b>${f0.format(-tzTop)} milyar</b>, yabancılar yalnızca hisselerde <b>${f0.format(-yabTL)} milyar</b> kaybetti. ` +
+  `Büyük resmin özeti şu: fatura en çok yerlinin, en çok da altın tutan evlerin üstünde kaldı.`;
+
+const hero = [
+  {k: 'Hanehalkı', c: 'var(--yerli)', v: sg(hh.toplam), s: `milyar TL · varlığın %${f1.format(-100 * hh.toplam / hh.genis_payda)}'i. Kaybın %${f0.format(100 * hh.altin / hh.toplam)}'i altından.`},
+  {k: 'Yerli şirketler', c: 'var(--yerli)', v: sg(tzTop), s: `milyar TL · döviz mevduatındaki ${f0.format(B.tuzel_kur.kazanc)} milyarlık kur kazancı hariç`},
+  {k: 'Yabancılar (hisse)', c: 'var(--yabanci)', v: sg(yabTL), s: `milyar TL · dolar bazında ${sg(yabUsd1 - yabUsd0, f1)} milyar $`},
+  {k: 'Yabancı payı, borsa', c: 'var(--yabanci)', v: '%' + f1.format(last(p12, 'pay')), s: `Ağustos'ta %${f1.format(at(p12, '2026-08', 'pay'))}. Yerli daha hızlı eridi.`},
+];
+document.getElementById('hero').innerHTML = hero.map((h) => `<div class="tile"><span class="k"><i class="dot" style="background:${h.c}"></i>${h.k}</span><span class="v">${h.v}</span><span class="s">${h.s}</span></div>`).join('');
+
+// ---------- texts ----------
+const yg = H('Yerli', 'Gerçek');
+const borsaRows = [['Yerli', 'Diğer'], ['Yerli', 'Gerçek'], ['Yerli', 'Tüzel'], ['Yabancı', 'Tüzel'], ['Yabancı', 'Diğer'], ['Yabancı', 'Gerçek']].map(([u, k]) => {
+  const h = H(u, k); return {u, k, d: h.ek - h.ag, p: 100 * (h.ek / h.ag - 1), ag: h.ag, ek: h.ek};
+});
+const yerliD = borsaRows.filter((r) => r.u === 'Yerli').reduce((s, r) => s + r.d, 0);
+document.getElementById('borsa-sub').innerHTML =
+  `MKK'ya göre pay senetlerinin toplam değeri iki ayda ${f0.format(piy['2026-08'])} milyardan ${f0.format(piy['2026-10'])} milyara indi. ` +
+  `Bu erimenin <b>%${f0.format(100 * yerliD / piyD)}'i yerli yatırımcının</b> portföyünden çıktı, yerlinin piyasadaki payı ise Ağustos'ta %${f0.format(100 - at(p12, '2026-08', 'pay'))} idi.`;
+document.getElementById('borsa-call').innerHTML =
+  `Yabancı tüzel ve kurumsal portföyler %22-25 eridi, yerli gerçek kişiler %${f0.format(-yg.mkk_2ay)}, yerli "Diğer" sınıfı %${f0.format(-dg.mkk_2ay)}. ` +
+  `Yabancıların elinde ağırlıklı olarak büyük ve likit hisseler var, kriz ise en sert fonların ve küçük hisselerin tarafında patladı. <b>Yabancı kaçmadı, yerli daha derinden battı.</b>`;
+document.getElementById('hh-sub').innerHTML =
+  `Hanehalkının kaybının %${f0.format(100 * hh.altin / hh.toplam)}'i altından geliyor. Gram altın 7.092 liradan 6.272'ye indi, tek başına sıradan bir düşüş. ` +
+  `Ama ülkede yaklaşık 3.700 ton altın yastık altında duruyor ve küçük bir yüzde trilyonlara dönüşüyor. Borsa kaybı ${f0.format(-hh.hisse)} milyarda kaldı.`;
+document.getElementById('tz-sub').innerHTML =
+  `Şirketlerin borsadaki portföyü %${f0.format(-tzH.mkk_2ay)} eridi. Fonlarda hanehalkı dışında kalan sahiplerin kaybı ${f0.format(-B.fon_kurumsal.mtm)} milyar, bunun ` +
+  `${f0.format(-B.fon_kurumsal.tasfiye)} milyarı tasfiyedeki fonlardan. Para piyasası ve döviz fonlarındaki getiri ${f0.format(B.fon_kurumsal.diger)} milyarla bunun bir kısmını dengeliyor. ` +
+  `Döviz mevduatı tutan şirketler ise kurdan <b>${f0.format(B.tuzel_kur.kazanc)} milyar</b> kazandı.`;
+document.getElementById('tz-note').textContent =
+  `Hisse: MKK yerli tüzel, beta ${nf(2).format(tzH.beta)}. Fon: TEFAS'ta hanehalkı dışı pay. Altın: TCMB tüzel kişi kıymetli maden hesabı, ${f1.format(B.tuzel_altin.ton)} ton. ` +
+  `Kur kazancı: ${f1.format(B.tuzel_kur.usd)} milyar $ tüzel döviz mevduatı.`;
+const yt = yabH.find((h) => h.kimlik === 'Tüzel');
+document.getElementById('yab-sub').innerHTML =
+  `Yabancı yatırımcı sayısı kriz boyunca neredeyse hiç değişmedi, hisse portföyleri yerliden belirgin biçimde daha az eridi. Bu yüzden borsadaki payları ` +
+  `%${f1.format(at(p12, '2026-08', 'pay'))}'dan %${f1.format(last(p12, 'pay'))}'e çıktı. DİBS'te tablo ters: yabancı payı %${f1.format(at(d12, '2026-08', 'pay'))}'dan %${f1.format(last(d12, 'pay'))}'e geriledi.`;
+const dYG = B.dibs.find((x) => x.uyruk === 'Yerli' && x.kimlik === 'Gerçek');
+const dYab = B.dibs.filter((x) => x.uyruk === 'Yabancı').reduce((s, x) => s + x.degisim, 0);
+document.getElementById('yab-call').innerHTML =
+  `En ilginç hareket tahvilde. Yabancılar DİBS'ten ${f0.format(-dYab)} milyar liralık pozisyon azaltırken yerli bireysel yatırımcının DİBS portföyü <b>%${f0.format(dYG.pct)}</b> büyüdü. ` +
+  `Fonlardan ve borsadan kaçan para devlet kâğıdına sığınıyor gibi görünüyor.`;
+const top10 = Y.ulke.slice(0, 10).reduce((s, u) => s + u.portfoy, 0);
+document.getElementById('ulke-note').textContent =
+  `MKK ülke paneli. İlk 10 ülke panel toplamının %${f0.format(100 * top10 / Y.ulke_panel_toplam_ekim)}'ini tutuyor. Panelin kapsamı uyruk tablosundan dar, toplamı ${f0.format(Y.ulke_panel_toplam_ekim)} milyar TL. Katar 9, İspanya 14 yatırımcıyla bu büyüklüğe ulaşıyor.`;
+
+// ---------- generic horizontal bar ----------
+function hbar(id, rows, opt = {}) {
+  const box = document.getElementById(id); box.replaceChildren();
+  const W = box.clientWidth || 600, narrow = W < 520;
+  const bh = narrow ? 16 : 22, gap = narrow ? 30 : 12, lab = narrow ? 0 : Math.min(200, W * 0.32), top = 4;
+  const rh = bh + gap; const Hh = top + rows.length * rh + 4;
+  const svg = el('svg', {width: W, height: Hh, viewBox: `0 0 ${W} ${Hh}`, role: 'img', 'aria-label': opt.aria || ''}, box);
+  const vals = rows.map((r) => r.v), mn = Math.min(0, ...vals), mx = Math.max(0, ...vals);
+  const valW = 92, x0 = lab + (mn < 0 ? valW : 6), x1 = W - (mx > 0 ? valW : 6);
+  const sx = (v) => x0 + (v - mn) / ((mx - mn) || 1) * (x1 - x0);
+  el('line', {x1: sx(0), x2: sx(0), y1: 0, y2: Hh, stroke: 'var(--axis)'}, svg);
+  const tip = tipFor(box);
+  rows.forEach((r, i) => {
+    const y = top + i * rh + (narrow ? 14 : 0);
+    if (narrow) txt(svg, 0, y - 5, r.l, {fill: 'var(--ink)'});
+    else txt(svg, 0, y + bh / 2, r.l, {fill: 'var(--ink)', 'dominant-baseline': 'middle'});
+    const a = sx(Math.min(0, r.v)), w = Math.max(2, Math.abs(sx(r.v) - sx(0)));
+    const g = el('g', {}, svg);
+    const rr = Math.min(4, w / 2);
+    // 4px rounded data end, square at baseline
+    const xa = a, xb = a + w, neg = r.v < 0;
+    const d = neg ? `M${xb},${y}H${xa + rr}Q${xa},${y} ${xa},${y + rr}V${y + bh - rr}Q${xa},${y + bh} ${xa + rr},${y + bh}H${xb}Z`
+                  : `M${xa},${y}H${xb - rr}Q${xb},${y} ${xb},${y + rr}V${y + bh - rr}Q${xb},${y + bh} ${xb - rr},${y + bh}H${xa}Z`;
+    el('path', {d, fill: r.c, opacity: r.o || 1}, g);
+    const vx = neg ? sx(r.v) - 6 : sx(r.v) + 6;
+    txt(svg, vx, y + bh / 2, r.vl, {'text-anchor': neg ? 'end' : 'start', 'dominant-baseline': 'middle', fill: 'var(--ink)'});
+    const hit = el('rect', {x: lab, y: y - 4, width: W - lab, height: bh + 8, fill: 'transparent'}, g);
+    hit.addEventListener('mousemove', (ev) => tip.show(ev, r.tip)); hit.addEventListener('mouseleave', () => tip.hide());
+  });
+}
+
+function drawBorsa() {
+  const rows = borsaRows.map((r) => ({l: `${r.u} ${KIM[r.k]}`, v: r.d, vl: `${sg(r.d)} · ${pct(r.p, f0)}`, c: r.u === 'Yerli' ? 'var(--yerli)' : 'var(--yabanci)',
+    tip: `<div class="t">${r.u} ${KIM[r.k]}</div>31 Ağustos: ${f0.format(r.ag)} milyar TL<br>31 Ekim: ${f0.format(r.ek)} milyar TL<br><b>${sg(r.d)} milyar TL (${pct(r.p)})</b>`}));
+  rows.push({l: 'Toplam piyasa', v: piyD, vl: `${sg(piyD)} · ${pct(100 * piyD / piy['2026-08'], f0)}`, c: 'var(--ink3)', tip: `<div class="t">Tüm yatırımcılar</div>${f0.format(piy['2026-08'])} → ${f0.format(piy['2026-10'])} milyar TL`});
+  hbar('c-borsa', rows, {aria: 'Pay senedi portföy değişimi gruplara göre'});
+}
+function drawHH() {
+  const rows = [['Altın', hh.altin], ['Doğrudan hisse', hh.hisse], ['Yatırım fonları', hh.fon], ['BES', hh.bes]].map(([l, v]) =>
+    ({l, v, vl: sg(v), c: 'var(--yerli)', tip: `<div class="t">Hanehalkı</div>${l}: <b>${sg(v)} milyar TL</b><br>Toplamın %${f0.format(100 * v / hh.toplam)}'i`}));
+  hbar('c-hh', rows);
+  // oran: tek bar, varlik icindeki pay
+  const box = document.getElementById('c-hh-oran'); box.replaceChildren();
+  const W = box.clientWidth || 500, Hh = 132, svg = el('svg', {width: W, height: Hh, viewBox: `0 0 ${W} ${Hh}`}, box);
+  const p = -hh.toplam / hh.genis_payda;
+  txt(svg, 0, 34, '%' + f1.format(100 * p), {'font-size': 40, fill: 'var(--ink)', 'font-family': 'var(--serif)'});
+  txt(svg, 0, 58, `hanehalkı varlığının (${f1.format(hh.genis_payda / 1000)} trilyon TL) eridi`, {'font-size': 13});
+  const y = 78, bw = W; el('rect', {x: 0, y, width: bw, height: 16, rx: 4, fill: 'var(--grid)'}, svg);
+  el('rect', {x: 0, y, width: Math.max(4, bw * p), height: 16, rx: 4, fill: 'var(--yerli)'}, svg);
+  const altinP = -hh.altin / hh.genis_payda;
+  el('rect', {x: bw * (p - altinP), y, width: 2, height: 16, fill: 'var(--bg)'}, svg);
+  txt(svg, 0, y + 34, `Bunun ${f1.format(100 * altinP)} puanı altından. Dolar karşılığı yaklaşık ${f0.format(-hh.toplam / B.usd1)} milyar $.`, {'font-size': 12.5});
+}
+function drawTZ() {
+  hbar('c-tz', [
+    {l: 'Hisse (MKK yerli tüzel)', v: tz.hisse, vl: sg(tz.hisse), c: 'var(--yerli)', tip: `<div class="t">Pay senedi, al-tut</div>Baz ${f0.format(tzH.baz)} milyar TL<br><b>${sg(tz.hisse)} milyar TL (${pct(tzH.getiri)})</b>`},
+    {l: 'Fonlar, tasfiye', v: B.fon_kurumsal.tasfiye, vl: sg(B.fon_kurumsal.tasfiye), c: 'var(--yerli)', tip: `<div class="t">Tasfiyedeki fonlar, hanehalkı dışı pay</div><b>${sg(B.fon_kurumsal.tasfiye)} milyar TL</b>`},
+    {l: 'Fonlar, diğer', v: B.fon_kurumsal.diger, vl: sg(B.fon_kurumsal.diger), c: 'var(--pos)', tip: `<div class="t">Diğer fonlar, hanehalkı dışı pay</div>Para piyasası ve döviz fonları artıda<br><b>${sg(B.fon_kurumsal.diger)} milyar TL</b>`},
+    {l: 'Altın hesabı', v: tz.altin, vl: sg(tz.altin), c: 'var(--yerli)', tip: `<div class="t">TCMB tüzel KMDH</div>${f1.format(B.tuzel_altin.ton)} ton<br><b>${sg(tz.altin)} milyar TL</b>`},
+    {l: 'Döviz mevduatı, kur', v: B.tuzel_kur.kazanc, vl: sg(B.tuzel_kur.kazanc), c: 'var(--pos)', o: .7, tip: `<div class="t">Kur kazancı, toplama katılmadı</div>${f1.format(B.tuzel_kur.usd)} milyar $ × kur farkı<br><b>${sg(B.tuzel_kur.kazanc)} milyar TL</b>`},
+  ]);
+}
+function drawDiger() {
+  const box = document.getElementById('c-diger'); box.replaceChildren();
+  const W = box.clientWidth || 500, Hh = 176, svg = el('svg', {width: W, height: Hh, viewBox: `0 0 ${W} ${Hh}`}, box);
+  const m = {l: 6, r: 6, t: 26, b: 26}, vals = [dg.ag, dg.ey, dg.ek], mx = Math.max(...vals);
+  const labs = ['Ağustos', 'Eylül', 'Ekim'], bw = Math.min(70, (W - m.l - m.r) / 3 - 24);
+  const tip = tipFor(box);
+  vals.forEach((v, i) => {
+    const cx = m.l + (i + .5) * (W - m.l - m.r) / 3, h = (Hh - m.t - m.b) * v / mx, y = Hh - m.b - h;
+    el('path', {d: `M${cx - bw / 2},${Hh - m.b}V${y + 4}Q${cx - bw / 2},${y} ${cx - bw / 2 + 4},${y}H${cx + bw / 2 - 4}Q${cx + bw / 2},${y} ${cx + bw / 2},${y + 4}V${Hh - m.b}Z`, fill: 'var(--kurum)'}, svg);
+    txt(svg, cx, y - 8, f0.format(v), {'text-anchor': 'middle', fill: 'var(--ink)'});
+    txt(svg, cx, Hh - 8, labs[i], {'text-anchor': 'middle'});
+    const hit = el('rect', {x: cx - bw / 2 - 8, y: m.t - 20, width: bw + 16, height: Hh - m.t, fill: 'transparent'}, svg);
+    hit.addEventListener('mousemove', (ev) => tip.show(ev, `<div class="t">Yerli "Diğer", ay sonu</div><b>${f0.format(v)} milyar TL</b>${i ? `<br>${pct(100 * (v / vals[i - 1] - 1))} önceki aya göre` : ''}`));
+    hit.addEventListener('mouseleave', () => tip.hide());
+  });
+  el('line', {x1: m.l, x2: W - m.r, y1: Hh - m.b, y2: Hh - m.b, stroke: 'var(--axis)'}, svg);
+  txt(svg, W - m.r, 12, `iki ayda ${pct(dg.mkk_2ay, f0)}`, {'text-anchor': 'end', fill: 'var(--ink)', 'font-weight': 600});
+}
+
+// ---------- line: yabanci payi ----------
+function drawPay() {
+  const box = document.getElementById('c-pay'); box.replaceChildren();
+  const W = box.clientWidth || 520, Hh = 240, m = {l: 34, r: 104, t: 10, b: 26};
+  const svg = el('svg', {width: W, height: Hh, viewBox: `0 0 ${W} ${Hh}`}, box);
+  const months = p12.map((r) => r.ay), n = months.length;
+  const all = [...p12.map((r) => r.pay), ...d12.map((r) => r.pay)], lo = Math.floor(Math.min(...all) / 5) * 5, hi = Math.ceil(Math.max(...all) / 5) * 5;
+  const sx = (i) => m.l + i * (W - m.l - m.r) / (n - 1), sy = (v) => m.t + (hi - v) / (hi - lo) * (Hh - m.t - m.b);
+  const ia = months.indexOf('2026-08');
+  el('rect', {x: sx(ia), y: m.t, width: sx(n - 1) - sx(ia), height: Hh - m.t - m.b, fill: 'var(--grid)', opacity: .7}, svg);
+  for (let v = lo; v <= hi; v += 5) { el('line', {x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v), stroke: 'var(--grid)'}, svg); txt(svg, m.l - 6, sy(v), '%' + v, {'text-anchor': 'end', 'dominant-baseline': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); }
+  const ml = ['Kas', 'Ara', 'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki'];
+  months.forEach((mo, i) => { if (W > 480 || i % 2 === 1) txt(svg, sx(i), Hh - 8, ml[+mo.slice(5) === 11 ? 0 : +mo.slice(5) === 12 ? 1 : +mo.slice(5) + 1], {'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink3)'}); });
+  const ly = [sy(p12[n - 1].pay), sy(d12[n - 1].pay)];
+  if (Math.abs(ly[0] - ly[1]) < 15) { const mid = (ly[0] + ly[1]) / 2, up = p12[n - 1].pay >= d12[n - 1].pay ? 0 : 1; ly[up] = mid - 8; ly[1 - up] = mid + 8; }
+  [[p12, null, 'Pay senedi', 0], [d12, '5 4', 'DİBS', 1]].forEach(([s, dash, name, li]) => {
+    el('path', {d: s.map((r, i) => (i ? 'L' : 'M') + sx(i) + ',' + sy(r.pay)).join(''), fill: 'none', stroke: 'var(--yabanci)', 'stroke-width': 2, 'stroke-dasharray': dash || '', 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}, svg);
+    s.forEach((r, i) => { if (i >= ia) el('circle', {cx: sx(i), cy: sy(r.pay), r: 4, fill: 'var(--yabanci)', stroke: 'var(--panel)', 'stroke-width': 2}, svg); });
+    txt(svg, sx(n - 1) + 8, ly[li], `${name} %${f1.format(s[n - 1].pay)}`, {'dominant-baseline': 'middle', 'font-size': 11.5, fill: 'var(--ink)'});
+  });
+  const tip = tipFor(box), rule = el('line', {y1: m.t, y2: Hh - m.b, stroke: 'var(--axis)', visibility: 'hidden'}, svg);
+  const ov = el('rect', {x: m.l, y: m.t, width: W - m.l - m.r, height: Hh - m.t - m.b, fill: 'transparent'}, svg);
+  ov.addEventListener('mousemove', (ev) => {
+    const r = box.getBoundingClientRect(), px = (ev.clientX - r.left) * W / box.clientWidth;
+    const i = Math.max(0, Math.min(n - 1, Math.round((px - m.l) / ((W - m.l - m.r) / (n - 1)))));
+    rule.setAttribute('x1', sx(i)); rule.setAttribute('x2', sx(i)); rule.setAttribute('visibility', 'visible');
+    tip.show(ev, `<div class="t">${months[i]}</div>Pay senedi: %${f1.format(p12[i].pay)}<br>DİBS: %${f1.format(d12[i].pay)}`);
+  });
+  ov.addEventListener('mouseleave', () => { tip.hide(); rule.setAttribute('visibility', 'hidden'); });
+}
+
+// ---------- stacked: yabanci usd ----------
+let usdV = 'pay';
+function drawUSD() {
+  const box = document.getElementById('c-usd'); box.replaceChildren();
+  const rows = Y[usdV + '_kimlik'].filter((r) => r.uyruk === 'Yabancı');
+  const months = ['2026-07', '2026-08', '2026-09', '2026-10'], lab = ['Temmuz', 'Ağustos', 'Eylül', 'Ekim'];
+  const col = {'Gerçek': 'var(--yerli)', 'Tüzel': 'var(--yabanci)', 'Diğer': 'var(--kurum)'};
+  const order = ['Diğer', 'Tüzel', 'Gerçek'];
+  const tot = months.map((mo) => rows.reduce((s, r) => s + r.usd[mo], 0)), mx = Math.max(...tot) * 1.12;
+  const W = box.clientWidth || 520, Hh = 230, m = {l: 6, r: 6, t: 22, b: 26};
+  const svg = el('svg', {width: W, height: Hh, viewBox: `0 0 ${W} ${Hh}`}, box);
+  const cw = (W - m.l - m.r) / months.length, bw = Math.min(64, cw - 28), sy = (v) => (Hh - m.t - m.b) * v / mx;
+  const tip = tipFor(box);
+  months.forEach((mo, i) => {
+    const cx = m.l + (i + .5) * cw; let y = Hh - m.b;
+    order.forEach((k, j) => {
+      const r = rows.find((x) => x.kimlik === k), h = sy(r.usd[mo]);
+      if (h < .5) return;
+      const top = j === order.length - 1 || order.slice(j + 1).every((kk) => sy(rows.find((x) => x.kimlik === kk).usd[mo]) < .5);
+      const yy = y - h + (j ? 2 : 0), hh_ = h - (j ? 2 : 0);
+      if (top && hh_ > 4) el('path', {d: `M${cx - bw / 2},${yy + hh_}V${yy + 4}Q${cx - bw / 2},${yy} ${cx - bw / 2 + 4},${yy}H${cx + bw / 2 - 4}Q${cx + bw / 2},${yy} ${cx + bw / 2},${yy + 4}V${yy + hh_}Z`, fill: col[k]}, svg);
+      else el('rect', {x: cx - bw / 2, y: yy, width: bw, height: Math.max(1, hh_), fill: col[k]}, svg);
+      y -= h;
+    });
+    txt(svg, cx, y - 8, f1.format(tot[i]), {'text-anchor': 'middle', fill: 'var(--ink)'});
+    txt(svg, cx, Hh - 8, lab[i], {'text-anchor': 'middle', 'font-size': 11.5});
+    const hit = el('rect', {x: cx - cw / 2, y: m.t - 20, width: cw, height: Hh - m.t, fill: 'transparent'}, svg);
+    hit.addEventListener('mousemove', (ev) => tip.show(ev, `<div class="t">${lab[i]}, yabancı ${usdV === 'pay' ? 'pay senedi' : 'DİBS'}</div>` +
+      ['Tüzel', 'Diğer', 'Gerçek'].map((k) => { const r = rows.find((x) => x.kimlik === k); return `${k}: ${f1.format(r.usd[mo])} milyar $ <span class="t">(${f0.format(r.tl[mo])} mlr TL, ${f0.format(r.yatirimci[mo])} yatırımcı)</span>`; }).join('<br>') +
+      `<br><b>Toplam ${f1.format(tot[i])} milyar $</b>`));
+    hit.addEventListener('mouseleave', () => tip.hide());
+  });
+  el('line', {x1: m.l, x2: W - m.r, y1: Hh - m.b, y2: Hh - m.b, stroke: 'var(--axis)'}, svg);
+  const ch = 100 * (tot[3] / tot[1] - 1);
+  txt(svg, W - m.r, 12, `Ağustos → Ekim ${pct(ch)}`, {'text-anchor': 'end', fill: 'var(--ink)', 'font-weight': 600});
+}
+document.querySelectorAll('#s-yab .seg button').forEach((b) => b.addEventListener('click', () => {
+  usdV = b.dataset.v; document.querySelectorAll('#s-yab .seg button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); drawUSD();
+}));
+
+function drawUlke() {
+  hbar('c-ulke', Y.ulke.slice(0, 10).map((u) => ({l: u.ulke, v: u.portfoy, vl: f0.format(u.portfoy), c: 'var(--yabanci)',
+    tip: `<div class="t">${u.ulke}, Ekim</div><b>${f0.format(u.portfoy)} milyar TL</b><br>${f0.format(u.yatirimci)} yatırımcı<br>Yatırımcı başına ${f1.format(u.portfoy / u.yatirimci)} milyar TL`})));
+}
+function drawDibs() {
+  const order = [['Yerli', 'Gerçek'], ['Yerli', 'Tüzel'], ['Yerli', 'Diğer'], ['Yabancı', 'Gerçek'], ['Yabancı', 'Tüzel'], ['Yabancı', 'Diğer']];
+  hbar('c-dibs', order.map(([u, k]) => { const x = B.dibs.find((d) => d.uyruk === u && d.kimlik === k);
+    return {l: `${u} ${KIM[k]}`, v: x.degisim, vl: `${sg(x.degisim)} · ${pct(x.pct, f0)}`, c: u === 'Yerli' ? 'var(--yerli)' : 'var(--yabanci)',
+      tip: `<div class="t">${u} ${KIM[k]}, DİBS</div>Ağustos: ${f0.format(x.ag)} milyar TL<br>Ekim: ${f0.format(x.ek)} milyar TL<br><b>${sg(x.degisim)} milyar TL (${pct(x.pct)})</b>`}; }));
+}
+
+// ---------- table ----------
+(function table() {
+  const r = (a) => `<tr>${a.map((c, i) => `<td${i ? ' class="n"' : ''}>${c}</td>`).join('')}</tr>`;
+  let h = `<thead><tr><th>Kalem</th><th class="n">Baz / Ağustos</th><th class="n">Değişim, milyar TL</th><th class="n">Yüzde</th></tr></thead><tbody>`;
+  h += r(['<b>Hanehalkı toplam</b>', f0.format(hh.genis_payda), sg(hh.toplam), pct(100 * hh.toplam / hh.genis_payda)]);
+  h += r(['Hanehalkı altın', '', sg(hh.altin), '']) + r(['Hanehalkı hisse', f0.format(yg.baz), sg(hh.hisse), pct(yg.getiri)]) + r(['Hanehalkı fon', '', sg(hh.fon), '']) + r(['Hanehalkı BES', '', sg(hh.bes), '']);
+  h += r(['<b>Yerli tüzel toplam</b>', '', sg(tzTop), '']) + r(['Tüzel hisse', f0.format(tzH.baz), sg(tz.hisse), pct(tzH.getiri)]) + r(['Tüzel ve kurumsal fon payı', f0.format(B.fon_kurumsal.baz), sg(tz.fon), pct(100 * tz.fon / B.fon_kurumsal.baz)]) + r(['Tüzel altın hesabı', f0.format(B.tuzel_altin.baz), sg(tz.altin), pct(100 * tz.altin / B.tuzel_altin.baz)]) + r(['Tüzel döviz, kur kazancı (hariç)', f1.format(B.tuzel_kur.usd) + ' mlr $', sg(B.tuzel_kur.kazanc), '']);
+  yabH.forEach((x) => { h += r([`Yabancı ${KIM[x.kimlik]} hisse`, f0.format(x.baz), sg(x.mtm), pct(x.getiri)]); });
+  h += r(['Yerli "Diğer" hisse (toplama dahil değil)', f0.format(dg.baz), sg(dg.mtm), pct(dg.getiri)]);
+  B.dibs.forEach((x) => { h += r([`DİBS ${x.uyruk.toLowerCase()} ${KIM[x.kimlik]} (pozisyon)`, f0.format(x.ag), sg(x.degisim), pct(x.pct)]); });
+  document.getElementById('t-all').innerHTML = h + '</tbody>';
+})();
+
+const drawAll = () => { drawBorsa(); drawHH(); drawTZ(); drawDiger(); drawPay(); drawUSD(); drawUlke(); drawDibs(); };
+drawAll();
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawAll, 120); });
+})();
+</script>
+</body></html>
