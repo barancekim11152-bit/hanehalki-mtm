@@ -118,3 +118,37 @@ main{width:min(960px,calc(100% - 48px))}
 <p>Dört-altı haftalık ana senaryomda IREN ve benzeri finansmana bağımlı AI şirketleri Nvidia'dan daha zayıf kalıyor. ABD'de bir yıl ileri başlangıçlı 2-10 yıl SOFR eğrisinin dikleşmesini ve Brent'in 110 doları test etmesini bekliyorum. DXY'de ilk aşamada 102-103, yıl sonunda 99-100 öngörüyorum. Altının Bitcoin'e, İsviçre frangının yene göre daha güçlü olacağını düşünüyorum.</p>
 <p>Bu tahminlerin sınanacağı tarihler ve koşullar da açık. IREN geciken kapasiteyi ocak-şubatta devreye alır, 6 milyar dolar civarındaki ilave finansmanı makul koşullarda tamamlar ve neocloud kredi spread'leri daralırsa ikinci satış beklentimi değiştirmem gerekir. Hürmüz'de tanker geçişleri normale dönerse petrol için 110 dolar senaryosu zayıflar. ABD teknoloji hisselerinden yabancı çıkışı görülmez ve Avrupa'ya kıyasla ABD'nin ileri faiz avantajı korunursa DXY'de yıl sonu düşüşünü yeniden değerlendireceğim.</p>
 <p>Önümüzdeki ay üç fiyat ilişkisini birlikte izleyeceğim. AI şirketlerinde satış derinleşirken kredi spread'leri ne yapıyor? Brent düşerken dizel marjı geriliyor mu? ABD teknoloji hisselerine yabancı talep azalırsa dolar nasıl karşılık veriyor? Kasım başındaki hareketin boyutunu ve kalıcılığını değerlendirirken bu üç ölçü bana daha fazla şey söyleyecek.</p>
+<hr/>
+<p><em>Veri notu. Grafiklerdeki piyasa serileri Bloomberg kaynaklı 5 Kasım kapanışlarından ve 6 Kasım sabahı piyasa panosundan alınmıştır. Farklı referans saatleri nedeniyle grafiklerdeki son fiyatlarla metindeki rakamlar arasında küçük farklar görülebilir.</em></p>
+<p><em>Kaynaklar: <a href="https://www.reuters.com/technology/neocloud-firm-iren-tops-quarterly-revenue-estimates-shares-jump-2026-11-05/">IREN'in Microsoft teslimat takvimi</a>, <a href="https://www.reuters.com/technology/microsoft-rejects-multibillion-dollar-ai-deal-with-uks-nscale-ft-reports-2026-11-05/">Microsoft'un Nscale opsiyonu</a>, <a href="https://www.texastribune.org/2026/11/04/data-center-texas-pause-gina-hinojosa-governor-policies/">Teksas'ta veri merkezi izinleri</a>, <a href="https://www.axios.com/2026/11/05/trump-iran-war-national-security-team-decision">Trump'ın İran hakkındaki açıklaması</a>.</em></p>
+</main>
+<div aria-label="Grafik büyütme" aria-modal="true" class="chart-modal" hidden="" id="chart-modal" role="dialog">
+<div class="chart-toolbar"><strong id="chart-title">Grafik</strong><button aria-label="Küçült" id="zoom-out" type="button">−</button><button aria-label="Büyüt" id="zoom-in" type="button">+</button><button id="zoom-fit" type="button">Sığdır</button><button id="zoom-close" type="button">Kapat ×</button></div>
+<div class="chart-scroller" id="chart-scroller"><img alt="" id="chart-large"/></div>
+<div class="chart-help">Grafiği büyütmek için + kullanın; yakınlaştırdıktan sonra kaydırabilirsiniz.</div>
+</div>
+<script>
+(function(){
+  const modal=document.getElementById('chart-modal'), image=document.getElementById('chart-large'), scroller=document.getElementById('chart-scroller'), title=document.getElementById('chart-title');
+  let zoom=1, lastFocus=null;
+  function fit(){zoom=1; apply();}
+  function apply(){const w=Math.max(300,scroller.clientWidth-18); image.style.width=Math.round(w*zoom)+'px';}
+  function close(){modal.hidden=true;document.body.style.overflow='';image.removeAttribute('src');if(lastFocus)lastFocus.focus();}
+  function open(src,alt,trigger){if(!src)return;lastFocus=trigger;image.src=src;image.alt=alt||'Grafik';title.textContent=alt||'Grafik';modal.hidden=false;document.body.style.overflow='hidden';fit();document.getElementById('zoom-close').focus();}
+  document.querySelectorAll('.figure img').forEach(function(img){
+    const fig=img.closest('.figure');if(!fig)return;
+    const btn=document.createElement('button');btn.type='button';btn.className='expand-chart';btn.textContent='⤢ Büyüt';btn.setAttribute('aria-label',(img.alt||'Grafik')+' grafiğini büyüt');fig.insertBefore(btn,fig.querySelector('figcaption'));
+    btn.addEventListener('click',()=>open(img.currentSrc||img.src,img.alt,btn));
+    img.setAttribute('tabindex','0');img.setAttribute('role','button');img.setAttribute('aria-label',(img.alt||'Grafik')+' grafiğini büyüt');
+    img.addEventListener('click',()=>open(img.currentSrc||img.src,img.alt,img));
+    img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(img.currentSrc||img.src,img.alt,img)}});
+  });
+  document.getElementById('zoom-close').addEventListener('click',close);
+  document.getElementById('zoom-in').addEventListener('click',()=>{zoom=Math.min(4,zoom*1.45);apply()});
+  document.getElementById('zoom-out').addEventListener('click',()=>{zoom=Math.max(0.6,zoom/1.45);apply()});
+  document.getElementById('zoom-fit').addEventListener('click',fit);
+  document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape')close();if(e.key==='+'){zoom=Math.min(4,zoom*1.45);apply()}if(e.key==='-'){zoom=Math.max(0.6,zoom/1.45);apply()}});
+  window.addEventListener('resize',()=>{if(!modal.hidden)apply()});
+})();
+</script>
+</body></html>
